@@ -23,7 +23,10 @@
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@angular/cli": "~13.3.0",
+    "@angular/compiler-cli": "~13.3.0",
+    "typescript": "~4.6.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.3.0",
@@ -39,5 +42,8 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.6.2"
   },
-  "engines": { "node": "~16.10.0", "npm": "~7.24.0" }
+  "engines": { 
+    "node": "16.10.0", 
+    "npm": "7.24.0" 
+  }
 }
