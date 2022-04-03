@@ -7,9 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WatchApp-FrontEnd';
+  inputText = 'input text test';
   buttonText = 'Test'
 
-  testButton(event: any){
-    alert("Butonul functioneaza")
+  testButton(){
+    alert(this.inputText);
+  }
+
+  inputChanged(event: string){
+    this.inputText = event
   }
 }

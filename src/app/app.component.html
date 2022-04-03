@@ -1,1 +1,3 @@
-<app-main-button [buttonText]="buttonText" (onClick)="testButton($event)"></app-main-button>
+<app-custom-input-field [inputText]="inputText" (outputText)="inputText" (inputChanged)="inputChanged($event)"></app-custom-input-field>
+<br><br>
+<app-main-button [buttonText]="buttonText" (onClick)="testButton()"></app-main-button>
