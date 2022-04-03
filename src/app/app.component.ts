@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WatchApp-FrontEnd';
+  buttonText = 'Test'
+
+  testButton(event: any){
+    alert("Butonul functioneaza")
+  }
 }
