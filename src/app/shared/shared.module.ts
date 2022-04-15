@@ -3,19 +3,27 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { MainButtonComponent } from './components/main-button/main-button.component';
+import { CustomInputFieldComponent } from './components/custom-input-field/custom-input-field.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MainButtonComponent,
+    CustomInputFieldComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MainButtonComponent,
+    CustomInputFieldComponent
   ]
 })
 export class SharedModule { }
