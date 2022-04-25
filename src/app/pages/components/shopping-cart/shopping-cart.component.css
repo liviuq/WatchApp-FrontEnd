@@ -81,11 +81,23 @@ img{
 button.favorite{
     color: white;
     background-color: #F08080;
+    transition: all .4s;
+}
+
+button.favorite:hover{
+    cursor: pointer;
+    background-color: #e06363;
 }
 
 button.delete{
     color: white;
     background-color: #DC3545;
+    transition: all .4s;
+}
+
+button.delete:hover{
+    cursor: pointer;
+    background-color: rgb(201, 67, 67);
 }
 
 button.pret__total{
@@ -160,13 +172,11 @@ button.pret__total{
     font-size: 24px;
     font-weight: 700;
     color: white;
-}
-
-button{
     transition: all .4s;
 }
 
-button:hover{
+.continue:hover{
     cursor: pointer;
-    filter: saturate(140%);
+    background: #1a9690;
 }
+
