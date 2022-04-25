@@ -1,0 +1,14 @@
+.content-wrap{
+    padding-bottom: 200px;
+ }
+ 
+ .page-container{
+     position: relative;
+     min-height: 100vh;
+ }
+ 
+ app-footer{
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+ }
