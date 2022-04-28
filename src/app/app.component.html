@@ -1,6 +1,7 @@
-<app-header></app-header>
-<app-custom-input-field [inputText]="inputText" (outputText)="inputText" (inputChanged)="inputChanged($event)"></app-custom-input-field>
-<br><br>
-<app-main-button [buttonText]="buttonText" (onClick)="testButton()"></app-main-button>
-<app-footer></app-footer>
-
+<div class="page-container">
+    <div class="content-wrap">
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+</div>
