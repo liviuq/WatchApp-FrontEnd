@@ -1,0 +1,25 @@
+
+  <div class="info_utilizator_box">
+    <img class="poza_profil" src="assets/profil-utilizator-cumparator-images/image 6.png">
+    <h1 class="descr">Nume: Username</h1>
+    <h1 class="descr" id="numar_tel">Nr de telefon : <span [style.color]="numberTelColor">{{numberTel}}</span></h1>
+    <div class="button_box">
+        <button type="button" class="button_green"><h1 class="button_text">Schimba nr de telefon</h1></button>
+        <button type="button" class="button_green"  (click)="getNumber()" id="numar_bt"><h1 class="button_text"> {{buttonName}}</h1></button>
+    </div>
+    <h1 class="descr">Numar de anunturi adaugate: 0</h1>
+    <h1 class="descr">Data inregistrarii: 11.03.2019</h1>
+    <h1 class="descr">Categorii preferate de produse:</h1>
+    <ul class="lista_pref">
+        <li>Romanian Vintage Watches</li>
+        <li>Another one</li>
+        <li>...</li>
+    </ul>
+    <button type="button" class="button_rose">
+       <div class="flex_text_img">
+        <h1 class="button_text_rose">Vezi produse preferate</h1>
+        <img class="inima" src="assets/profil-utilizator-cumparator-images/Vector.png">
+       </div>
+    </button> 
+  </div>
+
