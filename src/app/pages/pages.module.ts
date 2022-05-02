@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BuyAWatchComponent } from './components/buy-a-watch/buy-a-watch.component';
 
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
+import { FormAddproductComponent } from './components/form-addproduct/form-addproduct.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FavoriteListComponent } from './components/favorite-list/favorite-list.
     BuyAWatchComponent,
     FavoriteListComponent,
     ProfilUtilizatorCumparatorComponent,
-    HomeComponent
+    HomeComponent,
+    FormAddproductComponent
   ],
   imports: [
     CommonModule,
