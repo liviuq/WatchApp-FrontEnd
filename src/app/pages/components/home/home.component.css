@@ -141,6 +141,7 @@ h2 {
     justify-content: space-evenly;
     border-radius: 12px;
     border: none;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
     background-color: rgba(33, 171, 165, 1);
 }
 
