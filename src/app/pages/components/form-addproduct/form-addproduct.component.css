@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  border:0;
+  box-sizing: border-box;
+}
+
+input[type=text],input[type=number], select, textarea {
+  width: 100%;
+  padding: 12px;
+  resize: vertical;
+  color: #082A4D;
+  background-color: #e0e2e3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.row button {
+  background-color: #21ABA5;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  float: right;
+}
+
+.row button:hover {
+  background-color: #21aba484;
+}
+
+.container {
+	max-width: 960px;
+  margin:auto;
+  border-radius: 5px;
+  padding: 20px;
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+  color: #082A4D;
+}
+.category {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.category h1 ,
+.category h2 {
+  font-weight: normal;
+}
+
+.row {
+  margin-bottom: 60px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  margin-left: 100px;
+}
+
+.col-75 {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+
+}
+
+input[type='radio'] {
+  box-sizing: border-box;
+  appearance: none;
+  background: white;
+  outline: 2px solid #333;
+  border: 3px solid white;
+  width: 16px;
+  height: 16px;
+  margin-right: 60px;
+}
+
+input[type='radio']:checked {
+  background: #333;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.price input {
+  width: 80%;
+  border-radius: 0;
+}
+.price select {
+  width: 20%;
+  background-color: #bfbebe;
+  border-radius: 0;
+}
+
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
