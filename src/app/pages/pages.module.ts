@@ -14,7 +14,7 @@ import { FavoriteListComponent } from './components/favorite-list/favorite-list.
     ShoppingCartComponent,
     HomeComponent,
     BuyAWatchComponent,
-    FavoriteListComponent
+    FavoriteListComponent,
     ProfilUtilizatorCumparatorComponent,
     HomeComponent
   ],
