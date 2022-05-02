@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { ProfilUtilizatorCumparatorComponent } from './components/profil-utilizator-cumparator/profil-utilizator-cumparator.component';
 
 
 @NgModule({
   declarations: [
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ProfilUtilizatorCumparatorComponent
   ],
   imports: [
     CommonModule,
