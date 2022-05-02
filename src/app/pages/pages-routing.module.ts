@@ -4,6 +4,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { ProfilUtilizatorCumparatorComponent } from './components/profil-utilizator-cumparator/profil-utilizator-cumparator.component';
 const routes: Routes = [
   {path: 'shopping-cart', component: ShoppingCartComponent},
+  {path: '', component: HomeComponent},
   {path: 'profil', component: ProfilUtilizatorCumparatorComponent},
 ];
 
