@@ -1,0 +1,11 @@
+a{
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    transition: 0.2s;
+}
+
+a:hover{
+    color: #45EBA5;
+    cursor: pointer;
+}

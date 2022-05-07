@@ -1,7 +1,12 @@
-<div class="page-container">
-    <div class="content-wrap">
-        <app-header></app-header>
-        <router-outlet></router-outlet>
-    </div>
-    <app-footer></app-footer>
+<div class="loading" *ngIf="auth.isLoading$ | async; else loaded">
+    <p>Pagina se incarca. Trebuie un loading page aici</p>
 </div>
+<ng-template #loaded>
+    <div class="page-container">
+        <div class="content-wrap">
+            <app-header></app-header>
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+    </div>
+</ng-template>

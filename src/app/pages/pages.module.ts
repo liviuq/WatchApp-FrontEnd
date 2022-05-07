@@ -9,6 +9,7 @@ import { BuyAWatchComponent } from './components/buy-a-watch/buy-a-watch.compone
 
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 import { FormAddproductComponent } from './components/form-addproduct/form-addproduct.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,17 @@ import { FormAddproductComponent } from './components/form-addproduct/form-addpr
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    RouterModule
   ],
   exports: [
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    HomeComponent,
+    BuyAWatchComponent,
+    FavoriteListComponent,
+    ProfilUtilizatorCumparatorComponent,
+    HomeComponent,
+    FormAddproductComponent
   ]
 })
 export class PagesModule { }
