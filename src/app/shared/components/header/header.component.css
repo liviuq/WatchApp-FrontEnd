@@ -43,10 +43,11 @@
 }
 
 .navbar__right{
-    display: flex;
-    flex: 0 0 13%;
-    justify-content: space-between;
-    align-items: center;
+    width: 13%;
+}
+
+.login__btn{
+    float: right;
 }
 
 .navbar__right li a{
@@ -59,3 +60,21 @@
 .navbar__right li a:hover{
     color: #45EBA5;
 }
+
+.navbar__authenticated{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__authenticated a{
+    fill: white;
+    stroke: white;
+    transition: all .4s;
+}
+
+.navbar__authenticated a:hover{
+    fill: #45EBA5;
+    stroke: #45EBA5;
+}
+

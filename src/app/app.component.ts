@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ export class AppComponent {
   title = 'WatchApp-FrontEnd';
   inputText = 'input text test';
   buttonText = 'Test'
+
+  constructor(public auth: AuthService){}
 
   testButton(){
     alert(this.inputText);
