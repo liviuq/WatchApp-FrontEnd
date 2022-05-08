@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BuyAWatchComponent } from './components/buy-a-watch/buy-a-watch.component';
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 import { FormAddproductComponent } from './components/form-addproduct/form-addproduct.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 const routes: Routes = [
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: '', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'favorite-list', component: FavoriteListComponent },
   {path: 'profil', component: ProfilUtilizatorCumparatorComponent},
   {path: 'form', component: FormAddproductComponent},
+  {path: 'about-us', component: AboutUsComponent},
 ];
 
 @NgModule({

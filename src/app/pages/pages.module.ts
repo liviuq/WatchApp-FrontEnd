@@ -10,6 +10,7 @@ import { BuyAWatchComponent } from './components/buy-a-watch/buy-a-watch.compone
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 import { FormAddproductComponent } from './components/form-addproduct/form-addproduct.component';
 import { RouterModule } from '@angular/router';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     FavoriteListComponent,
     ProfilUtilizatorCumparatorComponent,
     HomeComponent,
-    FormAddproductComponent
+    FormAddproductComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'El Messiri', sans-serif;
+}
+
+.container-searchbar{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.searchbar {
+    z-index: 5;
+    width: 70%;
+    height: 86px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid #163A5F;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    background-color: white;
+    
+}
+
+.searchbar .div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+.searchbar .div img {
+    margin-right: 17px;
+    background-color: white;
+}
+
+.input {
+    padding: 0 20px;
+    width: 90%;
+    height: 50px;
+    border: none;
+    background-color: white;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.container-image{
+    display:flex;
+    justify-content: center;
+    
+}
+.image{
+    margin-top:20px;
+    width: 1920px;
+    height: 800px;
+    left: 0px;
+    top: 20px;
+    background: url(../../../../assets/about-us/1.png);
+}
+
+.container-company{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:261px;
+    margin-right:261px;
+    margin-top:104px;
+    background-color: white;
+    padding:25px 40px 40px;
+}
+
+.container-company h2{
+    font-family: El Messiri;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 75px;
+    letter-spacing: 0em;
+    text-align: center; 
+}
+.container-company p{
+    font-family: El Messiri;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align:center;
+    margin-top:50px;
+}
+
+.container-team{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left:261px;
+    margin-right:261px;
+    margin-top:103px;
+    background-color: white;
+    padding:27px 80px 51px 80px;
+    margin-bottom:103px;
+}
+.container-team h2{
+    font-family: El Messiri;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 75px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+.container-team p{
+    font-family: El Messiri;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top:50px;
+}
+.images-team{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:27px;
+}
+.container-team img{
+    width: 360px;
+    height: 250px;
+}
+.paragraphs-team{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top:51px;
+}
+.paragraph-team{
+    width: 360px;
+}
+.paragraph-team h2{
+    font-family: El Messiri;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.paragraph-team p{
+    font-family: El Messiri;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top:20px;
+}
