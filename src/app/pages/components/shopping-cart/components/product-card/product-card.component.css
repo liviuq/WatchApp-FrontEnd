@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'El Messiri', sans-serif;
+}
+
+img{
+    aspect-ratio: 16/9;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.product__card{
+    background: #DBEEF8;
+    padding: 2em;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #082A4D;
+    border-radius: 10px;
+    margin-bottom: 52px;
+}
+
+.product__costs hr{
+    margin: 8px 0;
+}
+
+.product__details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product__details h3{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.product__costs, .product__vendor{
+    font-size: 20px;
+    color: #082A4D;
+}
+
+.vendor__controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__vendor{
+    font-weight: 600;
+}
+
+.product__controls button{
+    font-size: 24px;
+    font-weight: 600;
+    height: 50px;
+    line-height: 55px;
+    width: 180px;
+    border: none;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    
+}
+
+button.favorite{
+    color: white;
+    background-color: #F08080;
+    transition: all .4s;
+}
+
+button.favorite:hover{
+    cursor: pointer;
+    background-color: #e06363;
+}
+
+button.delete{
+    color: white;
+    background-color: #DC3545;
+    transition: all .4s;
+}
+
+button.delete:hover{
+    cursor: pointer;
+    background-color: rgb(201, 67, 67);
+}
+
+button.pret__total{
+    color: black;
+    background-color: #45EBA5;
+}
+
+.product__controls{
+    display: flex;
+    column-gap: 34px;
+}
+
