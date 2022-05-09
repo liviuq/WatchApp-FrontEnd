@@ -36,12 +36,10 @@ li{
     line-height: 31px;
     color: #EEEEEE;
 }
-.button_box{
-    display: flex;
-    justify-content: center;
-    column-gap: 123px;
-}
+
 .button_green{
+    margin-left: 50%;
+    transform:translateX(-50%);
     background: #21ABA5;
     border: 1px solid #000000;
     box-sizing: border-box;
@@ -67,6 +65,16 @@ li{
     transform:translateX(-50%);
     cursor: pointer;
 }
+.button_cyan{
+    width: 200;
+    background: #21ABA5;
+    border-radius: 10px;
+    border: none;
+    margin-left: 50%;
+    transform:translateX(-50%);
+    cursor: pointer;
+    margin-top: 20px;
+}
 .button_text_rose{
     font-family: 'El Messiri';
     margin-left: 25px;
@@ -84,4 +92,189 @@ li{
 .inima{
     margin-right: 25px;
     margin-left: 25px;
+}
+.locatie_logo{
+    display: flex;
+    flex-direction: column;
+}
+.locatiee{
+    margin-left: 12.5px;
+    margin-right: 27.5px;
+}
+.sub_locatiee{
+    margin-left: 12.5px;
+    margin-right: 27.5px;
+}
+.adaugare_adresa{
+    width: 1500px;
+    height: 1000px;
+    background: white;
+    margin-bottom: 200px;
+    margin-left: 50%;
+    transform:translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+}
+
+.bara{
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    transform: rotate(180deg);
+    margin-top: 76px;
+    margin-bottom: 76px;
+}
+.adrese_msj{
+    margin-top: 40px;
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 47px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #000000;
+}
+.adresa_model{
+    background: #DBEEF8;
+    border: 1px solid #082A4D;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 500px;
+    height: 110px;
+    margin-top: 52px;
+}
+.mic_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.styyle_text{
+    margin-top: 5px;
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    color: #000000;
+    margin-left: 10px;
+}
+.styyle_text1{
+    
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    color: #000000;
+    margin-left: 70px;
+}
+.remove_locatie{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+
+
+
+input[type=text],input[type=number], select, textarea {
+    width: 450px;
+    padding: 12px;
+    resize: vertical;
+    color: #1D566E;
+    border: none;
+    background: #F1F4F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   
+  }
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .row {
+    margin-left: -150px;
+    margin-top: 52px;
+  }
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+    margin-left: 100px;
+  }
+  .col-75 {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .price input {
+    width: 430px;
+    border-radius: 0;
+  }
+  .price select {
+    width: 20%;
+    background: #CCD2E3;
+    border-radius: 0;
+  }
+  
+  .mic_flex1{
+    display: inline-flex;
+    gap:0px;
+}
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.salveaza_adresa{
+    background: #21ABA5;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 400px;
+    height: 36px;
+    border: none;
+    margin-left: 50%;
+    transform:translateX(-50%);
+    margin-top: 80px;
+    cursor: pointer;
+}
+.salv_adr{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+/* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 50%;
+    transform:translateX(-50%);
+    color: rgba(0, 0, 0, 0.6);
+}
+.cancel_save{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: -25px;
+}
+.adaugare{
+    margin-right: -200px;
 }
