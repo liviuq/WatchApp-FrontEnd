@@ -23,7 +23,7 @@ import { SummaryCardComponent } from './components/shopping-cart/components/summ
     ProfilUtilizatorCumparatorComponent,
     HomeComponent,
     FormAddproductComponent,
-    AboutUsComponent
+    AboutUsComponent,
     ProductCardComponent,
     SummaryCardComponent
   ],
