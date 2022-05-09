@@ -1,4 +1,4 @@
-.seller_p{
+.root{
     background: #FFFFFF;
     border-radius: 5px;
     width: 1400px;
@@ -7,6 +7,8 @@
     margin-bottom: 98px;
     margin-left: 50%;
     transform:translateX(-50%);
+}
+.seller_p{
     display:flex;
 }
 .info_filter{
@@ -104,6 +106,7 @@
     font-size: 24px;
     line-height: 38px;
     color: #000000;
+    cursor: pointer;
 }
 .filtru{
     border: none;
@@ -189,5 +192,32 @@
     border: none;
     margin-top: 60px;
     margin-right: 20px;
+    cursor: pointer;
 }
-
+.scroll_button_box{
+    position: absolute;
+    margin-left:325px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+.scroll_btn{
+    background: #1D566E;
+    box-shadow: 5px 4px 4px #CCD2E3;
+    border-radius: 38px;
+    border:none;
+    cursor: pointer;
+}
+.scroll_btn_text{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31px;
+    color: #000000;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
