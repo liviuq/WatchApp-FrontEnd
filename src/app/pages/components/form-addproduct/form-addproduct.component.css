@@ -6,7 +6,29 @@
   box-sizing: border-box;
 }
 
-input[type=text],input[type=number], select, textarea {
+.header-form {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+  color: #082A4D;
+  
+}
+
+.header-form h3 {
+  padding: 10px 100px;
+}
+
+
+
+a {
+  cursor: pointer;
+}
+
+input[type=text],input[type=number],input[type=date], select, textarea {
   width: 100%;
   padding: 12px;
   resize: vertical;
@@ -28,12 +50,23 @@ label {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.row .next {
   float: right;
 }
+
+.row .prev {
+  float: left;
+  color: #727272;
+}
+
+
 
 .row button:hover {
   background-color: #21aba484;
 }
+
 
 .container {
 	max-width: 960px;
@@ -47,6 +80,10 @@ label {
 .category {
   margin-bottom: 30px;
   margin-top: 30px;
+}
+
+h1,h2,h3,h4 {
+  font-weight: normal;
 }
 
 .category h1 ,
@@ -101,6 +138,41 @@ input[type='radio']:checked {
   width: 20%;
   background-color: #bfbebe;
   border-radius: 0;
+}
+
+/* Upload photos */
+
+input[type="file"] {
+  display: none;
+}
+
+.file-upload {
+  border: 1px dashed #000;
+  display: inline-block;
+  padding: 40px 30px;
+  cursor: pointer;
+  text-align: center;
+  background: rgba(245, 243, 243, 0.8);
+}
+
+.file-upload img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+.upload {
+  margin-bottom: 60px;
+}
+.linie {
+  border: 1px solid #BFC5CB;
+  margin: 30px 0px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 
