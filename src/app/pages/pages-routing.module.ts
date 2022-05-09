@@ -8,14 +8,16 @@ import { BuyAWatchComponent } from './components/buy-a-watch/buy-a-watch.compone
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 import { FormAddproductComponent } from './components/form-addproduct/form-addproduct.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 const routes: Routes = [
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: '', component: HomeComponent },
   { path: 'buy-a-watch', component: BuyAWatchComponent },
   { path: 'favorite-list', component: FavoriteListComponent },
-  {path: 'profil', component: ProfilUtilizatorCumparatorComponent, canActivate: [AuthGuard]},
-  {path: 'form', component: FormAddproductComponent},
-  {path: 'about-us', component: AboutUsComponent},
+  { path: 'profil', component: ProfilUtilizatorCumparatorComponent, canActivate: [AuthGuard] },
+  { path: 'form', component: FormAddproductComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'categories', component: CategoriesComponent },
 ];
 
 @NgModule({
