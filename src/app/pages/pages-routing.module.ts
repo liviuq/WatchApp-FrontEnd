@@ -8,9 +8,11 @@ import { BuyAWatchComponent } from './components/buy-a-watch/buy-a-watch.compone
 import { FavoriteListComponent } from './components/favorite-list/favorite-list.component';
 import { FormAddproductComponent } from './components/form-addproduct/form-addproduct.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ShoppingCartCheckoutComponent } from './components/shopping-cart-checkout/shopping-cart-checkout.component';
 import { SellerProfileBuyerPerspectiveComponent } from './components/seller-profile-buyer-perspective/seller-profile-buyer-perspective.component';
 const routes: Routes = [
-  { path: 'shopping-cart', component: ShoppingCartComponent },
+  { path: 'cart/products', component: ShoppingCartComponent },
+  { path: 'cart/checkout', component: ShoppingCartCheckoutComponent },
   { path: '', component: HomeComponent },
   { path: 'buy-a-watch', component: BuyAWatchComponent },
   { path: 'favorite-list', component: FavoriteListComponent },
