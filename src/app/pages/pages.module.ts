@@ -15,6 +15,7 @@ import { ProductCardComponent } from './components/shopping-cart/components/prod
 import { SummaryCardComponent } from './components/shopping-cart/components/summary-card/summary-card.component';
 import { ShoppingCartCheckoutComponent } from './components/shopping-cart-checkout/shopping-cart-checkout.component';
 import { CheckoutSummaryCardComponent } from './components/shopping-cart-checkout/components/checkout-summary-card/checkout-summary-card.component';
+import { SellerProfileBuyerPerspectiveComponent } from './components/seller-profile-buyer-perspective/seller-profile-buyer-perspective.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CheckoutSummaryCardComponent } from './components/shopping-cart-checkou
     ProductCardComponent,
     SummaryCardComponent,
     ShoppingCartCheckoutComponent,
-    CheckoutSummaryCardComponent
+    CheckoutSummaryCardComponent,
+    SellerProfileBuyerPerspectiveComponent
   ],
   imports: [
     CommonModule,

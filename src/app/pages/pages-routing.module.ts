@@ -9,6 +9,7 @@ import { FavoriteListComponent } from './components/favorite-list/favorite-list.
 import { FormAddproductComponent } from './components/form-addproduct/form-addproduct.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ShoppingCartCheckoutComponent } from './components/shopping-cart-checkout/shopping-cart-checkout.component';
+import { SellerProfileBuyerPerspectiveComponent } from './components/seller-profile-buyer-perspective/seller-profile-buyer-perspective.component';
 const routes: Routes = [
   { path: 'cart/products', component: ShoppingCartComponent },
   { path: 'cart/checkout', component: ShoppingCartCheckoutComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'profil', component: ProfilUtilizatorCumparatorComponent, canActivate: [AuthGuard]},
   {path: 'form', component: FormAddproductComponent},
   {path: 'about-us', component: AboutUsComponent},
+  {path: 'seller', component: SellerProfileBuyerPerspectiveComponent},
 ];
 
 @NgModule({
