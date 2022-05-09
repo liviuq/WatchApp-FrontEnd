@@ -2,62 +2,9 @@
 
 <div class="cart__content">
     <div class="products__container">
-        <div class="product__card">
-            <div class="product__details">
-                <img src="../../../../assets/shopping-cart/1.jpg" alt="">
-                <h3>Ceas Fossil 10 ATM</h3>
-                <div class="product__costs">
-                    <p>Cost produs: <span class="product__cost">2000$</span></p>
-                    <p>Cost livrare si procesare: <span class="product__delivery">30$</span></p>
-                    <hr>
-                    <p>Cost total: <span class="product__total">2030$</span></p>
-                </div>
-            </div>
-            <div class="vendor__controls">
-                <div class="product__vendor">Vandut de <span class="vendor">Ion Popescu</span></div>
-                <div class="product__controls">
-                    <button class="favorite">Muta la favorite</button>
-                    <button class="delete">Sterge din cos</button>
-                    <button class="pret__total">2.030$</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="product__card">
-            <div class="product__details">
-                <img src="../../../../assets/shopping-cart/1.jpg" alt="">
-                <h3>Ceas Fossil 10 ATM</h3>
-                <div class="product__costs">
-                    <p>Cost produs: <span class="product__cost">2000$</span></p>
-                    <p>Cost livrare si procesare: <span class="product__delivery">30$</span></p>
-                    <hr>
-                    <p>Cost total: <span class="product__total">2030$</span></p>
-                </div>
-            </div>
-            <div class="vendor__controls">
-                <div class="product__vendor">Vandut de <span class="vendor">Ion Popescu</span></div>
-                <div class="product__controls">
-                    <button class="favorite">Muta la favorite</button>
-                    <button class="delete">Sterge din cos</button>
-                    <button class="pret__total">2.030$</button>
-                </div>
-            </div>
-        </div>
+        <app-product-card productName="Ceas Fossil 10 ATM" productPrice="2000" productDelivery="30" productTotal="2030" vendor="Ion Popescu"></app-product-card>
+        <app-product-card productName="Ceas Fossil 10 ATM" productPrice="2000" productDelivery="30" productTotal="2030" vendor="Ion Popescu"></app-product-card>
 
     </div>
-    <div class="summary__card">
-        <div class="summary__content">
-            <h3>Sumar Comanda</h3>
-            <div class="order__costs">
-                <p>Cost produse:</p>
-                <p class="order__cost">2000$</p>
-                <p>Cost livrare:</p>
-                <p class="order__delivery">30$</p>
-                <hr>
-                <p class="total__text">Cost total:</p>
-                <p class="order__total">2030$</p>
-            </div>
-            <button class="continue"><img src="../../../../assets/shopping-cart/arrows.svg" alt="">  Continua</button>
-        </div>
-    </div>
+    <app-summary-card costProduse="2000" costLivrare="30" costTotal="2030"></app-summary-card>
 </div>
