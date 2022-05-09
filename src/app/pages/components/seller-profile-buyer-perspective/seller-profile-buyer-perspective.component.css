@@ -1,0 +1,223 @@
+.root{
+    background: #FFFFFF;
+    border-radius: 5px;
+    width: 1400px;
+    height: 1300px;
+    margin-top: 96px;
+    margin-bottom: 98px;
+    margin-left: 50%;
+    transform:translateX(-50%);
+}
+.seller_p{
+    display:flex;
+}
+.info_filter{
+    display: flex;
+    flex-direction: column;
+}
+.info{
+    width: 424px;
+    height: 582px;
+    background: #1D566E;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin-top: 13px;
+    margin-left: 25px;
+}
+.filter{
+    width: 424px;
+    
+    height: fit-content;
+    background: #FFFFFF;
+    border: 1px solid #45EBA5;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 33px;
+    margin-left: 25px;
+}
+.first_child{
+    margin-top: 30px;
+}
+.descr{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.poza_profil{
+    margin-left: 50%;
+    transform:translateX(-50%);
+    border-radius: 100px;
+    margin-top: 29px;
+    width: 205px;
+    height: 200px;
+}
+.button_rose{
+    background: #F08080;
+    border-radius: 10px;
+    border: none;
+    margin-top: 40px;
+    margin-left: 50%;
+    transform:translateX(-50%);
+    cursor: pointer;
+    width: 361px;
+    height: 50px;
+}
+.button_text_rose{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 39px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.flex_text_img{
+    display: flex;
+    justify-content: center;
+}
+.inima{
+   margin-top: 8px;
+   margin-left: 40px;
+   width: 20px;
+   height: 20px;
+}
+.drescriere_fil{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 47px;
+    margin-top: 11px;
+    margin-left: 18px;
+}
+.sageatad{
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+}
+.atribut{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38px;
+    color: #000000;
+    cursor: pointer;
+}
+.filtru{
+    border: none;
+    background: none;
+    display: flex;
+    margin-left: 27px;
+}
+.first_btn{
+    margin-top: 20px;
+}
+.drescriere_atribut{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+    margin-left: 60px;
+    margin-top: 5px;
+}
+
+.watch_box{
+    width: 904px;
+    height: 199px;
+    background: #FFFFFF;
+    border: 1px solid #45EBA5;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 13px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.poza_ceas{
+    width: 250px;
+    height: 173px;
+    border-radius: 10px;
+    margin-top: 13px;
+    margin-left: 19px;
+}
+.header1{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 47px;
+    color: #000000;
+}
+.tip_ceas_desc{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31px;
+    color: #000000;
+}
+.tip_ceas_desc1{
+    margin-top: 60px;
+}
+.date_ceas{
+    margin-top:16px;
+    margin-right: 180px;
+}
+.pret_anunt{
+    margin-top:16px;
+    margin-right: 10px;
+}
+.anuntdesc{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 39px;
+    text-align: center;
+    color: #000000;
+}
+.anunt{
+    background: #45EBA5;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    width: 180px;
+    height: 50px;
+    border: none;
+    margin-top: 60px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.scroll_button_box{
+    position: absolute;
+    margin-left:325px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+.scroll_btn{
+    background: #1D566E;
+    box-shadow: 5px 4px 4px #CCD2E3;
+    border-radius: 38px;
+    border:none;
+    cursor: pointer;
+}
+.scroll_btn_text{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31px;
+    color: #000000;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 20px;
+    margin-right: 20px;
+}

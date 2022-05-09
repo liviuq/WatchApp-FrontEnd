@@ -14,6 +14,9 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ProductCardComponent } from './components/shopping-cart/components/product-card/product-card.component';
 import { SummaryCardComponent } from './components/shopping-cart/components/summary-card/summary-card.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { ShoppingCartCheckoutComponent } from './components/shopping-cart-checkout/shopping-cart-checkout.component';
+import { CheckoutSummaryCardComponent } from './components/shopping-cart-checkout/components/checkout-summary-card/checkout-summary-card.component';
+import { SellerProfileBuyerPerspectiveComponent } from './components/seller-profile-buyer-perspective/seller-profile-buyer-perspective.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { CategoriesComponent } from './components/categories/categories.componen
     AboutUsComponent,
     ProductCardComponent,
     SummaryCardComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ShoppingCartCheckoutComponent,
+    CheckoutSummaryCardComponent,
+    SellerProfileBuyerPerspectiveComponent
   ],
   imports: [
     CommonModule,

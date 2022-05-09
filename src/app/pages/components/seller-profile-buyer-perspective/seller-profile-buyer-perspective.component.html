@@ -1,0 +1,163 @@
+<div class="root">
+    <div class="seller_p">
+        <div class="info_filter">
+            <div class="info">
+                <img class="poza_profil" src="assets/profil-utilizator-cumparator-images/image 6.png">
+                <h1 class="descr first_child">Nume: Username</h1>
+                <h1 class="descr">Nr de telefon : 1234567</h1>
+                <h1 class="descr">Anunturi active: 10</h1>
+                <h1 class="descr">Data inregistrarii: 11.03.2019</h1>
+                <h1 class="descr">Ultima oara activ: 02.05.2022</h1>
+                <button type="button" class="button_rose">
+                    <div class="flex_text_img">
+                     <h1 class="button_text_rose">Salveaza ca favorit</h1>
+                     <img class="inima" src="assets/profil-utilizator-cumparator-images/Vector.png">
+                    </div>
+                 </button> 
+            </div>
+            <div class="filter">
+               <h1 class="drescriere_fil">Filtreza anunturile:</h1>
+               <button (click)="toggle1()" class="filtru first_btn">
+    
+                   <div *ngIf="status1 === 'none'">
+                       <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+                   </div>
+    
+                   <div *ngIf="status1 === 'first'">
+                        <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+                    </div>
+                        
+                    <h1 class="atribut">Brand</h1>
+                </button>
+                <div *ngIf="status1 === 'first'">
+                    <h1 class="drescriere_atribut">-Rolex</h1>
+                    <h1 class="drescriere_atribut">-Fossil</h1>
+                </div>
+    
+                
+                <button (click)="toggle2()" class="filtru">
+                    <div *ngIf="status2 === 'none'">
+                        <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+                    </div>
+     
+                    <div *ngIf="status2 === 'secound'">
+                         <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+                     </div>
+                         
+                     <h1 class="atribut">Pentru</h1>
+                 </button>
+                 <div *ngIf="status2 === 'secound'">
+                     <h1 class="drescriere_atribut">-Femei</h1>
+                     <h1 class="drescriere_atribut">-Barbati</h1>
+                     <h1 class="drescriere_atribut">-Unisex</h1>
+                 </div>
+    
+                 <button (click)="toggle3()" class="filtru">
+                    <div *ngIf="status3 === 'none'">
+                        <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+                    </div>
+     
+                    <div *ngIf="status3 === 'third'">
+                         <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+                     </div>
+                         
+                     <h1 class="atribut">Conditie</h1>
+                 </button>
+                 <div *ngIf="status3 === 'third'">
+                     <h1 class="drescriere_atribut">-Nou</h1>
+                     <h1 class="drescriere_atribut">-Purtat</h1>
+                 </div>
+    
+                 <button (click)="toggle4()" class="filtru">
+                    <div *ngIf="status4 === 'none'">
+                        <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+                    </div>
+     
+                    <div *ngIf="status4 === 'forth'">
+                         <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+                     </div>
+                         
+                     <h1 class="atribut">An</h1>
+                 </button>
+                 <div *ngIf="status4 === 'forth'">
+                     <h1 class="drescriere_atribut">-2021</h1>
+                     <h1 class="drescriere_atribut">-1757</h1>
+                 </div>
+            </div>
+        </div>
+    
+        <div class="slider">
+             <div class="watch_box">
+                <img class="poza_ceas" src="assets/seller_profile/pozaceas.png">
+                <div class="date_ceas">
+                    <h1 class="header1">Ceas ROLEX 1980</h1>
+                    <h1 class="tip_ceas_desc tip_ceas_desc1">Vandut de: Username</h1>
+                    <h1 class="tip_ceas_desc">Arad - Azi la 12:04</h1>
+                </div>
+                <div class="pret_anunt">
+                    <h1 class="header1">50.000 $</h1>
+                    <button class="anunt"><h1 class="anuntdesc">Vezi anuntul</h1></button>
+                </div>
+             </div>
+    
+             <div class="watch_box">
+                <img class="poza_ceas" src="assets/seller_profile/pozaceas.png">
+                <div class="date_ceas">
+                    <h1 class="header1">Ceas ROLEX 1980</h1>
+                    <h1 class="tip_ceas_desc tip_ceas_desc1">Vandut de: Username</h1>
+                    <h1 class="tip_ceas_desc">Arad - Azi la 12:04</h1>
+                </div>
+                <div class="pret_anunt">
+                    <h1 class="header1">50.000 $</h1>
+                    <button class="anunt"><h1 class="anuntdesc">Vezi anuntul</h1></button>
+                </div>
+             </div>
+    
+             <div class="watch_box">
+                <img class="poza_ceas" src="assets/seller_profile/pozaceas.png">
+                <div class="date_ceas">
+                    <h1 class="header1">Ceas ROLEX 1980</h1>
+                    <h1 class="tip_ceas_desc tip_ceas_desc1">Vandut de: Username</h1>
+                    <h1 class="tip_ceas_desc">Arad - Azi la 12:04</h1>
+                </div>
+                <div class="pret_anunt">
+                    <h1 class="header1">50.000 $</h1>
+                    <button class="anunt"><h1 class="anuntdesc">Vezi anuntul</h1></button>
+                </div>
+             </div>
+    
+             <div class="watch_box">
+                <img class="poza_ceas" src="assets/seller_profile/pozaceas.png">
+                <div class="date_ceas">
+                    <h1 class="header1">Ceas ROLEX 1980</h1>
+                    <h1 class="tip_ceas_desc tip_ceas_desc1">Vandut de: Username</h1>
+                    <h1 class="tip_ceas_desc">Arad - Azi la 12:04</h1>
+                </div>
+                <div class="pret_anunt">
+                    <h1 class="header1">50.000 $</h1>
+                    <button class="anunt"><h1 class="anuntdesc">Vezi anuntul</h1></button>
+                </div>
+             </div>
+    
+             <div class="watch_box">
+                <img class="poza_ceas" src="assets/seller_profile/pozaceas.png">
+                <div class="date_ceas">
+                    <h1 class="header1">Ceas ROLEX 1980</h1>
+                    <h1 class="tip_ceas_desc tip_ceas_desc1">Vandut de: Username</h1>
+                    <h1 class="tip_ceas_desc">Arad - Azi la 12:04</h1>
+                </div>
+                <div class="pret_anunt">
+                    <h1 class="header1">50.000 $</h1>
+                    <button class="anunt"><h1 class="anuntdesc">Vezi anuntul</h1></button>
+                </div>
+             </div>
+
+             <div class="scroll_button_box">
+                <img class="poza_scroll" src="assets/seller_profile/scroll stanga.png">
+                <button class="scroll_btn"><h1 class="scroll_btn_text">Pagina 1 din 3</h1></button>
+                <img class="poza_scroll" src="assets/seller_profile/scroll dreapta.png">
+            </div>
+        </div>
+    </div>
+    
+</div>

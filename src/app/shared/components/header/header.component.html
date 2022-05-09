@@ -6,7 +6,7 @@
         <li><a [routerLink]="['/buy-a-watch']" routerLinkActive="active">BUY A WATCH</a></li>
         <li><a href="#">SELL A WATCH</a></li>
         <li><a href="#">CATEGORIES</a></li>
-        <li><a href="#">ABOUT</a></li>
+        <li><a [routerLink]="['/about-us']" routerLinkActive="active">ABOUT</a></li>
     </ul>
 
     <ul class="navbar__right">
@@ -18,7 +18,7 @@
                     <use xlink:href="#favorites"></use>
                 </svg>
             </a>
-            <a [routerLink]="['/shopping-cart']" routerLinkActive="active">
+            <a [routerLink]="['/cart/products']" routerLinkActive="active">
                 <svg style="margin-top: 6px; width: 2rem">
                     <use xlink:href="#cart"></use>
                 </svg>
