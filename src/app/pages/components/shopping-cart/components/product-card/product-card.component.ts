@@ -15,6 +15,8 @@ export class ProductCardComponent implements OnInit {
   @Input()
   productCartId!: string;
   @Input()
+  productId!: string;
+  @Input()
   productName!: string;
   @Input()
   productPrice!: string;
@@ -34,7 +36,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   addToFavorite(): void{
-    this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.buyerId+"/insert/"+this.productCartId).subscribe(data=>{
+    this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.buyerId+"/insert/"+this.productId).subscribe(data=>{
       console.log(data);
     }); 
   }
