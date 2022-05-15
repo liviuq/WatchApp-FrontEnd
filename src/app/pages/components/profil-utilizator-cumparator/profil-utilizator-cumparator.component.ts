@@ -18,7 +18,7 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
   constructor(public auth: AuthService, private http: HttpClient) { }
   public userId!: string;
   public profileJson!: any;
-
+  public productsLength:any;
   
   ngOnInit(): void {
     this.auth.user$.subscribe(
@@ -30,6 +30,9 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
                 this.profileJson=data.user;
                 console.log(this.profileJson);
       });
+          this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/product/"+this.userId+"/products/").subscribe(data=>{     
+                this.productsLength = data.products.length;
+});
       }
     );
 
