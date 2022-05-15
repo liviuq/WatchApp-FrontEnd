@@ -2,7 +2,7 @@
 
 <div class="cart__content" *ngIf="(auth.isAuthenticated$ | async) === true">
     <div class="products__container" >
-        <app-product-card *ngFor="let product of productsJson" buyerId={{userId}} productCartId={{product.id}} productName={{product.name}} productPrice={{product.price}} productDelivery="0" productTotal={{product.price}} vendor={{product.seller}}></app-product-card>
+        <app-product-card *ngFor="let product of productsJson" buyerId={{userId}} productCartId={{product.id}} productId={{product.product_id}} productName={{product.brand}} productPrice={{product.price}} productDelivery="0" productTotal={{product.price}} vendor={{product.seller}}></app-product-card>
         <!--<app-product-card productName="Ceas Fossil 10 ATM" productPrice="2000" productDelivery="30" productTotal="2030" vendor="Ion Popescu"></app-product-card>
         <app-product-card productName=  "Ceas Fossil 10 ATM" productPrice="2000" productDelivery="30" productTotal="2030" vendor="Ion Popescu"></app-product-card>
         -->

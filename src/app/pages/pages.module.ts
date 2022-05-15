@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
@@ -19,6 +20,8 @@ import { CheckoutSummaryCardComponent } from './components/shopping-cart-checkou
 import { SellerProfileBuyerPerspectiveComponent } from './components/seller-profile-buyer-perspective/seller-profile-buyer-perspective.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SellerProfileProductCardComponent } from './components/seller-profile-buyer-perspective/components/seller-profile-product-card/seller-profile-product-card.component';
+import { PaginatorStyleDirective } from './components/seller-profile-buyer-perspective/paginator-style.directive';
+
 
 @NgModule({
   declarations: [
@@ -36,13 +39,15 @@ import { SellerProfileProductCardComponent } from './components/seller-profile-b
     ShoppingCartCheckoutComponent,
     CheckoutSummaryCardComponent,
     SellerProfileBuyerPerspectiveComponent,
-    SellerProfileProductCardComponent
+    SellerProfileProductCardComponent,
+    PaginatorStyleDirective
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
   ],
   exports: [
     ShoppingCartComponent,

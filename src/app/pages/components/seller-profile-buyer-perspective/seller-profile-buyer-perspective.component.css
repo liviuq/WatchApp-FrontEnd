@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'El Messiri', sans-serif;
+}
+
 .root{
     background: #FFFFFF;
     border-radius: 5px;
@@ -233,3 +238,40 @@
     margin-left: 20px;
     margin-right: 20px;
 }
+
+
+/* ------ paginator -------- */
+
+mat-paginator{
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+::ng-deep .mat-paginator .mat-icon-button
+{
+  background-color: #1D566E;
+}
+
+::ng-deep .mat-paginator .mat-button-disabled
+{
+  background-color: #356f88;
+}
+
+::ng-deep .mat-paginator .mat-paginator-page-size, ::ng-deep .mat-paginator .mat-paginator-range-label
+{
+  display: none;
+}
+
+::ng-deep .mat-paginator .paginator-pageindex{
+    min-width: 5em;
+    text-align: center;
+    margin: 0 8px;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+
+

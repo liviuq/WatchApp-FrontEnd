@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {PageEvent} from '@angular/material/paginator';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-seller-profile-buyer-perspective',
@@ -11,10 +16,74 @@ export class SellerProfileBuyerPerspectiveComponent implements OnInit {
   public status2: 'none' | 'secound'  = 'none';
   public status3: 'none' | 'third'  = 'none';
   public status4: 'none' | 'forth'  = 'none';
-  constructor() { }
+  /////API
+  public userId!: string;
+  public productsJson!: any[];
+  public totalPrice: number = 0;
+  
+
+  constructor(public auth: AuthService, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getData();
   }
+  
+  getData(): void{
+    this.auth.user$.subscribe(
+      (profile) => {
+        if(profile?.sub !== undefined)
+          this.userId = profile.sub.split("|")[1];
+
+          this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/product/3/products/").subscribe(data=>{ //de schimbat link-ul     
+              this.productsJson=data.products;
+              this.productsLength = data.products.length;
+      });
+      }
+    );
+  }
+
+  callJsonGetRestApi(url: string):Observable<any> {
+   
+    return this.http.get(url)
+      .pipe(map((data: any) => {
+      //handle api 200 response code here or you wanted to manipulate to response
+        return data;
+
+      }),
+        catchError((error) => {    // handle error
+         
+          if (error.status == 404) {
+            //Handle Response code here
+          }
+          return throwError(error);
+        })
+      );
+
+  }
+
+
+  /////// pagination
+  productsLength: number = 0;
+  pageIndex: number = 0;
+  pageSize: number = 4;
+  lowValue: number = 0;
+  highValue: number = 4;       
+
+  getPaginatorData(event: { pageIndex: number; }){
+     console.log(event);
+     if(event.pageIndex === this.pageIndex + 1){
+        this.lowValue = this.lowValue + this.pageSize;
+        this.highValue =  this.highValue + this.pageSize;
+       }
+    else if(event.pageIndex === this.pageIndex - 1){
+       this.lowValue = this.lowValue - this.pageSize;
+       this.highValue =  this.highValue - this.pageSize;
+      }   
+       this.pageIndex = event.pageIndex;
+ }
+
+  /////////////////////
+
   toggle1(){
     if(this.status1=='first')
     this.status1='none';
