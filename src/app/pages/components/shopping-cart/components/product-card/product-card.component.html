@@ -12,9 +12,9 @@
     <div class="vendor__controls">
         <div class="product__vendor">Vandut de <span class="vendor">{{vendor}}</span></div>
         <div class="product__controls">
-            <button class="favorite">Muta la favorite</button>
-            <button class="delete">Sterge din cos</button>
-            <button class="pret__total">2.030$</button>
+            <button class="favorite" (click)="addToFavorite()">Muta la favorite</button>
+            <button class="delete" (click)="deleteProduct()">Sterge din cos</button>
+            <button class="pret__total">{{productTotal}}$</button>
         </div>
     </div>
 </div>

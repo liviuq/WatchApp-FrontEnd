@@ -13,6 +13,11 @@ export class SummaryCardComponent implements OnInit {
   costLivrare!: string;
   @Input()
   costTotal!: string;
+  @Input()
+  btnText!: string;
+  @Input()
+  routeLink!: string;
+
 
   constructor() { }
 

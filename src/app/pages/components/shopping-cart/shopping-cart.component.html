@@ -1,10 +1,11 @@
 <h1>Cosul meu</h1>
 
-<div class="cart__content">
-    <div class="products__container">
-        <app-product-card productName="Ceas Fossil 10 ATM" productPrice="2000" productDelivery="30" productTotal="2030" vendor="Ion Popescu"></app-product-card>
+<div class="cart__content" *ngIf="(auth.isAuthenticated$ | async) === true">
+    <div class="products__container" >
+        <app-product-card *ngFor="let product of productsJson" buyerId={{userId}} productCartId={{product.id}} productName={{product.name}} productPrice={{product.price}} productDelivery="0" productTotal={{product.price}} vendor={{product.seller}}></app-product-card>
+        <!--<app-product-card productName="Ceas Fossil 10 ATM" productPrice="2000" productDelivery="30" productTotal="2030" vendor="Ion Popescu"></app-product-card>
         <app-product-card productName=  "Ceas Fossil 10 ATM" productPrice="2000" productDelivery="30" productTotal="2030" vendor="Ion Popescu"></app-product-card>
-
+        -->
     </div>
-    <app-summary-card costProduse="2000" costLivrare="30" costTotal="2030"></app-summary-card>
+    <app-summary-card costProduse={{totalPrice}} costLivrare="0" costTotal={{totalPrice}} routeLink="/cart/checkout" btnText="Continua"></app-summary-card>
 </div>
