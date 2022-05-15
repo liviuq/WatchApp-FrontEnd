@@ -26,6 +26,7 @@ const routes: Routes = [
   {path: 'form', component: FormAddproductComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'seller', component: SellerProfileBuyerPerspectiveComponent},
+  {path: 'seller/:id', component: SellerProfileBuyerPerspectiveComponent},
 ];
 
 @NgModule({

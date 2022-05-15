@@ -4,6 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-seller-profile-buyer-perspective',
@@ -21,10 +22,12 @@ export class SellerProfileBuyerPerspectiveComponent implements OnInit {
   public productsJson!: any[];
   public totalPrice: number = 0;
   public userJson!:any;
+  public sellerId: any;
 
-  constructor(public auth: AuthService, private http: HttpClient) { }
+  constructor(public auth: AuthService, private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.sellerId = this.route.snapshot.paramMap.get('id')
     this.getData();
   }
   
@@ -34,11 +37,11 @@ export class SellerProfileBuyerPerspectiveComponent implements OnInit {
         if(profile?.sub !== undefined)
           this.userId = profile.sub.split("|")[1];
 
-          this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/product/3/products/").subscribe(data=>{ //de schimbat link-ul     
+          this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/product/" + this.sellerId +"/products/").subscribe(data=>{ //de schimbat link-ul     
               this.productsJson=data.products;
               this.productsLength = data.products.length;
       });
-          this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/user/3/").subscribe(data=>{ //de schimbat link-ul     
+          this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/user/" + this.sellerId).subscribe(data=>{ //de schimbat link-ul     
               this.userJson=data.user;
       });
 
