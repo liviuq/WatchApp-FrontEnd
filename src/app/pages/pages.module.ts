@@ -18,6 +18,7 @@ import { ShoppingCartCheckoutComponent } from './components/shopping-cart-checko
 import { CheckoutSummaryCardComponent } from './components/shopping-cart-checkout/components/checkout-summary-card/checkout-summary-card.component';
 import { SellerProfileBuyerPerspectiveComponent } from './components/seller-profile-buyer-perspective/seller-profile-buyer-perspective.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SellerProfileProductCardComponent } from './components/seller-profile-buyer-perspective/components/seller-profile-product-card/seller-profile-product-card.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     CategoriesComponent,
     ShoppingCartCheckoutComponent,
     CheckoutSummaryCardComponent,
-    SellerProfileBuyerPerspectiveComponent
+    SellerProfileBuyerPerspectiveComponent,
+    SellerProfileProductCardComponent
   ],
   imports: [
     CommonModule,
