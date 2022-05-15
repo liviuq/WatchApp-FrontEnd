@@ -3,7 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
-import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
+
 
 @Component({
   selector: 'app-profil-utilizator-cumparator',
