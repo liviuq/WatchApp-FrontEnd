@@ -20,7 +20,7 @@ export class SellerProfileBuyerPerspectiveComponent implements OnInit {
   public userId!: string;
   public productsJson!: any[];
   public totalPrice: number = 0;
-  
+  public userJson!:any;
 
   constructor(public auth: AuthService, private http: HttpClient) { }
 
@@ -38,6 +38,10 @@ export class SellerProfileBuyerPerspectiveComponent implements OnInit {
               this.productsJson=data.products;
               this.productsLength = data.products.length;
       });
+          this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/user/3/").subscribe(data=>{ //de schimbat link-ul     
+              this.userJson=data.user;
+      });
+
       }
     );
   }
