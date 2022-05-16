@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormControl, FormGroup,FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
 
 import { PagesRoutingModule } from './pages-routing.module';
@@ -45,6 +46,8 @@ import { PaginatorStyleDirective } from './components/seller-profile-buyer-persp
   imports: [
     CommonModule,
     PagesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
     MatPaginatorModule,

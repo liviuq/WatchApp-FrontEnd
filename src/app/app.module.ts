@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,11 +19,16 @@ import { environment as env } from 'src/environments/environment';
     AppRoutingModule,
     SharedModule,
     PagesModule,
+    FormsModule,
+    ReactiveFormsModule,
     AuthModule.forRoot({
       ... env.auth,
     })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    ReactiveFormsModule
+  ]
 })
 export class AppModule { }
