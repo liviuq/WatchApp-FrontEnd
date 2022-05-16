@@ -23,7 +23,7 @@ export class FavoriteListComponent implements OnInit {
         if (profile?.sub !== undefined)
           this.userId = profile.sub.split("|")[1];
         this.callJsonGetRestApi("https://watchappa3-be.herokuapp.com/favorites/extract/" + this.userId).subscribe(data => { //de schimbat link-ul     
-          this.productsJson = data.products;
+          this.productsJson = data.favoriteUtilsList;
         });
       }
     );
@@ -47,6 +47,5 @@ export class FavoriteListComponent implements OnInit {
           return throwError(error);
         })
       );
-
   }
 }
