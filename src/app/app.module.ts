@@ -7,9 +7,12 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
 
+import {AuthModule} from '@auth0/auth0-angular';
+import { environment as env } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -17,7 +20,10 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     PagesModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule.forRoot({
+      ... env.auth,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

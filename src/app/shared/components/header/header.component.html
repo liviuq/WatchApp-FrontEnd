@@ -1,17 +1,72 @@
 <div class="navbar">
 
-    <a href="#" class="navbar__left"><img src="assets/logo.svg" alt=""></a>
+    <a [routerLink]="['']" routerLinkActive="active" class="navbar__left"><img src="assets/header/logo.svg" alt=""></a>
 
     <ul class="navbar__middle">
-        <li><a href="#">BUY A WATCH</a></li>
-        <li><a href="#">SELL A WATCH</a></li>
-        <li><a href="#">CATEGORIES</a></li>
-        <li><a href="#">ABOUT</a></li>
+        <li><a [routerLink]="['/buy-a-watch']" routerLinkActive="active">BUY A WATCH</a></li>
+        <li><a [routerLink]="['/form']" routerLinkActive="active">SELL A WATCH</a></li>
+        <li><a [routerLink]="['/categories']" routerLinkActive="active">CATEGORIES</a></li>
+        <li><a [routerLink]="['/about-us']" routerLinkActive="active">ABOUT</a></li>
     </ul>
 
     <ul class="navbar__right">
-        <li><a href="#">Log in</a></li>
-        <li><a href="#" style = "text-decoration: underline;" >Register</a></li>
-        <a href="#"><img src="assets/user.svg" alt="" style = "margin-top: 6px;"></a>
+        <li class="login__btn"><app-login-button *ngIf="(auth.isAuthenticated$ | async) === false"> </app-login-button></li>
+        <div class="navbar__authenticated" *ngIf="(auth.isAuthenticated$ | async) === true">
+            <li><app-logout-button></app-logout-button></li>
+            <a [routerLink]="['/favorite-list']" routerLinkActive="active">
+                <svg style="margin-top: 6px; width: 2rem">
+                    <use xlink:href="#favorites"></use>
+                </svg>
+            </a>
+            <a [routerLink]="['/cart/products']" routerLinkActive="active">
+                <svg style="margin-top: 6px; width: 2rem">
+                    <use xlink:href="#cart"></use>
+                </svg>
+            </a>
+            <a [routerLink]="['/profil']" routerLinkActive="active">
+                <svg style="margin-top: 6px; width: 2rem">
+                    <use xlink:href="#user"></use>
+                </svg>
+            </a>
+        </div>
+        
     </ul>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SVGS - le-am editat si le-am pus direct aici pentru ca la cele de pe figma nu le pot da fill -->
+
+<svg xmlns="http://www.w3.org/2000/svg"style="display: none">    
+    <symbol viewBox="0 0 50 50" id="cart">
+        <title>cart</title>
+            <path d="M25 10.4167V6.25" stroke-width="2" stroke-linecap="round"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M45.8337 16.6666H4.16699V22.9166C4.94862 22.9166 5.33943 22.9166 5.68276 22.9743C7.10893 23.2143 8.30864 24.1768 8.85233 25.5168C8.9832 25.8395 9.06797 26.221 9.23753 26.9841L11.0502 35.141C11.7454 38.2695 12.093 39.8337 13.2355 40.7502C14.378 41.6666 15.9804 41.6666 19.1851 41.6666H30.8155C34.0203 41.6666 35.6226 41.6666 36.7651 40.7502C37.9076 39.8337 38.2553 38.2695 38.9505 35.141L40.763 26.9841V26.9839C40.9326 26.221 41.0174 25.8395 41.1482 25.5168C41.692 24.1768 42.8918 23.2143 44.3178 22.9743C44.6612 22.9166 45.052 22.9166 45.8337 22.9166V16.6666ZM19.7636 26.7408C19.5745 25.6058 18.5011 24.8391 17.3662 25.0283C16.2312 25.2175 15.4645 26.2908 15.6537 27.4258L16.6953 33.6758C16.8845 34.8108 17.9579 35.5775 19.0928 35.3883C20.2278 35.1991 20.9945 34.1258 20.8053 32.9908L19.7636 26.7408ZM34.3468 27.4258C34.536 26.2908 33.7693 25.2175 32.6343 25.0283C31.4993 24.8391 30.426 25.6058 30.2368 26.7408L29.1951 32.9908C29.006 34.1258 29.7726 35.1991 30.9076 35.3883C32.0426 35.5775 33.116 34.8108 33.3051 33.6758L34.3468 27.4258Z"/>
+    </symbol>
+    <symbol viewBox="0 0 50 50" id="favorites">
+        <title>favorites</title>
+        <path d="M9.2719 28.9754L23.7565 42.5823C24.2555 43.0509 24.5049 43.2852 24.799 43.3429C24.9315 43.369 25.0678 43.369 25.2003 43.3429C25.4945 43.2852 25.7438 43.0509 26.2428 42.5823L40.7274 28.9754C44.8028 25.1471 45.2976 18.8471 41.8701 14.4293L41.2257 13.5987C37.1253 8.31374 28.8947 9.20005 26.0136 15.2368C25.6065 16.0895 24.3928 16.0895 23.9857 15.2368C21.1047 9.20005 12.8741 8.31374 8.77372 13.5987L8.12924 14.4293C4.70165 18.8471 5.19655 25.1471 9.2719 28.9754Z" stroke-width="2"/>
+    </symbol>
+
+    <symbol viewBox="0 0 35 36" id="user">
+        <title>user</title>
+        <path d="M17.5 19.8814C19.9162 19.8814 21.875 17.9227 21.875 15.5064C21.875 13.0902 19.9162 11.1314 17.5 11.1314C15.0838 11.1314 13.125 13.0902 13.125 15.5064C13.125 17.9227 15.0838 19.8814 17.5 19.8814Z"  fill="none" stroke-width="2" stroke-linecap="round"/>
+        <path d="M17.5 31.5481C24.7487 31.5481 30.625 25.6718 30.625 18.4231C30.625 11.1743 24.7487 5.29807 17.5 5.29807C10.2513 5.29807 4.375 11.1743 4.375 18.4231C4.375 25.6718 10.2513 31.5481 17.5 31.5481Z"  fill="none" stroke-width="2"/>
+        <path d="M25.9299 28.3782C26.1153 28.2764 26.2031 28.0561 26.1246 27.8596C25.5623 26.4505 24.479 25.2093 23.0146 24.3048C21.4326 23.3277 19.4941 22.7981 17.5 22.7981C15.5059 22.7981 13.5675 23.3277 11.9854 24.3048C10.5211 25.2093 9.43776 26.4505 8.8754 27.8596C8.79701 28.0561 8.8847 28.2764 9.07009 28.3782C14.3204 31.2608 20.6796 31.2608 25.9299 28.3782Z" stroke="none"/>
+    </symbol>
+</svg>

@@ -1,0 +1,20 @@
+<div class="product__card">
+    <div class="product__details">
+        <img src="../../../../assets/shopping-cart/1.jpg" alt="">
+        <h3>{{productName}}</h3>
+        <div class="product__costs">
+            <p>Cost produs: <span class="product__cost">{{productPrice}}</span>$</p>
+            <p>Cost livrare si procesare: <span class="product__delivery">{{productDelivery}}</span>$</p>
+            <hr>
+            <p>Cost total: <span class="product__total">{{productTotal}}</span>$</p>
+        </div>
+    </div>
+    <div class="vendor__controls">
+        <div class="product__vendor">Vandut de <span class="vendor">{{vendor}}</span></div>
+        <div class="product__controls">
+            <button class="favorite" (click)="addToFavorite()">Muta la favorite</button>
+            <button class="delete" (click)="deleteProduct()">Sterge din cos</button>
+            <button class="pret__total">{{productTotal}}$</button>
+        </div>
+    </div>
+</div>

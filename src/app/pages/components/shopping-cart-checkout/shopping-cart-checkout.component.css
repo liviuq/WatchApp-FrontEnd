@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'El Messiri', sans-serif;
+}
+
+h1{
+    margin: 48px 100px 0;
+    font-size: 40px;
+}
+
+.details__content{
+    margin: 12px 110px 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details__container{
+    width: 65%;
+    background-color: white;
+    padding: 42px 24px;
+    border-radius: 20px;
+}
+
+.details__card{
+    background: #DBEEF8;
+    border: 1px solid #082A4D;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-bottom: 2.4em;
+}
+
+.card__content{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    margin: 25px 32px;
+    position: relative;
+}
+
+.card__content input{
+    margin-left: 32px;
+    margin-right: 8px;
+}
+
+
+
+.facturare__content{
+    background-color: white;
+    width: fit-content;
+    font-size: 20px;
+    line-height: 31px;
+    margin-top: 1em;
+    margin-left: 1.4em;
+    padding: .6em 6em .6em .6em;
+    border-radius: 12px;
+}
+
+.facturare__content .functie{
+    font-weight: 700;
+}
+
+.facturare__details{
+    margin-left: 2em;
+}
+
+.plata__content{
+    background-color: white;
+    width: fit-content;
+    font-size: 20px;
+    line-height: 31px;
+    margin-top: 1em;
+    margin-left: 1.4em;
+    padding: .6em 6em .6em .6em;
+    border-radius: 12px;
+}
+
+.btn-modifica{
+    background: #21ABA5;
+    width: 350px;
+    height: 58px;
+    margin: 18px auto;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    border-radius: 10px;
+
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    transition: all .4s;
+}
+
+.btn-modifica:hover{
+    cursor: pointer;
+    background: #1a9690;
+}
+
+.align-right{
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    margin-left: 32px;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 26px;
+    display: inline-block;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #1D566E;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}

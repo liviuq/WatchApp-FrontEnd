@@ -1,13 +1,10 @@
 
-  <div class="info_utilizator_box">
+  <div class="info_utilizator_box" *ngIf="auth.user$ | async as user">
     <img class="poza_profil" src="assets/profil-utilizator-cumparator-images/image 6.png">
-    <h1 class="descr">Nume: Username</h1>
-    <h1 class="descr" id="numar_tel">Nr de telefon : <span [style.color]="numberTelColor">{{numberTel}}</span></h1>
-    <div class="button_box">
-        <button type="button" class="button_green"><h1 class="button_text">Schimba nr de telefon</h1></button>
-        <button type="button" class="button_green"  (click)="getNumber()" id="numar_bt"><h1 class="button_text"> {{buttonName}}</h1></button>
-    </div>
-    <h1 class="descr">Numar de anunturi adaugate: 0</h1>
+    <h1 class="descr">Nume: {{profileJson?.mail}}</h1>
+    <h1 class="descr" id="numar_tel">Nr de telefon : <span [style.color]="numberTelColor">{{profileJson?.phone_number}}</span></h1>
+    <button type="button" class="button_green"><h1 class="button_text">Schimba nr de telefon</h1></button>
+    <h1 class="descr">Numar de anunturi adaugate: {{productsLength}}</h1>
     <h1 class="descr">Data inregistrarii: 11.03.2019</h1>
     <h1 class="descr">Categorii preferate de produse:</h1>
     <ul class="lista_pref">
@@ -21,5 +18,204 @@
         <img class="inima" src="assets/profil-utilizator-cumparator-images/Vector.png">
        </div>
     </button> 
+    <button (click)="toggle()" type="button" class="button_cyan">
+      <div class="flex_text_img">
+        <h1  class="button_text_rose">Adauga locatia preferata</h1>
+          <div class="locatie_logo">
+            <img class="locatiee" src="assets/profil-utilizator-cumparator-images/img_locatie_pref.png">
+            <img class="sub_locatiee" src="assets/profil-utilizator-cumparator-images/sub_locatie.png">
+          </div>
+      </div>
+    </button>
   </div>
 
+ <ng-container *ngIf="show">
+  <div class="adaugare_adresa">
+    <div class="adrese_pt_livrare">
+          <h1 class="adrese_msj">Adrese dvs pentru livrare sunt:</h1>
+          <div class="adresa_model">
+            <div class="mic_flex">
+              <h1 class="Locatie_adresa styyle_text">Acasa</h1>
+              <img class="remove_locatie" src="assets/profil-utilizator-cumparator-images/remove_locatie.png">
+            </div>
+               <h1 class="adresa_efectiva styyle_text1">str.. str..</h1>
+               <h1 class="oras_tara styyle_text1">Romania, Bucuresti</h1>
+          </div>
+          <div class="adresa_model">
+            <div class="mic_flex">
+              <h1 class="Locatie_adresa styyle_text">Birou</h1>
+              <img class="remove_locatie" src="assets/profil-utilizator-cumparator-images/remove_locatie.png">
+            </div>
+               <h1 class="adresa_efectiva styyle_text1">str.. str..</h1>
+               <h1 class="oras_tara styyle_text1">Romania, Bucuresti</h1>
+          </div>
+          
+    </div>
+    <div class="bara">
+
+    </div>
+    <div class="adaugare">
+
+          <h1 class="adrese_msj">Adaugare adresa pentru livrare:</h1>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="mechanism">Tip adresa</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="mechanism" name="mechanism">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="mechanism">Street*</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="mechanism" name="mechanism">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="mechanism">Street number</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="mechanism" name="mechanism">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="mechanism">ZIP(or postal) code</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="mechanism" name="mechanism">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="condition">Country</label>
+            </div>
+            <div class="col-75">
+              <select id="condition" name="condition">
+                <option value="" disabled selected>Please select</option>
+                <option value="new">Romania</option>
+                <option value="used">France</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-25">
+                <label for="price">Phone number</label>
+              </div>
+              <div class="col-75 price">
+                <div class="mic_flex1">
+                <select name="price" id="price">
+                  <option value="fr">+33</option>
+                  <option value="ro">+40</option>
+                </select>
+                <input type="number" id="price" name="price" class="phone_in">
+                </div>
+              </div>
+            </div>
+         
+            <button class="salveaza_adresa"><h1 class="salv_adr">Add the adress to my profile</h1></button>
+    </div>
+    <img (click)="toggle()" class="cancel_save" src="assets/profil-utilizator-cumparator-images/cancel_save_adress.png">
+</div>
+ </ng-container>
+ <ng-container *ngIf="productsLength">
+  <div class="if_seller">
+    <div class="filter">
+      <h1 class="drescriere_fil">Filtreza anunturile:</h1>
+      <button (click)="toggle1()" class="filtru first_btn">
+  
+          <div *ngIf="status1 === 'none'">
+              <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+          </div>
+  
+          <div *ngIf="status1 === 'first'">
+               <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+           </div>
+               
+           <h1 class="atribut">Brand</h1>
+       </button>
+       <div *ngIf="status1 === 'first'">
+           <h1 class="drescriere_atribut">-Rolex</h1>
+           <h1 class="drescriere_atribut">-Fossil</h1>
+       </div>
+  
+       
+       <button (click)="toggle2()" class="filtru">
+           <div *ngIf="status2 === 'none'">
+               <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+           </div>
+  
+           <div *ngIf="status2 === 'secound'">
+                <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+            </div>
+                
+            <h1 class="atribut">Pentru</h1>
+        </button>
+        <div *ngIf="status2 === 'secound'">
+            <h1 class="drescriere_atribut">-Femei</h1>
+            <h1 class="drescriere_atribut">-Barbati</h1>
+            <h1 class="drescriere_atribut">-Unisex</h1>
+        </div>
+  
+        <button (click)="toggle3()" class="filtru">
+           <div *ngIf="status3 === 'none'">
+               <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+           </div>
+  
+           <div *ngIf="status3 === 'third'">
+                <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+            </div>
+                
+            <h1 class="atribut">Conditie</h1>
+        </button>
+        <div *ngIf="status3 === 'third'">
+            <h1 class="drescriere_atribut">-Nou</h1>
+            <h1 class="drescriere_atribut">-Purtat</h1>
+        </div>
+  
+        <button (click)="toggle4()" class="filtru">
+           <div *ngIf="status4 === 'none'">
+               <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+           </div>
+  
+           <div *ngIf="status4 === 'forth'">
+                <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+            </div>
+                
+            <h1 class="atribut">An</h1>
+        </button>
+        <div *ngIf="status4 === 'forth'">
+            <h1 class="drescriere_atribut">-2021</h1>
+            <h1 class="drescriere_atribut">-1757</h1>
+        </div>
+   </div>
+  
+      <div class="slider">
+              
+          <div class="paginator" *ngIf="productsLength >= 0">
+  
+        <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+        <mat-paginator appPaginatorStyle [showTotalPages]="3" [length]="productsLength" [pageSize]="pageSize" 
+        (page)="getPaginatorData($event)" >
+        </mat-paginator> 
+  
+         </div>
+    
+      </div>
+   </div>
+ </ng-container>
+ 
+    
+  
+    
+  
+  

@@ -1,0 +1,15 @@
+<div class="summary__card">
+    <div class="summary__content">
+        <h3>Sumar Comanda</h3>
+        <div class="order__costs">
+            <p>Cost produse:</p>
+            <p class="order__cost"><span>{{costProduse}}</span>$</p>
+            <p>Cost livrare:</p>
+            <p class="order__delivery"><span>{{costLivrare}}</span>$</p>
+            <hr>
+            <p class="total__text">Cost total:</p>
+            <p class="order__total"><span>{{costTotal}}</span>$</p>
+        </div>
+        <button [routerLink]="[routeLink]" routerLinkActive="active" class="continue"><img src="../../../../assets/shopping-cart/arrows.svg" alt="">  {{btnText}} </button>
+    </div>
+</div>
