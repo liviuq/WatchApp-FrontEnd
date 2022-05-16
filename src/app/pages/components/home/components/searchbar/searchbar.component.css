@@ -5,7 +5,6 @@
 }
 
 .searchbar {
-    min-width: 1200px;
     height: 86px;
     background-color: rgba(255, 255, 255, 0.75);
     margin-top: 503px;
@@ -19,6 +18,7 @@
 }
 
 .searchbar>img {
+    cursor: pointer;
     width: 30px;
 }
 
@@ -29,6 +29,7 @@
 }
 
 .searchbar .div img {
+    cursor: pointer;
     margin-right: 17px;
 }
 

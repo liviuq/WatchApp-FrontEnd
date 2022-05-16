@@ -2,16 +2,15 @@
 
   <div class="watches-list">
     <h1 class="promoted-title">Anunturi promovate</h1>
-    <app-buy-a-watch-card isPromoted="true" name="Ceas ROLEX 1985" seller="Ion Popescu" price="50.000">
+    <app-buy-a-watch-card *ngFor="let product of productsJson" name={{product.brand}} seller={{product.user_id}}
+      price={{product.price}}>
+
     </app-buy-a-watch-card>
-    <app-buy-a-watch-card isPromoted="true" name="Ceas ROLEX 1980" seller="Ion Popescu" price="50.000">
-    </app-buy-a-watch-card>
-    <app-buy-a-watch-card isPromoted="true" name="Ceas ROLEX 1980" seller="Ion Popescu" price="50.000">
-    </app-buy-a-watch-card>
+
     <div class="grey-line"></div>
-    <app-buy-a-watch-card name="Ceas ROLEX 1980" seller="Ion Popescu" price="50.000"></app-buy-a-watch-card>
-    <app-buy-a-watch-card name="Ceas ROLEX 1980" seller="Ion Popescu" price="50.000"></app-buy-a-watch-card>
-    <app-buy-a-watch-card name="Ceas ROLEX 1980" seller="Ion Popescu" price="50.000"></app-buy-a-watch-card>
+
+
+
     <div class="page-counter">
       <div class="left-arrows">
         <img src="../../../../assets/filter-page/right-double-arrow.svg" alt="">

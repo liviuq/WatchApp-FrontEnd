@@ -88,13 +88,7 @@
 }
 
 
-.vertical-grey-bar {
-    position: absolute;
-    height: 145px;
-    width: 1px;
-    background-color: rgba(191, 197, 203, 1);
-    left: 58%;
-}
+
 
 h4 {
     font-size: 20px;
