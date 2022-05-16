@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormControl, FormGroup,FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
@@ -22,7 +23,10 @@ import { FormAddproductComponent } from './components/form-addproduct/form-addpr
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   exports: [
     ShoppingCartComponent
