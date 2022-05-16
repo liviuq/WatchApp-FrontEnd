@@ -278,3 +278,101 @@ input[type=number]::-webkit-outer-spin-button {
 .adaugare{
     margin-right: -200px;
 }
+/* ------ if user is also seller -------- */
+.if_seller{
+    display: flex;
+    background:white;
+    width: 1400px;
+    min-height: 300px;
+    margin-left: 50%;
+    transform:translateX(-50%);
+    height: fit-content;
+    margin-bottom: 150px;
+    padding: 10px;
+}
+.filter{
+    width: 424px;
+    
+    height: fit-content;
+    background: #FFFFFF;
+    border: 1px solid #45EBA5;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 33px;
+    margin-left: 25px;
+}
+.drescriere_fil{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 47px;
+    margin-top: 11px;
+    margin-left: 18px;
+}
+.sageatad{
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+}
+.atribut{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38px;
+    color: #000000;
+    cursor: pointer;
+}
+.filtru{
+    border: none;
+    background: none;
+    display: flex;
+    margin-left: 27px;
+}
+.first_btn{
+    margin-top: 20px;
+}
+.drescriere_atribut{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+    margin-left: 60px;
+    margin-top: 5px;
+}
+.slider{
+    margin-top: 21px;
+}
+/* ------ paginator -------- */
+mat-paginator{
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+::ng-deep .mat-paginator .mat-icon-button
+{
+  background-color: #1D566E;
+}
+
+::ng-deep .mat-paginator .mat-button-disabled
+{
+  background-color: #356f88;
+}
+
+::ng-deep .mat-paginator .mat-paginator-page-size, ::ng-deep .mat-paginator .mat-paginator-range-label
+{
+  display: none;
+}
+
+::ng-deep .mat-paginator .paginator-pageindex{
+    min-width: 5em;
+    text-align: center;
+    margin: 0 8px;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 18px;
+}
