@@ -1,387 +1,379 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<!-- <div class="header-form">
-  <h3 class="current">Watch details</h3>
-  <h3>Pictures</h3>
-  <h3>Personal information</h3>
-</div> -->
-
-
 <div class="container">
-  
-  <form action="">
+  <form (ngSubmit)="submit()" [formGroup]="multistep">
+
     <!-- FIRST PAGE -->
-    <div class="tab" *ngIf="step == 1">
-    <!-- Item Details -->
-    <div class="category">
-      <h2>Item Details</h2>
-      <p>Offer(*required field)</p>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="brand">Brand*</label>
+
+    <div class="tab" *ngIf="step == 1" formGroupName="itemDetails">
+      <!-- Item Details -->
+      <div class="category">
+        <h2>Item Details</h2>
+        <p>Offer(*required field)</p>
       </div>
-      <div class="col-75">
-        <select id="brand">
-          <option value="" disabled selected>Please select</option>
-          <option *ngFor="let status_item of brand_values">
+      <div class="row">
+        <div class="col-25">
+          <label for="brand">Brand*</label>
+        </div>
+        <div class="col-75">
+          <select id="brand" formControlName="brand">
+            <option value="" disabled selected>Please select</option>
+            <option *ngFor="let status_item of brand_values">
+            {{status_item}}
+            </option>
+        </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="model">Model*</label>
+        </div>
+        <div class="col-75">
+        
+            <input type="text" id="model" name="model" formControlName="model">
+      
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="mechanism">Mechanism*</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="mechanism" name="mechanism" formControlName="mechanism">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="condition">Condition*</label>
+        </div>
+        <div class="col-75">
+          <select id="condition" name="condition" formControlName="condition">
+            <option value="" disabled selected>Please select</option>
+            <option *ngFor="let status_item of condition_values">
+              {{status_item}}
+              </option>
+          </select>
+        </div>
+      </div>
+  
+  <!-- Basic Info -->
+  
+      <div class="category">
+        <h2>Basic Info</h2>
+        <p>Offer(*required field)</p>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="gender">Gender*</label>
+        </div>
+        <div class="col-75">
+          <select id="gender" name="gender" formControlName="gender">
+            <option value="" disabled selected>Please select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="year">Year of production*</label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="year" name="year" formControlName="year">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="strap">Strap</label>
+        </div>
+        <div class="col-75">
+          <select id="strap" name="strap" formControlName="strap">
+            <option value="" disabled selected>Please select</option>
+            <option *ngFor="let status_item of strap_values">
+              {{status_item}}
+              </option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="strapcolor">Strap Color</label>
+        </div>
+        <div class="col-75">
+          <select id="strapcolor" name="strapcolor" formControlName="strapcolor">
+            <option value="" disabled selected>Please select</option>
+            <option *ngFor="let status_item of strap_color">
+              {{status_item}}
+              </option>
+          </select>
+        </div>
+      </div>
+  
+  <!-- Carcase Info -->
+  
+  <div class="category">
+    <h2>Carcase Info</h2>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="carcase">Carcase</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="carcase" name="carcase" formControlName="carcase">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="carcaseform">Form</label>
+    </div>
+    <div class="col-75">
+      <select id="carcaseform" name="carcaseform" formControlName="carcaseform">
+        <option value="" disabled selected>Please select</option>
+        <option value="form1">Round</option>
+        <option value="form2">Square</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="thickness">Thickness</label>
+    </div>
+    <div class="col-75">
+      <select id="thickness" name="thickness" formControlName="thickness">
+        <option value="" disabled selected>Please select</option>
+        <option value="thickness1">2 to 8mm</option>
+        <option value="thickness2">8mm to 12mm</option>
+        <option value="thickness3">12mm-20mm</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="carcasecolor">Color</label>
+    </div>
+    <div class="col-75">
+      <select id="carcasecolor" name="carcasecolor" formControlName="carcasecolor">
+        <option value="" disabled selected>Please select</option>
+        <option *ngFor="let status_item of carcase_color">
           {{status_item}}
           </option>
       </select>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="model">Model*</label>
-      </div>
-      <div class="col-75">
+  </div>
+  
+  <!-- Technical Details -->
+  
+  <div class="category">
+    <h2>Technical Details</h2>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="waterresistence">Water resistence</label>
+    </div>
+    <div class="col-75">
+      <select id="waterresistence" name="waterresistence" formControlName="waterresistence">
+        <option value="" disabled selected>Please select</option>
+        <option value="yes">ISO 2281 water resistance testing</option>
+        <option value="no">ISO 2281 water resistance testing</option>
+  
+      </select>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="alarm">Alarm</label>
+    </div>
+    <div class="col-75 radio">
+      <label for="alarm-yes">YES</label>
+      <input type="radio" id="alarm-yes" name="alarm" value="yes" formControlName="alarm">
+      <label for="alarm-no">NO</label>
+      <input type="radio" id="alarm-no" name="alarm" value="no" formControlName="alarm">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="timer">Timer</label>
+    </div>
+    <div class="col-75">
+      <label for="alarm-yes">YES</label>
+      <input type="radio" id="timer-yes" name="timer" value="yes" formControlName="timer">
+      <label for="alarm-no" class="last">NO</label>
+      <input type="radio" id="timer-no" name="timer" value="no" formControlName="timer">
+    </div>
+  </div>
+  
+  <!-- PRICE -->
+  
+  <div class="category">
+    <h2>Price</h2>
+    <p>Offer(*required field)</p>
+  </div>
+  <div class="row">
+  <div class="col-25">
+      <label for="price">Price*</label>
+    </div>
+    <div class="col-75 price">
+      <input type="number" id="price" name="price" formControlName="price">
+      <select name="currency" id="currency" formControlName="currency">
+        <option value="usd">USD</option>
+        <option value="euro">Euro</option>
+        <option value="lei">Lei</option>
+      </select>
+    </div>
+  </div>
+  
+  </div>
+  
+    <!-- SECOND PAGE -->
+
+    <!-- <div class="tab" *ngIf="step == 2">
+    
       
-          <input type="text" id="model" name="model">
+  <div class="category">
+    <h2>Pictures</h2>
+    <br><br>
+    <p>Good pictures put the finishing touch on your listing. Take pictures of your watch from all angles in order to attract the most buyers.</p>
+  </div>
+  <div class="upload">
+  <label class="file-upload">
+    <img src="../../../../assets/form-addproduct/add-photo-1.png" alt="poza"> <br>
+    <span class="upload-text">Select files</span> or <br> drag and drop
+    <input type="file" multiple>
+  </label>
+  </div>
+  <div class="linie">
+  </div>
+ 
+    </div> -->
+
+    <div class="tab" *ngIf="step == 2">
     
-      </div>
+      <!-- PRICE -->
+  <div class="category">
+    <h2>Pictures</h2>
+    <br><br>
+    <p>Good pictures put the finishing touch on your listing. Take pictures of your watch from all angles in order to attract the most buyers.</p>
+  </div>
+  <div class="upload">
+  <label class="file-upload">
+    <img src="../../../../assets/form-addproduct/add-photo-1.png" alt="poza"> <br>
+    <span class="upload-text">Select files</span> or <br> drag and drop
+    <input type="file" multiple>
+  </label>
+  </div>
+  <div class="linie">
+  </div>
+
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="mechanism">Mechanism*</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="mechanism" name="mechanism">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="condition">Condition*</label>
-      </div>
-      <div class="col-75">
-        <select id="condition" name="condition">
-          <option value="" disabled selected>Please select</option>
-          <option *ngFor="let status_item of condition_values">
-            {{status_item}}
-            </option>
-        </select>
-      </div>
-    </div>
-
-<!-- Basic Info -->
-
-    <div class="category">
-      <h2>Basic Info</h2>
-      <p>Offer(*required field)</p>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="gender">Gender*</label>
-      </div>
-      <div class="col-75">
-        <select id="gender" name="gender">
-          <option value="" disabled selected>Please select</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="year">Year of production*</label>
-      </div>
-      <div class="col-75">
-        <input type="number" id="year" name="year">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="strap">Strap</label>
-      </div>
-      <div class="col-75">
-        <select id="strap" name="strap">
-          <option value="" disabled selected>Please select</option>
-          <option *ngFor="let status_item of strap_values">
-            {{status_item}}
-            </option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="strapcolor">Strap Color</label>
-      </div>
-      <div class="col-75">
-        <select id="strapcolor" name="strapcolor">
-          <option value="" disabled selected>Please select</option>
-          <option *ngFor="let status_item of strap_color">
-            {{status_item}}
-            </option>
-        </select>
-      </div>
-    </div>
-
-<!-- Carcase Info -->
-
-<div class="category">
-  <h2>Carcase Info</h2>
-</div>
-<div class="row">
-  <div class="col-25">
-    <label for="carcase">Carcase</label>
-  </div>
-  <div class="col-75">
-    <input type="text" id="carcase" name="carcase">
-  </div>
-</div>
-<div class="row">
-  <div class="col-25">
-    <label for="carcase-form">Form</label>
-  </div>
-  <div class="col-75">
-    <select id="carcase-form" name="carcase-form">
-      <option value="" disabled selected>Please select</option>
-      <option value="form1">Round</option>
-      <option value="form2">Square</option>
-    </select>
-  </div>
-</div>
-<div class="row">
-  <div class="col-25">
-    <label for="strap">Thickness</label>
-  </div>
-  <div class="col-75">
-    <select id="strap" name="strap">
-      <option value="" disabled selected>Please select</option>
-      <option value="thickness1">2 to 8mm</option>
-      <option value="thickness2">8mm to 12mm</option>
-      <option value="thickness3">12mm-20mm</option>
-    </select>
-  </div>
-</div>
-<div class="row">
-  <div class="col-25">
-    <label for="strapcolor">Color</label>
-  </div>
-  <div class="col-75">
-    <select id="carcasecolor" name="carcasecolor">
-      <option value="" disabled selected>Please select</option>
-      <option *ngFor="let status_item of carcase_color">
-        {{status_item}}
-        </option>
-    </select>
-  </div>
-</div>
-
-<!-- Technical Details -->
-
-<div class="category">
-  <h2>Technical Details</h2>
-</div>
-<div class="row">
-  <div class="col-25">
-    <label for="waterresistance">Water resistence</label>
-  </div>
-  <div class="col-75">
-    <select id="waterresistance" name="waterresistance">
-      <option value="" disabled selected>Please select</option>
-      <option value="yes">ISO 2281 water resistance testing</option>
-      <option value="no">ISO 2281 water resistance testing</option>
-
-    </select>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-25">
-    <label for="alarm">Alarm</label>
-  </div>
-  <div class="col-75 radio">
-    <label for="alarm-yes">YES</label>
-    <input type="radio" id="alarm-yes" name="alarm" value="yes">
-    <label for="alarm-no">NO</label>
-    <input type="radio" id="alarm-no" name="alarm" value="no">
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-25">
-    <label for="timer">Timer</label>
-  </div>
-  <div class="col-75">
-    <label for="alarm-yes">YES</label>
-    <input type="radio" id="timer-yes" name="timer" value="yes">
-    <label for="alarm-no" class="last">NO</label>
-    <input type="radio" id="timer-no" name="timer" value="no">
-  </div>
-</div>
-
-<!-- PRICE -->
-
-<div class="category">
-  <h2>Price</h2>
-  <p>Offer(*required field)</p>
-</div>
-<div class="row">
-<div class="col-25">
-    <label for="price">Price*</label>
-  </div>
-  <div class="col-75 price">
-    <input type="number" id="price" name="price">
-    <select name="price" id="price">
-      <option value="usd">USD</option>
-      <option value="euro">Euro</option>
-      <option value="lei">Lei</option>
-    </select>
-  </div>
-</div>
-<div class="row">
-<button type="submit"  class="next" (click)="step2()">Accept details and continue
-</button>  
-</div>
-
-</div>
-
-      <!-- SECOND PAGE -->
-  <div class="tab" *ngIf="step == 2">
-    
-    <!-- PRICE -->
-<div class="category">
-  <h2>Pictures</h2>
-  <br><br>
-  <p>Good pictures put the finishing touch on your listing. Take pictures of your watch from all angles in order to attract the most buyers.</p>
-</div>
-<div class="upload">
-<label class="file-upload">
-  <img src="../../../../assets/form-addproduct/add-photo-1.png" alt="poza"> <br>
-  <span class="upload-text">Select files</span> or <br> drag and drop
-  <input type="file" multiple>
-</label>
-</div>
-<div class="linie">
-
-</div>
-<div class="row">
-  <button type="submit"  class="next" (click)="step3()">Continue to personal information
-  </button>  
-  <!-- <button type="button" id="prevBtn" class="prev" (click)="previous()">Prev
-  </button> -->
-  <a id="prevBtn" class="prev" (click)="previous()">BACK TO STEP 1</a>
-  </div>
-  </div>
+  
 
       <!-- THIRD PAGE -->
-      <div class="tab" *ngIf="step == 3">
-    
-        <!-- PRICE -->
-    <div class="category">
-      <h2>Personal Information</h2>
-      <div class="linie"></div>
-    </div>
-    <div class="row">
+      <div *ngIf="step == 3" formGroupName="userDetails">
+        <div class="category">
+          <h2>Personal Information</h2>
+          <div class="linie"></div>
+        </div>
+
+         <div class="row">
     <div class="col-25">
         <label for="firstname">First Name*</label>
       </div>
       <div class="col-75">
-        <input type="text" id="firstname" name="firstname">
+        <input type="text" id="firstname" name="firstname" formControlName="firstname">
       </div>
     </div>
+
     <div class="row">
       <div class="col-25">
           <label for="lastname">Last Name*</label>
         </div>
         <div class="col-75">
-          <input type="text" id="lastname" name="lastname">
+          <input type="text" id="lastname" name="lastname" formControlName="lastname">
+        </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+          <label for="dateofbirth">Date of birth*</label>
+        </div>
+        <div class="col-75">
+          <input type="date" id="dateofbirth" name="dateofbirth" formControlName="dateofbirth">
         </div>
       </div>
+
+      <div class="category">
+        <h2>Adress</h2>
+        <div class="linie"></div>
+      </div>
+
       <div class="row">
         <div class="col-25">
-            <label for="dateofbirth">Date of birth*</label>
+            <label for="street">Street*</label>
           </div>
           <div class="col-75">
-            <input type="date" id="dateofbirth" name="dateofbirth">
+            <input type="text" id="street" name="street" formControlName="street">
           </div>
         </div>
-              <!-- ADRESS -->
-        <div class="category">
-          <h2>Adress</h2>
-          <div class="linie"></div>
-        </div>
+
         <div class="row">
           <div class="col-25">
-              <label for="street">Street*</label>
+              <label for="street2">Street*</label>
             </div>
             <div class="col-75">
-              <input type="text" id="street" name="street">
+              <input type="text" id="street2" name="street2" formControlName="street2">
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+              <label for="zip">ZIP(or postal) code</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="zip" name="zip" formControlName="zip">
             </div>
           </div>
+
           <div class="row">
             <div class="col-25">
-                <label for="street2">Street Line 2</label>
+                <label for="country">Country*</label>
               </div>
               <div class="col-75">
-                <input type="text" id="street2" name="street2">
+                <input type="text" id="country" name="country" formControlName="country">
               </div>
-            </div>
+          </div>
 
-            <div class="row">
-              <div class="col-25">
-                  <label for="zip">ZIP(or postal) code</label>
-                </div>
-                <div class="col-75">
-                  <input type="text" id="zip" name="zip">
-                </div>
+          <div class="row">
+            <div class="col-25">
+                <label for="phone">Phone number*</label>
               </div>
-            
-              <div class="row">
-                <div class="col-25">
-                    <label for="country">Country*</label>
-                  </div>
-                  <div class="col-75">
-                    <input type="text" id="country" name="country">
-                  </div>
+              <div class="col-75">
+                <input type="text" id="phone" name="phone" formControlName="phone">
               </div>
+          </div>
 
-              <div class="row">
-                <div class="col-25">
-                    <label for="phone">Phone number*</label>
-                  </div>
-                  <div class="col-75">
-                    <input type="number" id="phone" name="phone">
-                  </div>
-              </div>
-
-              
-
-
-        <!-- BUTTONS -->
-    <div class="row">
-  <button type="submit"  class="next" >Submit
-  </button>
-  <a id="prevBtn" class="prev" (click)="previous()">BACK TO PICTURES</a>
-  <!-- <button type="button" id="prevBtn" class="prev" (click)="previous()">Prev
-  </button> -->
-</div>
       </div>
 
+      <div class="row">
+    <a class="prev" *ngIf="step == 3" (click)="previous()">BACK TO PICTURES</a>
+    <!-- <button class="next" *ngIf="step != 2">Next</button> -->
+    <a class="prev" *ngIf="step == 2" (click)="previous()">BACK TO STEP 1</a>
 
+    <button class="next" *ngIf="step == 1">
+      <p>Accept details and continue</p>
+      <img src="../../../../assets/home/arrow-right.svg" alt="">
+    </button>
+    <button class="next" *ngIf="step == 2">
+      <p>Continue to personal information</p>
+      <img src="../../../../assets/home/arrow-right.svg" alt="">
+    </button>
 
-<!-- BUTTON -->
-<!-- <div class="row"> 
-  <button type="button" id="prevBtn" class="prev" *ngIf="step!=1" (click)="previous()">Prev
-  </button>
-  <button type="submit"  class="next" *ngIf="step!=3">Next
-  </button>
-  <button type="submit"  class="next" *ngIf="step==3">Submit
-  </button>
-  
-</div> -->
-
+    <button type="submit" class="next" *ngIf="step == 3">
+      <p>Post Listing</p>
+      <img src="../../../../assets/home/arrow-right.svg" alt="">
+    </button>
+    </div>
+    <br>
+    <br><br>
+    <pre>{{multistep.value | json}}</pre>
   </form>
-
 </div>
-
-
-
-<router-outlet></router-outlet>

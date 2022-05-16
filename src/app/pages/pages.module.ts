@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
+import { FormControl, FormGroup,FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
@@ -55,6 +57,8 @@ import { FavoriteWatchCardComponent } from './components/favorite-list/component
   imports: [
     CommonModule,
     PagesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
     MatPaginatorModule,
