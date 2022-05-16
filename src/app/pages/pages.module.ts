@@ -23,6 +23,10 @@ import { SellerProfileBuyerPerspectiveComponent } from './components/seller-prof
 import { HttpClientModule } from '@angular/common/http';
 import { SellerProfileProductCardComponent } from './components/seller-profile-buyer-perspective/components/seller-profile-product-card/seller-profile-product-card.component';
 import { PaginatorStyleDirective } from './components/seller-profile-buyer-perspective/paginator-style.directive';
+import { AdviceForSellersComponent } from './components/advice-for-sellers/advice-for-sellers.component';
+import { SellingAWatchComponent } from './components/selling-a-watch/selling-a-watch.component';
+import { CaringForYourWatchComponent } from './components/caring-for-your-watch/caring-for-your-watch.component';
+import { PhotographingAWatchComponent } from './components/photographing-a-watch/photographing-a-watch.component';
 import { SearchbarComponent } from './components/home/components/searchbar/searchbar.component';
 import { WatchCardComponent } from './components/home/components/watch-card/watch-card.component';
 import { CategoriesCardComponent } from './components/home/components/categories-card/categories-card.component';
@@ -48,6 +52,10 @@ import { FavoriteWatchCardComponent } from './components/favorite-list/component
     SellerProfileBuyerPerspectiveComponent,
     SellerProfileProductCardComponent,
     PaginatorStyleDirective,
+    AdviceForSellersComponent,
+    SellingAWatchComponent,
+    CaringForYourWatchComponent,
+    PhotographingAWatchComponent,
     SearchbarComponent,
     WatchCardComponent,
     CategoriesCardComponent,

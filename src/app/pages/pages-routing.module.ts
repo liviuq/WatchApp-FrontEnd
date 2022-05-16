@@ -11,6 +11,10 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ShoppingCartCheckoutComponent } from './components/shopping-cart-checkout/shopping-cart-checkout.component';
 import { SellerProfileBuyerPerspectiveComponent } from './components/seller-profile-buyer-perspective/seller-profile-buyer-perspective.component';
+import { AdviceForSellersComponent } from './components/advice-for-sellers/advice-for-sellers.component';
+import { SellingAWatchComponent } from './components/selling-a-watch/selling-a-watch.component';
+import { CaringForYourWatchComponent } from './components/caring-for-your-watch/caring-for-your-watch.component';
+import { PhotographingAWatchComponent } from './components/photographing-a-watch/photographing-a-watch.component';
 
 const routes: Routes = [
   { path: 'cart/products', component: ShoppingCartComponent },
@@ -27,6 +31,10 @@ const routes: Routes = [
   {path: 'about-us', component: AboutUsComponent},
   {path: 'seller', component: SellerProfileBuyerPerspectiveComponent},
   {path: 'seller/:id', component: SellerProfileBuyerPerspectiveComponent},
+  {path: 'advice-for-sellers', component: AdviceForSellersComponent},
+  {path: 'advice-for-sellers/selling-a-watch', component: SellingAWatchComponent},
+  {path: 'advice-for-sellers/caring-for-your-watch', component: CaringForYourWatchComponent},
+  {path: 'advice-for-sellers/photographing-a-watch', component: PhotographingAWatchComponent},
 ];
 
 @NgModule({
