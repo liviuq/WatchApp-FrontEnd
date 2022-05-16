@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { FormControl, FormGroup,FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
+
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
@@ -22,6 +23,11 @@ import { SellerProfileBuyerPerspectiveComponent } from './components/seller-prof
 import { HttpClientModule } from '@angular/common/http';
 import { SellerProfileProductCardComponent } from './components/seller-profile-buyer-perspective/components/seller-profile-product-card/seller-profile-product-card.component';
 import { PaginatorStyleDirective } from './components/seller-profile-buyer-perspective/paginator-style.directive';
+import { SearchbarComponent } from './components/home/components/searchbar/searchbar.component';
+import { WatchCardComponent } from './components/home/components/watch-card/watch-card.component';
+import { CategoriesCardComponent } from './components/home/components/categories-card/categories-card.component';
+import { BuyAWatchCardComponent } from './components/buy-a-watch/components/buy-a-watch-card/buy-a-watch-card.component';
+import { FavoriteWatchCardComponent } from './components/favorite-list/components/favorite-watch-card/favorite-watch-card.component';
 
 
 @NgModule({
@@ -41,7 +47,12 @@ import { PaginatorStyleDirective } from './components/seller-profile-buyer-persp
     CheckoutSummaryCardComponent,
     SellerProfileBuyerPerspectiveComponent,
     SellerProfileProductCardComponent,
-    PaginatorStyleDirective
+    PaginatorStyleDirective,
+    SearchbarComponent,
+    WatchCardComponent,
+    CategoriesCardComponent,
+    BuyAWatchCardComponent,
+    FavoriteWatchCardComponent,
   ],
   imports: [
     CommonModule,
