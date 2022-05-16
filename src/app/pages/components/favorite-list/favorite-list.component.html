@@ -13,7 +13,7 @@
 
     <div class="favorite-list">
       <!-- de adaugat productId = {{...}} cand integreaza back end-ul-->
-      <app-favorite-watch-card *ngFor="let product of productsJson" buyerId={{userId}} name={{product.brand}} seller={{product.seller}}
+      <app-favorite-watch-card *ngFor="let product of productsJson" buyerId={{userId}} productFavoritetId={{product.id}} name={{product.brand}} seller={{product.seller}}
         price={{product.price}}>
       </app-favorite-watch-card>
 
