@@ -13,17 +13,9 @@
 
     <div class="favorite-list">
 
-      <app-favorite-watch-card name="Ceas Fossil 10 ATM" price="200" noStars="4" seller="Ion Glanetasu">
+      <app-favorite-watch-card *ngFor="let product of productsJson" name={{product.brand}} seller={{product.user_id}}
+        price={{product.price}}>
       </app-favorite-watch-card>
-      <app-favorite-watch-card name="Ceas Fossil 10 ATM" price="200" noStars="4" seller="Ion Glanetasu">
-      </app-favorite-watch-card>
-      <app-favorite-watch-card name="Ceas Fossil 10 ATM" price="200" noStars="4" seller="Ion Glanetasu">
-      </app-favorite-watch-card>
-      <app-favorite-watch-card name="Ceas Fossil 10 ATM" price="200" noStars="4" seller="Ion Glanetasu">
-      </app-favorite-watch-card>
-      <app-favorite-watch-card name="Ceas Fossil 10 ATM" price="200" noStars="4" seller="Ion Glanetasu">
-      </app-favorite-watch-card>
-
 
     </div>
 
