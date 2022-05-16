@@ -1,100 +1,15 @@
 <div class="page">
 
-
-
   <div class="watches-list">
     <h1 class="promoted-title">Anunturi promovate</h1>
-    <div class="watch-card promoted-watch">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart-filled.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
-    <div class="watch-card promoted-watch">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart-filled.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
-    <div class="watch-card promoted-watch">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
+    <app-buy-a-watch-card *ngFor="let product of productsJson" buyerId={{userId}} productId={{product.id}} name={{product.brand}} seller={{product.user_id}}
+      price={{product.price}}>
+
+    </app-buy-a-watch-card>
+
     <div class="grey-line"></div>
-    <div class="watch-card">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
-    <div class="watch-card">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart-filled.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
-    <div class="watch-card ">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart-filled.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
+
+
 
     <div class="page-counter">
       <div class="left-arrows">

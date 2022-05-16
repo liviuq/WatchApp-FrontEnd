@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'El Messiri', sans-serif;
+}
+
+.searchbar {
+    height: 86px;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-top: 503px;
+    border: 1px solid #163A5F;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+}
+
+.searchbar>img {
+    cursor: pointer;
+    width: 30px;
+}
+
+.searchbar .div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.searchbar .div img {
+    cursor: pointer;
+    margin-right: 17px;
+}
+
+.input {
+    padding: 0 20px;
+    width: 90%;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.74);
+}

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
+import { FormControl, FormGroup,FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
@@ -25,6 +27,11 @@ import { AdviceForSellersComponent } from './components/advice-for-sellers/advic
 import { SellingAWatchComponent } from './components/selling-a-watch/selling-a-watch.component';
 import { CaringForYourWatchComponent } from './components/caring-for-your-watch/caring-for-your-watch.component';
 import { PhotographingAWatchComponent } from './components/photographing-a-watch/photographing-a-watch.component';
+import { SearchbarComponent } from './components/home/components/searchbar/searchbar.component';
+import { WatchCardComponent } from './components/home/components/watch-card/watch-card.component';
+import { CategoriesCardComponent } from './components/home/components/categories-card/categories-card.component';
+import { BuyAWatchCardComponent } from './components/buy-a-watch/components/buy-a-watch-card/buy-a-watch-card.component';
+import { FavoriteWatchCardComponent } from './components/favorite-list/components/favorite-watch-card/favorite-watch-card.component';
 
 
 @NgModule({
@@ -49,10 +56,17 @@ import { PhotographingAWatchComponent } from './components/photographing-a-watch
     SellingAWatchComponent,
     CaringForYourWatchComponent,
     PhotographingAWatchComponent,
+    SearchbarComponent,
+    WatchCardComponent,
+    CategoriesCardComponent,
+    BuyAWatchCardComponent,
+    FavoriteWatchCardComponent,
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
     MatPaginatorModule,

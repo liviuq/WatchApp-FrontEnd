@@ -12,142 +12,11 @@
     <h2 class="all-products">Toate produsele <span>(3 produse in 1 lista)</span></h2>
 
     <div class="favorite-list">
+      <!-- de adaugat productId = {{...}} cand integreaza back end-ul-->
+      <app-favorite-watch-card *ngFor="let product of productsJson" buyerId={{userId}} name={{product.brand}} seller={{product.seller}}
+        price={{product.price}}>
+      </app-favorite-watch-card>
 
-      <div class="favorite-list__card">
-        <img src="../../../../assets/favorite-list/watch.png" alt="">
-
-        <div class="flex-column">
-          <h3 class="color-grey">Lista: Favorite</h3>
-          <h3>Ceas Fossil 10 ATM</h3>
-          <div class="stars">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-          </div>
-        </div>
-
-        <div class="flex-column-right">
-          <h3 class="color-green">in stoc</h3>
-          <h3>Vandut de: Ion Glanetasu</h3>
-          <h3>Pret: <span class="color-red">200$</span></h3>
-          <button class="add-button">
-            Add to cart
-            <img src="../../../../assets/favorite-list/cart.png" alt="">
-          </button>
-          <h3 class="color-blue">Sterge</h3>
-        </div>
-        <div class="vertical-grey-bar"></div>
-
-      </div>
-      <div class="favorite-list__card">
-        <img src="../../../../assets/favorite-list/watch.png" alt="">
-
-        <div class="flex-column">
-          <h3 class="color-grey">Lista: Favorite</h3>
-          <h3>Ceas Fossil 10 ATM</h3>
-          <div class="stars">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-          </div>
-        </div>
-
-        <div class="flex-column-right">
-          <h3 class="color-green">in stoc</h3>
-          <h3>Vandut de: Ion Glanetasu</h3>
-          <h3>Pret: <span class="color-red">200$</span></h3>
-          <button class="add-button">
-            Add to cart
-            <img src="../../../../assets/favorite-list/cart.png" alt="">
-          </button>
-          <h3 class="color-blue">Sterge</h3>
-        </div>
-        <div class="vertical-grey-bar"></div>
-
-      </div>
-      <div class="favorite-list__card">
-        <img src="../../../../assets/favorite-list/watch.png" alt="">
-
-        <div class="flex-column">
-          <h3 class="color-grey">Lista: Favorite</h3>
-          <h3>Ceas Fossil 10 ATM</h3>
-          <div class="stars">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-          </div>
-        </div>
-
-        <div class="flex-column-right">
-          <h3 class="color-green">in stoc</h3>
-          <h3>Vandut de: Ion Glanetasu</h3>
-          <h3>Pret: <span class="color-red">200$</span></h3>
-          <button class="add-button">
-            Add to cart
-            <img src="../../../../assets/favorite-list/cart.png" alt="">
-          </button>
-          <h3 class="color-blue">Sterge</h3>
-        </div>
-        <div class="vertical-grey-bar"></div>
-
-      </div>
-      <div class="favorite-list__card">
-        <img src="../../../../assets/favorite-list/watch.png" alt="">
-
-        <div class="flex-column">
-          <h3 class="color-grey">Lista: Favorite</h3>
-          <h3>Ceas Fossil 10 ATM</h3>
-          <div class="stars">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-          </div>
-        </div>
-
-        <div class="flex-column-right">
-          <h3 class="color-green">in stoc</h3>
-          <h3>Vandut de: Ion Glanetasu</h3>
-          <h3>Pret: <span class="color-red">200$</span></h3>
-          <button class="add-button">
-            Add to cart
-            <img src="../../../../assets/favorite-list/cart.png" alt="">
-          </button>
-          <h3 class="color-blue">Sterge</h3>
-        </div>
-        <div class="vertical-grey-bar"></div>
-
-      </div>
-      <div class="favorite-list__card">
-        <img src="../../../../assets/favorite-list/watch.png" alt="">
-
-        <div class="flex-column">
-          <h3 class="color-grey">Lista: Favorite</h3>
-          <h3>Ceas Fossil 10 ATM</h3>
-          <div class="stars">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-            <img src="../../../../assets/favorite-list/star.png" alt="">
-          </div>
-        </div>
-
-        <div class="flex-column-right">
-          <h3 class="color-green">in stoc</h3>
-          <h3>Vandut de: Ion Glanetasu</h3>
-          <h3>Pret: <span class="color-red">200$</span></h3>
-          <button class="add-button">
-            Add to cart
-            <img src="../../../../assets/favorite-list/cart.png" alt="">
-          </button>
-          <h3 class="color-blue">Sterge</h3>
-        </div>
-        <div class="vertical-grey-bar"></div>
-
-      </div>
     </div>
 
     <h4>Alti vizitatori au fost interesati si de:</h4>
@@ -157,39 +26,10 @@
       <button class="swipe">
         <img src="../../../../assets/favorite-list/left-arrow.png" alt="">
       </button>
-
-      <div class="recommendations__card">
-        <img src="../../../../assets/home/watch2.png" alt="">
-        <h3>Ceas ROLEX</h3>
-        <div class="recommendations__flex">
-          <p>50.000 $</p>
-          <img src="../../../../assets/home/heart.svg" alt="">
-        </div>
-      </div>
-      <div class="recommendations__card">
-        <img src="../../../../assets/home/watch2.png" alt="">
-        <h3>Ceas ROLEX</h3>
-        <div class="recommendations__flex">
-          <p>50.000 $</p>
-          <img src="../../../../assets/home/heart.svg" alt="">
-        </div>
-      </div>
-      <div class="recommendations__card">
-        <img src="../../../../assets/home/watch2.png" alt="">
-        <h3>Ceas ROLEX</h3>
-        <div class="recommendations__flex">
-          <p>50.000 $</p>
-          <img src="../../../../assets/home/heart.svg" alt="">
-        </div>
-      </div>
-      <div class="recommendations__card">
-        <img src="../../../../assets/home/watch2.png" alt="">
-        <h3>Ceas ROLEX</h3>
-        <div class="recommendations__flex">
-          <p>50.000 $</p>
-          <img src="../../../../assets/home/heart.svg" alt="">
-        </div>
-      </div>
+      <app-watch-card price="50.001" name="Ceas ROLEX"></app-watch-card>
+      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
+      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
+      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
       <button class="swipe">
         <img src="../../../../assets/favorite-list/right-arrow.png" alt="">
       </button>

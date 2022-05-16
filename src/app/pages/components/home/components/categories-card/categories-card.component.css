@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'El Messiri', sans-serif;
+}
+
+.categories__card {
+    cursor: pointer;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.56);
+    box-sizing: border-box;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+.categories__card p {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 25px 0 25px 0;
+}
