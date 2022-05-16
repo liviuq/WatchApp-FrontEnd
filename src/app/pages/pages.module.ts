@@ -21,6 +21,10 @@ import { SellerProfileBuyerPerspectiveComponent } from './components/seller-prof
 import { HttpClientModule } from '@angular/common/http';
 import { SellerProfileProductCardComponent } from './components/seller-profile-buyer-perspective/components/seller-profile-product-card/seller-profile-product-card.component';
 import { PaginatorStyleDirective } from './components/seller-profile-buyer-perspective/paginator-style.directive';
+import { AdviceForSellersComponent } from './components/advice-for-sellers/advice-for-sellers.component';
+import { SellingAWatchComponent } from './components/selling-a-watch/selling-a-watch.component';
+import { CaringForYourWatchComponent } from './components/caring-for-your-watch/caring-for-your-watch.component';
+import { PhotographingAWatchComponent } from './components/photographing-a-watch/photographing-a-watch.component';
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { PaginatorStyleDirective } from './components/seller-profile-buyer-persp
     CheckoutSummaryCardComponent,
     SellerProfileBuyerPerspectiveComponent,
     SellerProfileProductCardComponent,
-    PaginatorStyleDirective
+    PaginatorStyleDirective,
+    AdviceForSellersComponent,
+    SellingAWatchComponent,
+    CaringForYourWatchComponent,
+    PhotographingAWatchComponent,
   ],
   imports: [
     CommonModule,
