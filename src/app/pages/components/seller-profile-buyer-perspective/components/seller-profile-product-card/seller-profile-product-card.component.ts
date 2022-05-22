@@ -19,6 +19,8 @@ export class SellerProfileProductCardComponent implements OnInit {
   watchPrice!: string;
   @Input()
   watchYear!:string;
+  @Input()
+  productId!:string;
   constructor() { }
 
   ngOnInit(): void {
