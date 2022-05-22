@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup,FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup,FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
@@ -27,10 +27,10 @@ export class FormAddproductComponent implements OnInit {
   multistep = new FormGroup({
       itemDetails:new FormGroup({
         user_id: new FormControl(''),
-        brand: new FormControl(''),
-        price: new FormControl(''),
+        brand: new FormControl('',Validators.required),
+        price: new FormControl('',Validators.required),
         date: new FormControl(''),
-        year: new FormControl(''),
+        year: new FormControl('',Validators.required),
         strap: new FormControl(''),
         glass: new FormControl(''),
         strap_color: new FormControl(''),
@@ -41,12 +41,12 @@ export class FormAddproductComponent implements OnInit {
         carcase_thickness: new FormControl(''),
         alarm: new FormControl(''),
         timer: new FormControl(''),
-        mechanism: new FormControl(''),
-        gender: new FormControl(''),
-        condition: new FormControl(''),
-        promoted: new FormControl('no'),
+        mechanism: new FormControl('',Validators.required),
+        gender: new FormControl('',Validators.required),
+        condition: new FormControl('',Validators.required),
+        promoted: new FormControl(''),
         category: new FormControl(''),
-        model: new FormControl('')
+        model: new FormControl('',Validators.required)
       }),
 
       userDetails: new FormGroup({
@@ -69,6 +69,8 @@ export class FormAddproductComponent implements OnInit {
    
   }
   
+  
+
   postData(): void{
     console.log('dsadasd');
     this.auth.user$.subscribe(
@@ -101,18 +103,11 @@ export class FormAddproductComponent implements OnInit {
       );
 
   }
-submit() {  
-  // this.submitted = true;s
-  // if(this.multistep.controls['userDetails'].invalid && this.step == 1) {
-  //   return;
-  // }
-  // if(this.multistep.controls.contactDetails.invalid && this.step == 2) {
-  //   return;
-  // }
-  // this.step = this.step + 1;
+
   
-}
 next() {
+  if(this.multistep.controls['itemDetails'].invalid)
+  return ;
   this.step = this.step + 1;
 }
 
