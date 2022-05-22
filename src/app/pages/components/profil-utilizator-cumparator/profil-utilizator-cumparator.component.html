@@ -14,7 +14,7 @@
     </ul>
     <button type="button" class="button_rose">
        <div class="flex_text_img">
-        <h1 class="button_text_rose">Vezi produse preferate</h1>
+        <h1 class="button_text_rose" [routerLink]="['/favorite-list']">Vezi produse preferate</h1>
         <img class="inima" src="assets/profil-utilizator-cumparator-images/Vector.png">
        </div>
     </button> 
@@ -206,7 +206,7 @@
             <div *ngIf="curentFilter === 'year'">
                   <div *ngFor="let product of productsJson | slice: lowValue : highValue">
                       <div *ngIf="curentValueFilter===product.year">
-                        <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                        <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
                       </div>
                   </div>
             </div>
@@ -214,7 +214,7 @@
             <div *ngIf="curentFilter === 'brand'">
               <div *ngFor="let product of productsJson | slice: lowValue : highValue">
                   <div *ngIf="curentValueFilter===product.brand">
-                    <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                    <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
                   </div>
               </div>
             </div>
@@ -222,7 +222,7 @@
             <div *ngIf="curentFilter === 'sex'">
               <div *ngFor="let product of productsJson | slice: lowValue : highValue">
                   <div *ngIf="curentValueFilter===product.gender">
-                    <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                    <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
                   </div>
               </div>
             </div>
@@ -230,7 +230,7 @@
 
 
             <div *ngIf="curentFilter === 'none'">
-              <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+              <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
             </div>
 
         <!-- <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card> -->
