@@ -32,6 +32,7 @@ import { WatchCardComponent } from './components/home/components/watch-card/watc
 import { CategoriesCardComponent } from './components/home/components/categories-card/categories-card.component';
 import { BuyAWatchCardComponent } from './components/buy-a-watch/components/buy-a-watch-card/buy-a-watch-card.component';
 import { FavoriteWatchCardComponent } from './components/favorite-list/components/favorite-watch-card/favorite-watch-card.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { FavoriteWatchCardComponent } from './components/favorite-list/component
     CategoriesCardComponent,
     BuyAWatchCardComponent,
     FavoriteWatchCardComponent,
+    FaqComponent,
   ],
   imports: [
     CommonModule,
