@@ -140,9 +140,9 @@
     <div class="col-75">
       <select id="carcase_thickness" name="carcase_thickness" formControlName="carcase_thickness">
         <option value="" disabled selected>Please select</option>
-        <option value="thickness1">2 to 8mm</option>
-        <option value="thickness2">8mm to 12mm</option>
-        <option value="thickness3">12mm-20mm</option>
+        <option value="1">2 to 8mm</option>
+        <option value="2">8mm to 12mm</option>
+        <option value="3">12mm-20mm</option>
       </select>
     </div>
   </div>
@@ -354,16 +354,18 @@
 
       </div>
 
+      <!-- BUTOANE -->
+
       <div class="row">
     <a class="prev" *ngIf="step == 3" (click)="previous()">BACK TO PICTURES</a>
     <!-- <button class="next" *ngIf="step != 2">Next</button> -->
     <a class="prev" *ngIf="step == 2" (click)="previous()">BACK TO STEP 1</a>
 
-    <button class="next" *ngIf="step == 1" (click)="next()">
+    <button type="button" class="next" *ngIf="step == 1" (click)="next()">
       <p>Accept details and continue</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
-    <button class="next" *ngIf="step == 2" (click)="next()">
+    <button type="button" class="next" *ngIf="step == 2" (click)="next()">
       <p>Continue to personal information</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
@@ -373,6 +375,8 @@
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
     </div>
+
+
     <br>
     <br><br>
     <pre>{{multistep.value | json}}</pre>
