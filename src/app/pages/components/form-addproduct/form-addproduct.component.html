@@ -1,5 +1,5 @@
 <div class="container">
-  <form (ngSubmit)="submit()" [formGroup]="multistep">
+  <form (ngSubmit)="postData()" [formGroup]="multistep" >
 
     <!-- FIRST PAGE -->
 
@@ -67,8 +67,9 @@
         <div class="col-75">
           <select id="gender" name="gender" formControlName="gender">
             <option value="" disabled selected>Please select</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+            <option value="2">Unisex</option>
           </select>
         </div>
       </div>
@@ -95,10 +96,10 @@
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="strapcolor">Strap Color</label>
+          <label for="strap_color">Strap Color</label>
         </div>
         <div class="col-75">
-          <select id="strapcolor" name="strapcolor" formControlName="strapcolor">
+          <select id="strap_color" name="strap_color" formControlName="strap_color">
             <option value="" disabled selected>Please select</option>
             <option *ngFor="let status_item of strap_color">
               {{status_item}}
@@ -122,10 +123,10 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="carcaseform">Form</label>
+      <label for="carcase_form">Form</label>
     </div>
     <div class="col-75">
-      <select id="carcaseform" name="carcaseform" formControlName="carcaseform">
+      <select id="carcase_form" name="carcase_form" formControlName="carcase_form">
         <option value="" disabled selected>Please select</option>
         <option value="form1">Round</option>
         <option value="form2">Square</option>
@@ -134,10 +135,10 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="thickness">Thickness</label>
+      <label for="carcase_thickness">Thickness</label>
     </div>
     <div class="col-75">
-      <select id="thickness" name="thickness" formControlName="thickness">
+      <select id="carcase_thickness" name="carcase_thickness" formControlName="carcase_thickness">
         <option value="" disabled selected>Please select</option>
         <option value="thickness1">2 to 8mm</option>
         <option value="thickness2">8mm to 12mm</option>
@@ -147,10 +148,10 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="carcasecolor">Color</label>
+      <label for="carcase_color">Color</label>
     </div>
     <div class="col-75">
-      <select id="carcasecolor" name="carcasecolor" formControlName="carcasecolor">
+      <select id="carcase_color" name="carcase_color" formControlName="carcase_color">
         <option value="" disabled selected>Please select</option>
         <option *ngFor="let status_item of carcase_color">
           {{status_item}}
@@ -166,10 +167,10 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="waterresistence">Water resistence</label>
+      <label for="water_resistence">Water resistence</label>
     </div>
     <div class="col-75">
-      <select id="waterresistence" name="waterresistence" formControlName="waterresistence">
+      <select id="water_resistence" name="water_resistence" formControlName="water_resistence">
         <option value="" disabled selected>Please select</option>
         <option value="yes">ISO 2281 water resistance testing</option>
         <option value="no">ISO 2281 water resistance testing</option>
@@ -214,11 +215,11 @@
     </div>
     <div class="col-75 price">
       <input type="number" id="price" name="price" formControlName="price">
-      <select name="currency" id="currency" formControlName="currency">
+      <!-- <select name="currency" id="currency" formControlName="currency">
         <option value="usd">USD</option>
         <option value="euro">Euro</option>
         <option value="lei">Lei</option>
-      </select>
+      </select> -->
     </div>
   </div>
   
@@ -358,11 +359,11 @@
     <!-- <button class="next" *ngIf="step != 2">Next</button> -->
     <a class="prev" *ngIf="step == 2" (click)="previous()">BACK TO STEP 1</a>
 
-    <button class="next" *ngIf="step == 1">
+    <button class="next" *ngIf="step == 1" (click)="next()">
       <p>Accept details and continue</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
-    <button class="next" *ngIf="step == 2">
+    <button class="next" *ngIf="step == 2" (click)="next()">
       <p>Continue to personal information</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
