@@ -32,8 +32,11 @@ import { WatchCardComponent } from './components/home/components/watch-card/watc
 import { CategoriesCardComponent } from './components/home/components/categories-card/categories-card.component';
 import { BuyAWatchCardComponent } from './components/buy-a-watch/components/buy-a-watch-card/buy-a-watch-card.component';
 import { FavoriteWatchCardComponent } from './components/favorite-list/components/favorite-watch-card/favorite-watch-card.component';
+import { ProductComponent } from './components/product/product.component';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
 import { FaqComponent } from './components/faq/faq.component';
-
 
 @NgModule({
   declarations: [
@@ -62,6 +65,7 @@ import { FaqComponent } from './components/faq/faq.component';
     CategoriesCardComponent,
     BuyAWatchCardComponent,
     FavoriteWatchCardComponent,
+    ProductComponent,
     FaqComponent,
   ],
   imports: [
@@ -71,7 +75,10 @@ import { FaqComponent } from './components/faq/faq.component';
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
+    NgxGalleryModule,
+    BrowserAnimationsModule,
     MatPaginatorModule,
+    MatTabsModule
   ],
   exports: [
     ShoppingCartComponent,

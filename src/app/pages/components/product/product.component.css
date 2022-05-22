@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'El Messiri', sans-serif;
+}
+
+ngx-gallery { 
+    display: inline-block; 
+  
+}
+
+.product__content{
+    margin: 20px 15%;
+}
+
+.product__top{
+    display: flex;
+    column-gap: 2em;
+}
+
+.top__right{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.top__right h1{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120.2%;
+}
+
+.product__tags{
+    display: flex;
+    column-gap: 1em;
+}
+
+.tag{
+    background: #EBEBEB;
+    border-radius: 15px;
+    padding: 4px .8em;
+    box-shadow: inset 0px 17px 12px -11px rgba(0,0,0,0.32);
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120.2%;
+}
+
+.tag span{
+    font-weight: bold;
+}
+
+.product__price{
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 120.2%;
+    letter-spacing: -0.1em;
+    margin: .2em 0 1em 0;
+}
+
+.add_to_cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .2em;
+    width: 450px;
+    height: 70px;
+    background: #1D566E;
+    border-radius: 5px;
+    border: none;
+    
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 80%;
+
+    color: #FFFFFF;
+    transition: all .4s;
+}
+
+.add_to_cart img{
+    margin-bottom: 8px;
+}
+
+.add_to_cart:hover{
+    cursor: pointer;
+    background: #19495e;
+}
+
+
+.add_to_favorites{
+    margin-top: .3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .2em;
+    width: 450px;
+    height: 70px;
+    background: #C22E49;
+    border-radius: 5px;
+    border: none;
+    
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 80%;
+
+    color: #FFFFFF;
+    transition: all .4s;
+}
+
+.add_to_favorites img{
+    margin-bottom: 8px;
+}
+
+.add_to_favorites:hover{
+    cursor: pointer;
+    background: #a7263e;
+}
+
+.product__seller{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    column-gap: .6em;
+}
+
+.product__seller img{
+    height: 100px;
+}
+
+.seller__info{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120.2%;
+    text-align: right;
+}
+
+.seller span{
+    font-weight: bold;
+}
+
+.view-seller{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120.2%;
+
+    color: #1D566E;
+    transition: all .4s;
+}
+
+.view-seller:hover{
+    cursor: pointer;
+    color: #1a485c;
+    
+}
+
+
+
+
+.chat{
+    margin-top: .3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .2em;
+    width: 250px;
+    height: 50px;
+    background: #24865D;
+    border-radius: 5px;
+    border: none;
+    
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 80%;
+
+    color: #FFFFFF;
+    transition: all .4s;
+}
+
+.chat img{
+    margin-bottom: 8px;
+    height: 40px;
+}
+
+.chat:hover{
+    cursor: pointer;
+    background: #1d6d4b;
+}
+
+mat-tab-group{
+    margin: 8em 6%;
+}
+
+::ng-deep .mat-tab-label-content{
+    font-family: 'El Messiri';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 56px;
+}
+
+.tab__content{
+    padding: 1em 2em;
+    font-size: 32px;
+    line-height: 120.2%;
+}
+
+
+.proprietate{
+    font-weight: 700;
+    font-size: 26px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    margin-bottom: 1.4em;
+}
+
+.proprietate span{
+    font-weight: normal;
+}
+
+
+
+.tab__flex{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flex__content{
+    width: fit-content;
+}

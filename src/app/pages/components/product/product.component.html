@@ -1,0 +1,85 @@
+<div class="product__content">
+    <div class="product__top">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        <div class="top__right">
+            <div>
+                <h1>{{productJson.brand}}</h1>
+                <p>PRODUCT ID: {{productJson.id}}</p>
+                <div class="product__tags">
+                    <div class="tag"><p>Condition: <span>to be added</span></p></div>
+                    <div class="tag"><p>Production year: <span>{{productJson.year}}</span></p></div>
+                </div>
+                <h2 class="product__price">$ <span>{{productJson.price}}</span></h2>
+
+                <button (click)="addToCart()" class="add_to_cart">  Add to cart <img src="../../../../assets/product/cart.svg" alt=""></button>
+                <button (click)="addToFavorite()" class="add_to_favorites">  Save to favorites <img src="../../../../assets/product/favorite.svg" alt=""></button>
+            </div>
+            
+
+            <div class="product__seller">
+                <img src="../../../../assets/product/user.png" alt="">
+                <div class="seller__info">
+                    <p class="seller">Sold by: <span>{{productJson.user_id}}</span></p>
+                    <p class="view-seller" routerLink="/seller/{{productJson.user_id}}">View seller's profile</p>
+                    <button class="chat">  Chat with seller <img src="../../../../assets/product/chat.svg" alt=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <mat-tab-group dynamicHeight mat-align-tabs="center">
+        <mat-tab label="Description">
+            <div class="tab__container">
+                <div class="tab__content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos atque quod eveniet consequatur beatae repellendus sapiente temporibus. Necessitatibus saepe architecto animi tempora officiis, reprehenderit pariatur eveniet debitis reiciendis! Praesentium velit natus neque necessitatibus ex officia provident aperiam cupiditate rem veniam, reiciendis delectus nam commodi ullam deserunt nemo! Soluta odio labore neque quae non? Atque perspiciatis eaque esse! Corrupti veniam tempora, maxime iste suscipit error modi aperiam necessitatibus quo dignissimos vel quaerat vitae autem nisi, nulla nemo! Voluptatum culpa iusto non et necessitatibus explicabo totam laudantium, perferendis rerum similique ratione earum? Ea esse sapiente nulla delectus tenetur illum tempore praesentium nihil.
+                </div>
+            </div>
+            
+        </mat-tab>
+        <mat-tab label="Basic Info">
+            <div class="tab__container">
+                <div class="tab__content tab__flex">
+                    <div class="flex__content">
+                        <p class="proprietate">Brand: <span>{{productJson.brand}}</span></p>
+                        <p class="proprietate">Model: <span>{{productJson.model}}</span></p>
+                        <p class="proprietate">Mechanism: <span>{{productJson.mechanism}}</span></p>
+                    </div>
+                    <div class="flex__content">
+                        <p class="proprietate">Case Material: <span>{{productJson.carcase}}</span></p>
+                        <p class="proprietate">Year Of Production: <span>{{productJson.year}}</span></p>
+                        <p class="proprietate">Gender: <span>{{productJson.gender}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Case">
+            <div class="tab__content tab__flex">
+                <div class="flex__content">
+                    <p class="proprietate">Material: <span>{{productJson.carcase}}</span></p>
+                    <p class="proprietate">Thickness: <span>{{productJson.carcase_thickness}}</span></p>
+                    <p class="proprietate">Form: <span>{{productJson.carcase_form}}</span></p>
+                </div>
+                <div class="flex__content">
+                    <p class="proprietate">Color: <span>{{productJson.carcase_color}}</span></p>
+                    <p class="proprietate">Water Resistance: <span>{{productJson.water_resistance}}</span></p>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Additional">
+            <div class="tab__content tab__flex">
+                <div class="flex__content">
+                    <p class="proprietate">Strap: <span>{{productJson.strap}}</span></p>
+                    <p class="proprietate">Strap color: <span>{{productJson.strap_color}}</span></p>
+                    <p class="proprietate">Glass: <span>{{productJson.glass}}</span></p>
+                </div>
+                <div class="flex__content">
+                    <p class="proprietate">Alarm: <span>{{productJson.alarm}}</span></p>
+                    <p class="proprietate">Timer: <span>{{productJson.timer}}</span></p>
+                </div>
+            </div>
+        </mat-tab>
+      </mat-tab-group>
+    
+</div>
+
+
