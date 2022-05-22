@@ -1,0 +1,136 @@
+<div class="container-searchbar">
+    <div class="searchbar">
+        <div class="div">
+            <img src="../../../../assets/home/search.png" alt="">
+            <input class="input" type="text" placeholder="Search by brand, color ...">
+        </div>
+        <img src="../../../../assets/home/circle-arrow.svg" alt="">
+    </div>
+</div>
+
+<div class="root_faq">
+
+    <div class="header box">
+        ChronoA3 - Ajutor si Intrebari Comune (FAQ)
+    </div>
+
+    <div class="cautare box">
+        <h1 class="header_mare underline1">Cautare de ceasuri</h1>
+        <!--//Firstdropdown-->
+        <button class="flex_dropdown" (click)="toggle('1')">
+            <ng-container *ngIf="show1 === true">
+                <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+            </ng-container>
+            <ng-container *ngIf="show1 === false">
+                <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+            </ng-container>
+           
+            <h1 class="mic_header">Cum caut un ceas pe ChronoA3?</h1>
+        </button>
+
+        <ng-container *ngIf="show1 === true">
+            <div class="descriere">Iti poti gasi ceasul mult dorit pe platforma ChronoA3 cu ajutorul barii de cautare. De asemenea, ai optiunea de a adauga filtre, dupa preferinte.</div>
+        </ng-container>
+        <!--Firstdropdown///////////////////////////////////////////////-->
+
+        <!--//Secdropdown-->
+        <button class="flex_dropdown" (click)="toggle('2')">
+            <ng-container *ngIf="show2 === true">
+                <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+            </ng-container>
+            <ng-container *ngIf="show2 === false">
+                <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+            </ng-container>
+           
+            <h1 class="mic_header">Cum aplic filtre pentru a gasi listari specifice?</h1>
+        </button>
+
+        <ng-container *ngIf="show2 === true">
+            <div class="descriere">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem quae necessitatibus velit quis laborum voluptate excepturi, nisi a veniam magnam amet maiores labore similique. Consequuntur placeat quidem minus aut facere!</div>
+        </ng-container>
+        <!--//Secdropdown-->
+    </div>
+
+
+    <div class="cautare box">
+        <h1 class="header_mare underline2">Cumparare de ceasuri</h1>
+        <!--//Third-->
+        <button class="flex_dropdown" (click)="toggle('3')">
+            <ng-container *ngIf="show3 === true">
+                <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+            </ng-container>
+            <ng-container *ngIf="show3 === false">
+                <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+            </ng-container>
+           
+            <h1 class="mic_header">Cum pot cumpara un ceas pe ChronoA3?</h1>
+        </button>
+
+        <ng-container *ngIf="show3 === true">
+            <div class="descriere"><b>Plata prin ChronoA3:</b><br><br>Multe oferte permit efectuarea unei comenzi si plata direct prin website. Pentru a continua, apasa pe butonul “Add to cart”. Din cosul de cumparaturi, alege optiunea “Confirma adresa”. Adauga o adresa noua sau verifica adresele existente. Apoi, indreapta-te catre “Confirma plata”, unde vei introduce datele bancare prin sistemul nostru criptat. Odata ce ai efectuat plata, comanda ta va fi transmisa vanzatorului, pentru a fi pusa spre expediere. Echipa ChronoA3 este constant atenta pentru a oferi tranzactii cat mai sigure si placute.
+                <br><br> <b>Contacteaza vanzatorul in privat:</b><br><br>
+                Daca doresti ridicarea personala a produsului, sau vanzatorul nu a configurat procesarea platii direct prin ChronoAh3, il poti contacta prin apasarea butonului “Chat with seller”, direct de pe pagina produsului.</div>
+        </ng-container>
+        <!--Third///////////////////////////////////////////////-->
+
+
+        <!--Forth-->
+        <button class="flex_dropdown" (click)="toggle('4')">
+            <ng-container *ngIf="show4 === true">
+                <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+            </ng-container>
+            <ng-container *ngIf="show4 === false">
+                <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+            </ng-container>
+           
+            <h1 class="mic_header">Trebuie sa imi creez un cont pe ChronoA3 pentru a plasa o comanda?</h1>
+        </button>
+
+        <ng-container *ngIf="show4 === true">
+            <div class="descriere">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In praesentium, rem nemo atque eum hic ad maiores illum perferendis labore voluptas corrupti inventore repellendus accusamus officia. Placeat porro perspiciatis accusamus.</div>
+        </ng-container>
+        <!--Forth///////////////////////////////////////////////-->
+
+        
+        <!--5-->
+        <button class="flex_dropdown" (click)="toggle('5')">
+            <ng-container *ngIf="show5 === true">
+                <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+            </ng-container>
+            <ng-container *ngIf="show5 === false">
+                <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+            </ng-container>
+           
+            <h1 class="mic_header">Cat dureaza livrarea unei comenzi platite Online?</h1>
+        </button>
+
+        <ng-container *ngIf="show5 === true">
+            <div class="descriere">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In praesentium, rem nemo atque eum hic ad maiores illum perferendis labore voluptas corrupti inventore repellendus accusamus officia. Placeat porro perspiciatis accusamus.</div>
+        </ng-container>
+        <!--5///////////////////////////////////////////////-->
+
+    </div>
+
+    <div class="cautare box">
+        <h1 class="header_mare underline3">Contul meu</h1>
+        <!--//6-->
+        <button class="flex_dropdown" (click)="toggle('1')">
+            <ng-container *ngIf="show1 === true">
+                <img class="sageatad" src="assets/seller_profile/sageata_jos.png">
+            </ng-container>
+            <ng-container *ngIf="show1 === false">
+                <img class="sageatad" src="assets/seller_profile/sageata_dreapta.png">
+            </ng-container>
+           
+            <h1 class="mic_header">De ce sunt nevoit sa imi creez cont pe ChronoA3</h1>
+        </button>
+
+        <ng-container *ngIf="show1 === true">
+            <div class="descriere">Înregistrarea pe ChronoA3 va aduce mai aproape de lumea ceasurilor de lux. Comunicati rapid si în siguranta cu vânzatorii si profitati de numeroasele functii ale contului dvs. personal. Interfața usor de utilizat a contului va permite sa vizualizati informațiile dintr-o privire. <br><br><b>Achizitii rapide si sigure</b><br><br> Cu un cont ChronoA3, puteti cumpara rapid si în siguranta ceasul de vis de la dealerul ales de dvs. Dealerul va poate raspunde si la orice întrebari pe care le aveti. <br><br><b>O interfata usor de utilizat</b><br><br> Adaugati listari interesante la Favorite, astfel încât sa fie usor de gasit. <br><br><b>Creati si gestionati cu usurinta anunturile</b><br><br> Puteti folosi ChronoA3 atât pentru a cumpara, cât si pentru a vinde ceasuri. Creați listari profesionale în câtiva pasi simpli si publicati-le pe platforma noastra.</div>
+        </ng-container>
+        <!--6///////////////////////////////////////////////-->
+
+    </div>
+   
+
+</div>

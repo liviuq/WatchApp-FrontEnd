@@ -15,6 +15,7 @@ import { AdviceForSellersComponent } from './components/advice-for-sellers/advic
 import { SellingAWatchComponent } from './components/selling-a-watch/selling-a-watch.component';
 import { CaringForYourWatchComponent } from './components/caring-for-your-watch/caring-for-your-watch.component';
 import { PhotographingAWatchComponent } from './components/photographing-a-watch/photographing-a-watch.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 const routes: Routes = [
   { path: 'cart/products', component: ShoppingCartComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: 'advice-for-sellers/selling-a-watch', component: SellingAWatchComponent},
   {path: 'advice-for-sellers/caring-for-your-watch', component: CaringForYourWatchComponent},
   {path: 'advice-for-sellers/photographing-a-watch', component: PhotographingAWatchComponent},
+  {path: 'faq',component:FaqComponent},
 ];
 
 @NgModule({

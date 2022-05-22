@@ -1,0 +1,116 @@
+.container-searchbar{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.searchbar {
+    z-index: 5;
+    width: 70%;
+    height: 86px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid #163A5F;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    background-color: white;
+    
+}
+
+.searchbar .div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+.searchbar .div img {
+    margin-right: 17px;
+    background-color: white;
+}
+
+.input {
+    padding: 0 20px;
+    width: 90%;
+    height: 50px;
+    border: none;
+    background-color: white;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.root_faq{
+    margin-top: 65px;
+    width: 1297px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50%;
+    transform:translateX(-50%);
+    min-height: 200px;
+    height: fit-content;
+}
+
+.box{
+    background: white;
+    min-height: 50px;
+    height: fit-content;
+    margin-bottom: 80px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+.header{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 94px;
+    color: #000000;
+}
+.header_mare{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 78px;
+    color: #000000;
+}
+.underline1{
+    border-bottom: 2px solid currentColor;
+    width: 405px;
+}
+.underline2{
+    border-bottom: 2px solid currentColor;
+    width: 480px;
+}
+.underline3{
+    border-bottom: 2px solid currentColor;
+    width: 250px;
+}
+.flex_dropdown{
+    display: flex;
+    align-items: center;
+    border:none;
+    background: none;
+}
+.mic_header{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 500;
+     font-size: 36px;
+    line-height: 56px;
+    color: #000000;
+}
+.descriere{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 56px;
+    color: #000000;
+    margin-left: 25px;
+}
