@@ -36,6 +36,7 @@ import { ProductComponent } from './components/product/product.component';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     BuyAWatchCardComponent,
     FavoriteWatchCardComponent,
     ProductComponent,
+    FaqComponent,
   ],
   imports: [
     CommonModule,
