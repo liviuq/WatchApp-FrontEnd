@@ -29,6 +29,23 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
   public productsJson!: any[];
   public totalPrice: number = 0;
   public userJson!:any;
+
+
+  public brandFilter:any[]=[];
+  public brandFilterFINAL!:any[];
+
+  public sexFilter:any[]=[];
+  public sexFilterFINAL!:any[];
+
+  public conditionFilter:any[]=[];
+  public conditionFilterFINAL!:any[];
+
+  public yearFilter:any[]=[];
+  public yearFilterFINAL!:any[];
+
+  public curentFilter:any='none';
+  public curentValueFilter:any='none';
+
   ngOnInit(): void {
     this.auth.user$.subscribe(
       (profile) => {
@@ -42,11 +59,31 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
           this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/product/"+this.userId+"/products/").subscribe(data=>{     
                 this.productsLength = data.products.length;
                 this.productsJson=data.products;
+
+
+                 /* ------ data for dinamic filter -------- backend does not do his job smh*/
+                for(let i=0;i<this.productsLength;i++){
+                   this.brandFilter.push(this.productsJson[i].brand);
+                   if(this.productsJson[i].gender===0)
+                   this.sexFilter.push("Barbat");
+                   else this.sexFilter.push("Femeie");
+                    /* ------ condition does not exist yet -------- backend does not do his job smh  ///////////////////////////////////////////////////////////////DONT FORGET TO ADD*/ 
+                   this.yearFilter.push(this.productsJson[i].year);
+                }
+                this.brandFilterFINAL=this.brandFilter.filter((v,i,a)=>a.indexOf(v)===i);
+                this.sexFilterFINAL=this.sexFilter.filter((v,i,a)=>a.indexOf(v)===i);
+                this.yearFilterFINAL=this.yearFilter.filter((v,i,a)=>a.indexOf(v)===i);
+                 
+                /* ------ works -------- */
+                //console.log(this.brandFilterFINAL);
+                //console.log(this.sexFilterFINAL);
+                //console.log(this.yearFilterFINAL);
 });
       }
     );
 
-    
+            
+   
   }
   toggle(){
     this.show=!this.show;
@@ -114,6 +151,20 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
     this.status4='none';
     else
       this.status4='forth';
+  }
+
+
+  filterFunction(actualValue:string,typeFilter:string){
+    if(this.curentFilter==typeFilter&&this.curentValueFilter==actualValue)  
+    {
+      this.curentFilter='none';
+      this.curentValueFilter='none';
+    }
+    else {
+      this.curentFilter=typeFilter;
+      this.curentValueFilter=actualValue;
+    }
+
   }
  
 

@@ -144,10 +144,11 @@
            <h1 class="atribut">Brand</h1>
        </button>
        <div *ngIf="status1 === 'first'">
-           <h1 class="drescriere_atribut">-Rolex</h1>
-           <h1 class="drescriere_atribut">-Fossil</h1>
+         
+         <div class="drescriere_atribut" *ngFor="let product of brandFilterFINAL" (click)="filterFunction(product,'brand')">- {{product}} </div>  
+          
        </div>
-  
+      
        
        <button (click)="toggle2()" class="filtru">
            <div *ngIf="status2 === 'none'">
@@ -161,9 +162,9 @@
             <h1 class="atribut">Pentru</h1>
         </button>
         <div *ngIf="status2 === 'secound'">
-            <h1 class="drescriere_atribut">-Femei</h1>
-            <h1 class="drescriere_atribut">-Barbati</h1>
-            <h1 class="drescriere_atribut">-Unisex</h1>
+
+          <div class="drescriere_atribut" *ngFor="let product of sexFilterFINAL" (click)="filterFunction(product,'sex')">- {{product}} </div>
+
         </div>
   
         <button (click)="toggle3()" class="filtru">
@@ -178,8 +179,8 @@
             <h1 class="atribut">Conditie</h1>
         </button>
         <div *ngIf="status3 === 'third'">
-            <h1 class="drescriere_atribut">-Nou</h1>
-            <h1 class="drescriere_atribut">-Purtat</h1>
+            <h1 class="drescriere_atribut">- Nou</h1>
+            <h1 class="drescriere_atribut">- Purtat</h1>
         </div>
   
         <button (click)="toggle4()" class="filtru">
@@ -194,16 +195,45 @@
             <h1 class="atribut">An</h1>
         </button>
         <div *ngIf="status4 === 'forth'">
-            <h1 class="drescriere_atribut">-2021</h1>
-            <h1 class="drescriere_atribut">-1757</h1>
+          <div class="drescriere_atribut" *ngFor="let product of yearFilterFINAL" (click)="filterFunction(product,'year')">- {{product}} </div>
         </div>
    </div>
   
       <div class="slider">
               
           <div class="paginator" *ngIf="productsLength >= 0">
-  
-        <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+            
+            <div *ngIf="curentFilter === 'year'">
+                  <div *ngFor="let product of productsJson | slice: lowValue : highValue">
+                      <div *ngIf="curentValueFilter===product.year">
+                        <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                      </div>
+                  </div>
+            </div>
+
+            <div *ngIf="curentFilter === 'brand'">
+              <div *ngFor="let product of productsJson | slice: lowValue : highValue">
+                  <div *ngIf="curentValueFilter===product.brand">
+                    <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                  </div>
+              </div>
+            </div>
+
+            <div *ngIf="curentFilter === 'sex'">
+              <div *ngFor="let product of productsJson | slice: lowValue : highValue">
+                  <div *ngIf="curentValueFilter===product.gender">
+                    <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                  </div>
+              </div>
+            </div>
+
+
+
+            <div *ngIf="curentFilter === 'none'">
+              <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+            </div>
+
+        <!-- <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card> -->
         <mat-paginator appPaginatorStyle [showTotalPages]="3" [length]="productsLength" [pageSize]="pageSize" 
         (page)="getPaginatorData($event)" >
         </mat-paginator> 
