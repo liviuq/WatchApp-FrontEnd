@@ -376,3 +376,7 @@ mat-paginator{
     font-weight: 600;
     font-size: 18px;
 }
+
+.drescriere_atribut{
+    cursor: pointer;
+}
