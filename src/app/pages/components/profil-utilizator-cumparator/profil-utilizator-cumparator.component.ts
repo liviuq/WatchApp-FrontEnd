@@ -43,8 +43,8 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
   public yearFilter:any[]=[];
   public yearFilterFINAL!:any[];
 
-  public curentFilter:any='none';
-  public curentValueFilter:any='none';
+  public curentFilter:any[]=[];
+  public curentValueFilter:any[]=[];
 
   ngOnInit(): void {
     this.auth.user$.subscribe(
@@ -78,6 +78,9 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
                 //console.log(this.brandFilterFINAL);
                 //console.log(this.sexFilterFINAL);
                 //console.log(this.yearFilterFINAL);
+                this.curentFilter.push('none');
+                this.curentValueFilter.push('none');
+                
 });
       }
     );
@@ -155,15 +158,58 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
 
 
   filterFunction(actualValue:string,typeFilter:string){
-    if(this.curentFilter==typeFilter&&this.curentValueFilter==actualValue)  
+    if(this.curentFilter.length!=0 &&this.curentValueFilter.length!=0){              //daca filtru are o lungime mai mare de 0 scoatem none si aplicam filtrele respective
+      this.curentFilter=this.curentFilter.filter(item=> item!== 'none');
+      this.curentValueFilter=this.curentValueFilter.filter(item=> item!== 'none');
+
+      console.log(this.curentFilter);
+      console.log(this.curentValueFilter);
+
+      var a = this.curentFilter.lastIndexOf(typeFilter);
+      var b = this.curentValueFilter.lastIndexOf(actualValue);
+      if( a!=-1&&b!=-1 )                                                           // daca avem deja elementele apelate le scoatem 
+      {
+        this.curentFilter=this.curentFilter.filter(item=> item!== typeFilter);
+        this.curentValueFilter=this.curentValueFilter.filter(item=> item!== actualValue);
+
+        if(this.curentFilter.length==0&&this.curentValueFilter.length==0)  // daca nu avem nimic in filtru punem none
+        {
+                    this.curentFilter.push('none');
+                    this.curentValueFilter.push('none');
+    
+                    console.log(this.curentFilter);
+                    console.log(this.curentValueFilter);
+        }
+        else if(this.curentFilter.length==0&&this.curentValueFilter.length!=0){
+                    this.curentFilter.push(typeFilter);
+        }
+
+        
+
+        console.log(this.curentFilter);
+        console.log(this.curentValueFilter);
+      }
+      else {                                                               //altfel le punem
+        this.curentFilter.push(typeFilter);
+        this.curentValueFilter.push(actualValue);
+
+        console.log(this.curentFilter);
+        console.log(this.curentValueFilter);
+      }
+    }
+    else  if(this.curentFilter.length==0&&this.curentValueFilter.length==0)  // daca nu avem nimic in filtru punem none
     {
-      this.curentFilter='none';
-      this.curentValueFilter='none';
+                this.curentFilter.push('none');
+                this.curentValueFilter.push('none');
+
+                console.log(this.curentFilter);
+                console.log(this.curentValueFilter);
     }
-    else {
-      this.curentFilter=typeFilter;
-      this.curentValueFilter=actualValue;
-    }
+         
+                                                              
+
+    
+    
 
   }
  
