@@ -17,6 +17,7 @@ export class ProductComponent implements OnInit {
   public userId!: string;
   public productJson: any;
   public productId: any;
+  public seller!: string;
 
   galleryOptions!: NgxGalleryOptions[];
   galleryImages!: NgxGalleryImage[];
@@ -79,6 +80,9 @@ export class ProductComponent implements OnInit {
 
         this.callJsonGetRestApi("https://watchappa3-be.herokuapp.com/product/" + this.productId ).subscribe(data => { //de schimbat link-ul     
           this.productJson = data.product;
+          this.callJsonGetRestApi("https://watchappa3-be.herokuapp.com/user/" + this.productJson.user_id ).subscribe(data => { //de schimbat link-ul     
+          this.seller = data.user.user_name;
+        });
         });
       }
     );

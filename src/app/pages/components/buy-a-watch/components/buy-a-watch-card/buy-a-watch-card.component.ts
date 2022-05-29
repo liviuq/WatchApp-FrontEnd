@@ -14,7 +14,8 @@ export class BuyAWatchCardComponent implements OnInit {
 
   @Input() name!: string;
   @Input() price!: string;
-  @Input() seller!: string;
+  @Input() sellerId!: string;
+  public seller!: string;
   @Input() isPromoted!: string;
   @Input() buyerId!: string;
   @Input() productId!: string;
@@ -22,6 +23,11 @@ export class BuyAWatchCardComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+
+    this.callJsonGetRestApi("https://watchappa3-be.herokuapp.com/user/" + this.sellerId).subscribe(data => { //de schimbat link-ul     
+          this.seller = data.user.user_name;
+        });
+
   }
 
   addToFavorite(): void{
@@ -40,6 +46,25 @@ export class BuyAWatchCardComponent implements OnInit {
       }),
         catchError((error) => {    // handle error
          
+          if (error.status == 404) {
+            //Handle Response code here
+          }
+          return throwError(error);
+        })
+      );
+
+  }
+
+  callJsonGetRestApi(url: string): Observable<any> {
+
+    return this.http.get(url)
+      .pipe(map((data: any) => {
+        //handle api 200 response code here or you wanted to manipulate to response
+        return data;
+
+      }),
+        catchError((error) => {    // handle error
+
           if (error.status == 404) {
             //Handle Response code here
           }
