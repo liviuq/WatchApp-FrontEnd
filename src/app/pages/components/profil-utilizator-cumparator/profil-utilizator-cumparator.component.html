@@ -145,7 +145,7 @@
        </button>
        <div *ngIf="status1 === 'first'">
          
-         <div class="drescriere_atribut" *ngFor="let product of brandFilterFINAL" (click)="filterFunction(product,'brand')">- {{product}} </div>  
+         <div class="drescriere_atribut" *ngFor="let product of brandFilterFINAL" (click)="filterFunction1(product,'brand')">- {{product}} </div>  
           
        </div>
       
@@ -163,7 +163,7 @@
         </button>
         <div *ngIf="status2 === 'secound'">
 
-          <div class="drescriere_atribut" *ngFor="let product of sexFilterFINAL" (click)="filterFunction(product,'sex')">- {{product}} </div>
+          <div class="drescriere_atribut" *ngFor="let product of sexFilterFINAL" (click)="filterFunction1(product,'sex')">- {{product}} </div>
 
         </div>
   
@@ -195,7 +195,7 @@
             <h1 class="atribut">An</h1>
         </button>
         <div *ngIf="status4 === 'forth'">
-          <div class="drescriere_atribut" *ngFor="let product of yearFilterFINAL" (click)="filterFunction(product,'year')">- {{product}} </div>
+          <div class="drescriere_atribut" *ngFor="let product of yearFilterFINAL" (click)="filterFunction1(product,'year')">- {{product}} </div>
         </div>
    </div>
   
@@ -205,7 +205,8 @@
             
             <div *ngIf="curentFilter.includes('year')||curentFilter.includes('brand')||curentFilter.includes('sex')">
                   <div *ngFor="let product of productsJson | slice: lowValue : highValue">
-                      <div *ngIf="curentValueFilter.includes(product.year)||curentValueFilter.includes(product.brand)||curentValueFilter.includes(product.gender) ">
+                    <!--  <div *ngIf="curentValueFilter.includes(product.year)||curentValueFilter.includes(product.brand)||curentValueFilter.includes(product.gender) "> -->
+                      <div *ngIf="checkFilter(product.year,product.brand,product.gender)==1">
                         <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
                       </div>
                   </div>

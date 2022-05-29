@@ -156,62 +156,67 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
       this.status4='forth';
   }
 
+  /*
+      La initializare curentFilter si curentValueFilter contin 'none'
+  */
+  filterFunction1(actualValue:string,typeFilter:string){
+    
+    if(this.curentFilter.length!=0 &&this.curentValueFilter.length!=0)   //aplicam filtrele date si scoatem 'none'
+    {
 
-  filterFunction(actualValue:string,typeFilter:string){
-    if(this.curentFilter.length!=0 &&this.curentValueFilter.length!=0){              //daca filtru are o lungime mai mare de 0 scoatem none si aplicam filtrele respective
       this.curentFilter=this.curentFilter.filter(item=> item!== 'none');
       this.curentValueFilter=this.curentValueFilter.filter(item=> item!== 'none');
-
-      console.log(this.curentFilter);
-      console.log(this.curentValueFilter);
-
+      
       var a = this.curentFilter.lastIndexOf(typeFilter);
       var b = this.curentValueFilter.lastIndexOf(actualValue);
-      if( a!=-1&&b!=-1 )                                                           // daca avem deja elementele apelate le scoatem 
-      {
-        this.curentFilter=this.curentFilter.filter(item=> item!== typeFilter);
-        this.curentValueFilter=this.curentValueFilter.filter(item=> item!== actualValue);
+     
+      if( a!=-1&&b!=-1 ){                                                 //verificam daca filtrele exista deja, daca exista le scoatem (*)
+                                             
+          this.curentFilter.splice(a,1);
+          this.curentValueFilter.splice(b,1);
+          
+          console.log(this.curentFilter);
+          console.log(this.curentValueFilter);
 
-        if(this.curentFilter.length==0&&this.curentValueFilter.length==0)  // daca nu avem nimic in filtru punem none
-        {
+          if(this.curentFilter.length===0&&this.curentValueFilter.length===0)  // daca nu avem nimic in filtru punem none
+          {
                     this.curentFilter.push('none');
                     this.curentValueFilter.push('none');
-    
                     console.log(this.curentFilter);
                     console.log(this.curentValueFilter);
-        }
-        else if(this.curentFilter.length==0&&this.curentValueFilter.length!=0){
+          }
+
+      }
+      else{                                                                  //altfel le punem                                          (*)
                     this.curentFilter.push(typeFilter);
-        }
-
-        
-
-        console.log(this.curentFilter);
-        console.log(this.curentValueFilter);
-      }
-      else {                                                               //altfel le punem
-        this.curentFilter.push(typeFilter);
-        this.curentValueFilter.push(actualValue);
-
-        console.log(this.curentFilter);
-        console.log(this.curentValueFilter);
+                    this.curentValueFilter.push(actualValue);
+                    
+                    console.log(this.curentFilter);
+                    console.log(this.curentValueFilter);
       }
     }
-    else  if(this.curentFilter.length==0&&this.curentValueFilter.length==0)  // daca nu avem nimic in filtru punem none
-    {
-                this.curentFilter.push('none');
-                this.curentValueFilter.push('none');
-
-                console.log(this.curentFilter);
-                console.log(this.curentValueFilter);
-    }
-         
-                                                              
-
-    
-    
 
   }
- 
+  checkFilter(yearValue:string,brandValue:string,sexValue:string){
+      if(this.curentFilter.includes('year'))
+          {
+            if(!this.curentValueFilter.includes(yearValue))
+            return -1;
+          }
+
+      if(this.curentFilter.includes('brand'))
+      {
+        if(!this.curentValueFilter.includes(brandValue))
+        return -1;
+      }
+      
+      if(this.curentFilter.includes('sex'))
+          {
+            if(!this.curentValueFilter.includes(sexValue))
+            return -1;
+          }
+
+      return 1;
+  }
 
 }
