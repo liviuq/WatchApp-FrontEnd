@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import {AuthModule} from '@auth0/auth0-angular';
 import { environment as env } from 'src/environments/environment';
 
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { environment as env } from 'src/environments/environment';
     ReactiveFormsModule,
     AuthModule.forRoot({
       ... env.auth,
-    })
+    }),
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
