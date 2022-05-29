@@ -26,7 +26,6 @@ export class FormAddproductComponent implements OnInit {
   submitted: any = false;
   multistep = new FormGroup({
       itemDetails:new FormGroup({
-        user_id: new FormControl(''),
         brand: new FormControl('',Validators.required),
         price: new FormControl('',Validators.required),
         date: new FormControl(''),
@@ -42,11 +41,12 @@ export class FormAddproductComponent implements OnInit {
         alarm: new FormControl(''),
         timer: new FormControl(''),
         mechanism: new FormControl('',Validators.required),
+        rating: new FormControl(''),
         gender: new FormControl('',Validators.required),
-        condition: new FormControl('',Validators.required),
         promoted: new FormControl(''),
         category: new FormControl(''),
-        model: new FormControl('',Validators.required)
+        model: new FormControl('',Validators.required),
+        conditions: new FormControl('',Validators.required)
       }),
 
       userDetails: new FormGroup({
@@ -62,6 +62,7 @@ export class FormAddproductComponent implements OnInit {
      
   })
   
+
   
   constructor(public auth: AuthService, private http: HttpClient) { }
 
@@ -69,24 +70,27 @@ export class FormAddproductComponent implements OnInit {
    
   }
   
-  
+  phonenumber = new FormGroup({
+  phone_number: new FormControl(''),
+  })
 
   postData(): void{
     console.log('dsadasd');
+    console.log(this.multistep.value.itemDetails);
     this.auth.user$.subscribe(
       (profile) => {
         if(profile?.sub !== undefined)
           this.userId = profile.sub.split("|")[1];
-          this.multistep.value.itemDetails.user_id=this.userId;
+          // this.phonenumber.value.user_id=this.userId;
           this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/product/" + this.userId).subscribe(data=>{
                 
-      });
+          });
       }
     );
   }
 
   callJsonPostRestApi(url: string):Observable<any> {
-    const headers = new HttpHeaders({'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers':  'Content-Type, X-Auth-Token, Authorization, Origin', 'Access-Control-Allow-Methods':  'POST, PUT', 'Access-Control-Allow-Credentials': 'true'});
+    const headers = new HttpHeaders({'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers':  'Content-Type, X-Auth-Token, Authorization, Origin', 'Access-Control-Allow-Methods':  'POST', 'Access-Control-Allow-Credentials': 'true'});
     return this.http.post(url,this.multistep.value.itemDetails,{headers:headers})
       .pipe(map((data: any) => {
       //handle api 200 response code here or you wanted to manipulate to response
@@ -106,8 +110,8 @@ export class FormAddproductComponent implements OnInit {
 
   
 next() {
-  if(this.multistep.controls['itemDetails'].invalid)
-  return ;
+  // if(this.multistep.controls['itemDetails'].invalid)
+  // return ;
   this.step = this.step + 1;
 }
 

@@ -42,10 +42,10 @@
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="condition">Condition*</label>
+          <label for="conditions">Condition*</label>
         </div>
         <div class="col-75">
-          <select id="condition" name="condition" formControlName="condition">
+          <select id="conditions" name="conditions" formControlName="conditions">
             <option value="" disabled selected>Please select</option>
             <option *ngFor="let status_item of condition_values">
               {{status_item}}
