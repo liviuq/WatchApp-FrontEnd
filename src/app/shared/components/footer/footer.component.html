@@ -3,24 +3,22 @@
         <div class="columne-one">
             <p class="title">Cumparare</p>
             <ul>
-                <li><a href="#">Protectia cumparatorului</a></li>
-                <li><a href="#">Garantie ceasuri</a></li>
+                <li><a (click)="protectiaCumparatorului()">Protectia cumparatorului</a></li>
                 <li><a href="#">Retur comod</a></li>
             </ul>
         </div>
         <div class="columne-two">
             <p class="title">Vanzare</p>
             <ul>
-                <li><a href="#">Protectia vanzatorului</a></li>
                 <li><a [routerLink]="['/advice-for-sellers']" routerLinkActive="active">Sfaturi pentru vanzatori</a></li>
+                <li><a href="#">Adauga anunt</a></li>
             </ul>
         </div>
         <div class="columne-three">
             <p class="title">Ajutor</p>
             <ul>
-                <li><a href="#">Harta site</a></li>
-                <li><a href="#">Adauga anunt</a></li>
-                <li><a href="#">Creeaza cont</a></li>
+                <li><a [routerLink]="['/faq']" routerLinkActive="active">FAQ</a></li>
+                <li><a [routerLink]="['/about-us']" routerLinkActive="active">Despre site</a></li>
             </ul>
         </div>
     </div>

@@ -37,6 +37,7 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FaqComponent } from './components/faq/faq.component';
+import { ProtectiaCumparatoruluiComponent } from './components/protectia-cumparatorului/protectia-cumparatorului.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { FaqComponent } from './components/faq/faq.component';
     FavoriteWatchCardComponent,
     ProductComponent,
     FaqComponent,
+    ProtectiaCumparatoruluiComponent,
   ],
   imports: [
     CommonModule,

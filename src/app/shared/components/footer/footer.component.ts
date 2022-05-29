@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ProtectiaCumparatoruluiComponent } from 'src/app/pages/components/protectia-cumparatorului/protectia-cumparatorului.component';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialogRef : MatDialog) { }
+
+  protectiaCumparatorului(){
+    this.dialogRef.open(ProtectiaCumparatoruluiComponent);
+  }
 
   ngOnInit(): void {
   }
