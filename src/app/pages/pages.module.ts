@@ -38,6 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FaqComponent } from './components/faq/faq.component';
 import { ProtectiaCumparatoruluiComponent } from './components/protectia-cumparatorului/protectia-cumparatorului.component';
+import { ReturComodComponent } from './components/retur-comod/retur-comod.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { ProtectiaCumparatoruluiComponent } from './components/protectia-cumpara
     ProductComponent,
     FaqComponent,
     ProtectiaCumparatoruluiComponent,
+    ReturComodComponent,
   ],
   imports: [
     CommonModule,
