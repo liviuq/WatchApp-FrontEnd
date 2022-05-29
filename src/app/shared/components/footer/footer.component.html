@@ -4,14 +4,14 @@
             <p class="title">Cumparare</p>
             <ul>
                 <li><a (click)="protectiaCumparatorului()">Protectia cumparatorului</a></li>
-                <li><a href="#">Retur comod</a></li>
+                <li><a (click)="returComod()">Retur comod</a></li>
             </ul>
         </div>
         <div class="columne-two">
             <p class="title">Vanzare</p>
             <ul>
                 <li><a [routerLink]="['/advice-for-sellers']" routerLinkActive="active">Sfaturi pentru vanzatori</a></li>
-                <li><a href="#">Adauga anunt</a></li>
+                <li><a [routerLink]="['/form']" routerLinkActive="active">Adauga anunt</a></li>
             </ul>
         </div>
         <div class="columne-three">
