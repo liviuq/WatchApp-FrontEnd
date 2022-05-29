@@ -2,8 +2,16 @@
   <div class="info_utilizator_box" *ngIf="auth.user$ | async as user">
     <img class="poza_profil" src="assets/profil-utilizator-cumparator-images/image 6.png">
     <h1 class="descr">Nume: {{profileJson?.mail}}</h1>
+    <!--  -->
     <h1 class="descr" id="numar_tel">Nr de telefon : <span [style.color]="numberTelColor">{{profileJson?.phone_number}}</span></h1>
-    <button type="button" class="button_green"><h1 class="button_text">Schimba nr de telefon</h1></button>
+    <button type="button" class="button_green"><h1 class="button_text" (click)="toggleNumber()">Schimba nr de telefon</h1></button>
+        
+        <ng-container *ngIf="insertNumber">
+          <form>
+            <input (keydown.enter)="save($event)" class="change_number" type="number" name="name" placeholder="Enter Phone Number">
+          </form>
+        </ng-container>
+    <!--  -->
     <h1 class="descr">Numar de anunturi adaugate: {{productsLength}}</h1>
     <h1 class="descr">Data inregistrarii: 11.03.2019</h1>
     <h1 class="descr">Categorii preferate de produse:</h1>

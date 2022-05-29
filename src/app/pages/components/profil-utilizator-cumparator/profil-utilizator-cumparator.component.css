@@ -1,7 +1,9 @@
 
 .info_utilizator_box{
     width: 1215px;
-    height: 900px;
+    min-height: 900px;
+    height: fit-content;
+    padding-bottom: 10px;
     background: #1D566E;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
     border-radius: 50px;
@@ -379,4 +381,12 @@ mat-paginator{
 
 .drescriere_atribut{
     cursor: pointer;
+}
+.change_number{
+    margin-top: 10px;
+    width: 100px;
+    height: 20px;
+    background: white;
+    margin-left: 50%;
+    transform:translateX(-50%);
 }

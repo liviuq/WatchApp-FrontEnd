@@ -3,7 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
-
+import { FormControl, FormGroup,FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profil-utilizator-cumparator',
@@ -12,12 +12,15 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class ProfilUtilizatorCumparatorComponent implements OnInit {
 
+    phonenumber = new FormGroup({
+    phone_number: new FormControl(''),
+    })
 
   public status1: 'none' | 'first'  = 'none';
   public status2: 'none' | 'secound'  = 'none';
   public status3: 'none' | 'third'  = 'none';
   public status4: 'none' | 'forth'  = 'none';
-
+  public insertNumber:boolean=false;
 
   public show:boolean = false;
   public numberTel:any='+4078*******';
@@ -45,7 +48,8 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
 
   public curentFilter:any[]=[];
   public curentValueFilter:any[]=[];
-
+  
+  
   ngOnInit(): void {
     this.auth.user$.subscribe(
       (profile) => {
@@ -80,6 +84,8 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
                 //console.log(this.yearFilterFINAL);
                 this.curentFilter.push('none');
                 this.curentValueFilter.push('none');
+
+                
                 
 });
       }
@@ -155,6 +161,9 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
     else
       this.status4='forth';
   }
+  toggleNumber(){
+    this.insertNumber=true;
+  }
 
   /*
       La initializare curentFilter si curentValueFilter contin 'none'
@@ -218,5 +227,38 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
 
       return 1;
   }
+  
 
+  //salvam nr de tel adaugat
+  save(event:any)
+  {
+    this.phonenumber.value.phone_number=event.target.value;
+    console.log(this.phonenumber.value);
+    
+    this.sendF('https://watchappa3-be.herokuapp.com/user/'+ this.userId+'/phone',this.phonenumber.value).subscribe(data=>{
+                
+    });
+    
+    window.location.reload();
+  }
+
+  sendF(url: string,x:any):Observable<any>{
+    const headers = new HttpHeaders({'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers':  'Content-Type, X-Auth-Token, Authorization, Origin', 'Access-Control-Allow-Methods':  'PUT', 'Access-Control-Allow-Credentials': 'true'});
+    return this.http.put(url,x,{headers:headers})
+    .pipe(map((data: any) => {
+    //handle api 200 response code here or you wanted to manipulate to response  
+    return data;
+
+    }),
+      catchError((error) => {    // handle error
+        console.log("2");
+        if (error.status == 404) {
+          //Handle Response code here
+        }
+        return throwError(error);
+      })
+    );
+  }
+
+  
 }
