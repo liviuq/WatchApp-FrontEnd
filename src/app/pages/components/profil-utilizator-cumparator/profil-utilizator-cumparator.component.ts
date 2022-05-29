@@ -162,7 +162,7 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
       this.status4='forth';
   }
   toggleNumber(){
-    this.insertNumber=true;
+    this.insertNumber=!this.insertNumber;
   }
 
   /*
@@ -259,6 +259,12 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
       })
     );
   }
+
+
+  // "city": null,
+  // "county": null,
+  // "address": null,
+  // "postal_code": null,
 
   
 }
