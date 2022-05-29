@@ -87,7 +87,7 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
                 
                 /* ------ works -------- */
                 //console.log(this.brandFilterFINAL);
-                console.log(this.sexFilterFINAL);
+                //console.log(this.sexFilterFINAL);
                 //console.log(this.yearFilterFINAL);
                 this.curentFilter.push('none');
                 this.curentValueFilter.push('none');
