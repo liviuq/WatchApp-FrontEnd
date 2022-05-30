@@ -90,7 +90,7 @@
             
             <div class="paginator" *ngIf="productsLength >= 0">
 
-                <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} watchYear={{product.year}} sellerName={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} watchYear={{product.year}} sellerId={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
                 <mat-paginator appPaginatorStyle [showTotalPages]="3" [length]="productsLength" [pageSize]="pageSize" 
                 (page)="getPaginatorData($event)" >
                 </mat-paginator> 

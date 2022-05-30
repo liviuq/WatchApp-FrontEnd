@@ -29,6 +29,7 @@ export class BuyAWatchCardComponent implements OnInit {
         });
 
   }
+  
 
   addToFavorite(): void{
     this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.buyerId+"/insert/"+this.productId).subscribe(data=>{
