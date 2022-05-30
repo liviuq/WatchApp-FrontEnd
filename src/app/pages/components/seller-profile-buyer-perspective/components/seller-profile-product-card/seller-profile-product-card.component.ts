@@ -29,9 +29,6 @@ export class SellerProfileProductCardComponent implements OnInit {
   constructor(public auth: AuthService, private http: HttpClient, private router: Router) { }
   public userId!: string;
   public sellerName!: string;
-  public productsJson!: any[];
-  public productsLength!: string;
-  public isFavorite: boolean = false;
 
   ngOnInit(): void {
 
@@ -47,7 +44,6 @@ export class SellerProfileProductCardComponent implements OnInit {
           this.userId = profile.sub.split("|")[1];
 
           this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.userId+"/insert/"+this.productId).subscribe(data=>{
-            this.isFavorite = true;
             console.log(data);
           }); 
       }

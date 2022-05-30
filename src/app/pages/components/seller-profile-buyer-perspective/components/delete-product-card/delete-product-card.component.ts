@@ -75,14 +75,15 @@ export class DeleteProductCardComponent implements OnInit {
     console.log(this.productId);
      this.dpcapi('https://watchappa3-be.herokuapp.com/product/'+this.userId+'/delete/'+this.productId).subscribe(data=>{
       console.log("success");
+      window.location.reload();
      });
      
-     
+     /*
      this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/product/"+this.userId+"/products/").subscribe(data=>{     
                 this.productsLength = data.products.length;
                 this.productsJson=data.products;  
                 window.location.reload();               
-});
+});*/
 
   }
 
