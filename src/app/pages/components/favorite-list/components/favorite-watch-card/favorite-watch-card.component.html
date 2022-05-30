@@ -1,0 +1,28 @@
+<div class="favorite-list__card">
+    <a routerLink="/product/{{productId}}"><img src="../../../../assets/favorite-list/watch.png" alt=""></a>
+    
+
+    <div class="flex-column">
+        <h3 class="color-grey">Lista: Favorite</h3>
+        <h3>{{name}}</h3>
+        <div class="stars">
+            <img src="../../../../assets/favorite-list/star.png" alt="">
+            <img src="../../../../assets/favorite-list/star.png" alt="">
+            <img src="../../../../assets/favorite-list/star.png" alt="">
+            <img src="../../../../assets/favorite-list/star.png" alt="">
+        </div>
+    </div>
+
+    <div class="flex-column-right">
+        <h3 class="color-green">in stoc</h3>
+        <h3>Vandut de: {{seller}}</h3>
+        <h3>Pret: <span class="color-red">{{price}}$</span></h3>
+        <button class="add-button" (click)="addToCart()">
+            Add to cart
+            <img src="../../../../assets/favorite-list/cart.png" alt="" > <!-- de adaugat (click)="addToCart() cand termina de implementat back-ul"-->
+        </button>
+        <h3 class="color-blue" (click)="deleteProduct()">Sterge</h3>
+    </div>
+    <div class="vertical-grey-bar"></div>
+
+</div>

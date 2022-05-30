@@ -1,0 +1,79 @@
+.title h2{
+    font-family: El Messiri;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: center;    
+}
+
+.title{
+    margin-top:10px;
+}
+
+.card{
+    margin-left:130px;
+    margin-right: 130px;
+    margin-top:34px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-text{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 535px;
+    margin-right:230px;
+}
+
+.card-text h2{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 47px;
+    text-align: center;
+    color: #163A5F;
+}
+
+.card-text p{
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+}
+.line{
+    margin-top:30px;
+    margin-bottom:50px;
+    display:flex;
+    justify-content: center;
+}
+
+.buton{
+    height: 50px;
+    width: 350px;
+    border-radius: 10px;
+    background: #21ABA5;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buton a{
+    font-family: El Messiri;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: center;
+    cursor:pointer;
+}
+
+.buton-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom:15px;
+}

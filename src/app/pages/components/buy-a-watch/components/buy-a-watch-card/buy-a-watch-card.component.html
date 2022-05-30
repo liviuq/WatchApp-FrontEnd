@@ -1,0 +1,15 @@
+<div class="watch-card">
+    <div class="watch-img">
+        <a routerLink="/product/{{productId}}"> <img src="../../../../assets/filter-page/watch.png" alt=""> </a>
+    </div>
+    <div class="flex-column">
+        <h1>{{name}}</h1>
+        <h2>Vandut de: {{seller}}</h2>
+        <h3>Arad - Azi la 12:04</h3>
+    </div>
+    <div class="flex-column-right">
+        <h1>{{price}} $</h1>
+        <img src="../../../../assets/filter-page/heart.svg" alt="" (click)="addToFavorite()">
+        <button class="btn" routerLink="/product/{{productId}}">Vezi anuntul</button>
+    </div>
+</div>

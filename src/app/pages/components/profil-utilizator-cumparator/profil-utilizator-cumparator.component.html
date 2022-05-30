@@ -1,9 +1,17 @@
 
   <div class="info_utilizator_box" *ngIf="auth.user$ | async as user">
     <img class="poza_profil" src="assets/profil-utilizator-cumparator-images/image 6.png">
-    <h1 class="descr">Nume: {{profileJson?.mail}}</h1>
+    <h1 class="descr">Nume: {{profileJson?.user_name}}</h1>
+    <!--  -->
     <h1 class="descr" id="numar_tel">Nr de telefon : <span [style.color]="numberTelColor">{{profileJson?.phone_number}}</span></h1>
-    <button type="button" class="button_green"><h1 class="button_text">Schimba nr de telefon</h1></button>
+    <button type="button" class="button_green"><h1 class="button_text" (click)="toggleNumber()">Schimba nr de telefon</h1></button>
+        
+        <ng-container *ngIf="insertNumber">
+          <form>
+            <input (keydown.enter)="save($event)" class="change_number" type="number" name="name" placeholder="Enter Phone Number">
+          </form>
+        </ng-container>
+    <!--  -->
     <h1 class="descr">Numar de anunturi adaugate: {{productsLength}}</h1>
     <h1 class="descr">Data inregistrarii: 11.03.2019</h1>
     <h1 class="descr">Categorii preferate de produse:</h1>
@@ -14,7 +22,7 @@
     </ul>
     <button type="button" class="button_rose">
        <div class="flex_text_img">
-        <h1 class="button_text_rose">Vezi produse preferate</h1>
+        <h1 class="button_text_rose" [routerLink]="['/favorite-list']">Vezi produse preferate</h1>
         <img class="inima" src="assets/profil-utilizator-cumparator-images/Vector.png">
        </div>
     </button> 
@@ -32,98 +40,65 @@
  <ng-container *ngIf="show">
   <div class="adaugare_adresa">
     <div class="adrese_pt_livrare">
-          <h1 class="adrese_msj">Adrese dvs pentru livrare sunt:</h1>
-          <div class="adresa_model">
+           <h1 class="adrese_msj">Adresa curenta:</h1>
+           <div class="adresa_model">
             <div class="mic_flex">
-              <h1 class="Locatie_adresa styyle_text">Acasa</h1>
-              <img class="remove_locatie" src="assets/profil-utilizator-cumparator-images/remove_locatie.png">
+              <h1 class="Locatie_adresa styyle_text">{{profileJson?.postal_code}}</h1>
+              
             </div>
-               <h1 class="adresa_efectiva styyle_text1">str.. str..</h1>
-               <h1 class="oras_tara styyle_text1">Romania, Bucuresti</h1>
-          </div>
-          <div class="adresa_model">
-            <div class="mic_flex">
-              <h1 class="Locatie_adresa styyle_text">Birou</h1>
-              <img class="remove_locatie" src="assets/profil-utilizator-cumparator-images/remove_locatie.png">
-            </div>
-               <h1 class="adresa_efectiva styyle_text1">str.. str..</h1>
-               <h1 class="oras_tara styyle_text1">Romania, Bucuresti</h1>
-          </div>
-          
+               <h1 class="adresa_efectiva styyle_text1">{{profileJson?.address}}</h1>
+               <h1 class="oras_tara styyle_text1">{{profileJson?.city}}, {{profileJson?.county}}</h1>
+          </div>  
     </div>
+    
     <div class="bara">
 
     </div>
+    <!--  -->
     <div class="adaugare">
+      <form (ngSubmit)="saveAdress()" [formGroup]="userDetails" >
+        <h1 class="adrese_msj">Modificare adresa pentru livrare:</h1>
 
-          <h1 class="adrese_msj">Adaugare adresa pentru livrare:</h1>
-
-          <div class="row">
-            <div class="col-25">
-              <label for="mechanism">Tip adresa</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="mechanism" name="mechanism">
-            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="mechanism">City</label>
           </div>
-
-          <div class="row">
-            <div class="col-25">
-              <label for="mechanism">Street*</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="mechanism" name="mechanism">
-            </div>
+          <div class="col-75">
+            <input type="text" id="mechanism" name="mechanism" formControlName="city">
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-25">
-              <label for="mechanism">Street number</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="mechanism" name="mechanism">
-            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="mechanism">County</label>
           </div>
+          <div class="col-75">
+            <input type="text" id="mechanism" name="mechanism" formControlName="county">
+          </div>
+        </div>
 
-          <div class="row">
-            <div class="col-25">
-              <label for="mechanism">ZIP(or postal) code</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="mechanism" name="mechanism">
-            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="mechanism">Street</label>
           </div>
+          <div class="col-75">
+            <input type="text" id="mechanism" name="mechanism" formControlName="address">
+          </div>
+        </div>
 
-          <div class="row">
-            <div class="col-25">
-              <label for="condition">Country</label>
-            </div>
-            <div class="col-75">
-              <select id="condition" name="condition">
-                <option value="" disabled selected>Please select</option>
-                <option value="new">Romania</option>
-                <option value="used">France</option>
-              </select>
-            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="mechanism">ZIP(or postal) code</label>
           </div>
-          
-          <div class="row">
-            <div class="col-25">
-                <label for="price">Phone number</label>
-              </div>
-              <div class="col-75 price">
-                <div class="mic_flex1">
-                <select name="price" id="price">
-                  <option value="fr">+33</option>
-                  <option value="ro">+40</option>
-                </select>
-                <input type="number" id="price" name="price" class="phone_in">
-                </div>
-              </div>
-            </div>
-         
-            <button class="salveaza_adresa"><h1 class="salv_adr">Add the adress to my profile</h1></button>
+          <div class="col-75">
+            <input type="text" id="mechanism" name="mechanism" formControlName="postal_code">
+          </div>
+        </div>
+          <button class="salveaza_adresa" type="submit"><h1 class="salv_adr">Add the adress to my profile</h1></button>
+        
+      </form>      
     </div>
+
     <img (click)="toggle()" class="cancel_save" src="assets/profil-utilizator-cumparator-images/cancel_save_adress.png">
 </div>
  </ng-container>
@@ -144,10 +119,11 @@
            <h1 class="atribut">Brand</h1>
        </button>
        <div *ngIf="status1 === 'first'">
-           <h1 class="drescriere_atribut">-Rolex</h1>
-           <h1 class="drescriere_atribut">-Fossil</h1>
+         
+         <div class="drescriere_atribut" *ngFor="let product of brandFilterFINAL" (click)="filterFunction1(product,'brand')">- {{product}} </div>  
+          
        </div>
-  
+      
        
        <button (click)="toggle2()" class="filtru">
            <div *ngIf="status2 === 'none'">
@@ -161,9 +137,12 @@
             <h1 class="atribut">Pentru</h1>
         </button>
         <div *ngIf="status2 === 'secound'">
-            <h1 class="drescriere_atribut">-Femei</h1>
-            <h1 class="drescriere_atribut">-Barbati</h1>
-            <h1 class="drescriere_atribut">-Unisex</h1>
+
+          <div class="drescriere_atribut" *ngFor="let product of sexFilterFINAL" (click)="filterFunction1(product,'sex')">
+            <div *ngIf="product==0">- Barbat</div>
+            <div *ngIf="product==1">- Femeie</div>
+          </div>
+
         </div>
   
         <button (click)="toggle3()" class="filtru">
@@ -178,8 +157,9 @@
             <h1 class="atribut">Conditie</h1>
         </button>
         <div *ngIf="status3 === 'third'">
-            <h1 class="drescriere_atribut">-Nou</h1>
-            <h1 class="drescriere_atribut">-Purtat</h1>
+            <!-- <h1 class="drescriere_atribut">- Nou</h1>
+            <h1 class="drescriere_atribut">- Purtat</h1> -->
+            <div class="drescriere_atribut" *ngFor="let product of conditionFilterFINAL" (click)="filterFunction1(product,'condition')">- {{product}} </div>
         </div>
   
         <button (click)="toggle4()" class="filtru">
@@ -194,16 +174,46 @@
             <h1 class="atribut">An</h1>
         </button>
         <div *ngIf="status4 === 'forth'">
-            <h1 class="drescriere_atribut">-2021</h1>
-            <h1 class="drescriere_atribut">-1757</h1>
+          <div class="drescriere_atribut" *ngFor="let product of yearFilterFINAL" (click)="filterFunction1(product,'year')">- {{product}} </div>
         </div>
    </div>
   
       <div class="slider">
               
           <div class="paginator" *ngIf="productsLength >= 0">
-  
-        <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+            
+            <div *ngIf="curentFilter.includes('year')||curentFilter.includes('brand')||curentFilter.includes('sex')||curentFilter.includes('condition')">
+                  <div *ngFor="let product of productsJson | slice: lowValue : highValue">
+                    <!--  <div *ngIf="curentValueFilter.includes(product.year)||curentValueFilter.includes(product.brand)||curentValueFilter.includes(product.gender) "> -->
+                      <div *ngIf="checkFilter(product.year,product.brand,product.gender,product.conditions)==1">
+                        <app-delete-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-delete-product-card>
+                      </div>
+                  </div>
+            </div>
+
+            <!-- <div *ngIf="curentFilter === 'brand'">
+              <div *ngFor="let product of productsJson | slice: lowValue : highValue">
+                  <div *ngIf="curentValueFilter===product.brand">
+                    <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                  </div>
+              </div>
+            </div>
+
+            <div *ngIf="curentFilter === 'sex'">
+              <div *ngFor="let product of productsJson | slice: lowValue : highValue">
+                  <div *ngIf="curentValueFilter===product.gender">
+                    <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                  </div>
+              </div>
+            </div> -->
+
+
+
+            <div *ngIf="curentFilter.includes('none')">
+              <app-delete-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-delete-product-card>
+            </div>
+
+        <!-- <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card> -->
         <mat-paginator appPaginatorStyle [showTotalPages]="3" [length]="productsLength" [pageSize]="pageSize" 
         (page)="getPaginatorData($event)" >
         </mat-paginator> 

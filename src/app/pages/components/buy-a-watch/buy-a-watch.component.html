@@ -1,100 +1,179 @@
 <div class="page">
 
+  <app-searchbar class="searchbar"></app-searchbar>
+
+  <div class="filter">
+    <form  (ngSubmit)="getData()" [formGroup]="itemDetails">
+      <div class="filter__grid">
+        <div class="filter__grid__topleft">
+          <h5>Filtre pentru a gasi ceasul perfect:</h5>
+          <div class="filter__pret flex-row">
+            <h5>Pret:</h5>
+            <div class="flex-row">
+              <div class="ron">
+                <input type="text" id="ron" value="0" maxlength="4"/>
+              </div>
+              <div class="ron">
+                <input type="text" id="ron" value="1500" maxlength="4"/>
+              </div>
+            </div>
+          </div>
+          <div class="filter__pentru flex-row">
+            <h5>Pentru: </h5>
+            <div class="flex-column">
+              <div>
+                <input type="radio" name="gender" value="0" formControlName="gender">
+                <label for="gender">Barbati</label>
+              </div>
+              <div>
+                <input type="radio" name="gender" value="1" formControlName="gender">
+                <label for="gender">Femei</label>
+              </div>
+            </div>
+          </div>
+          <div class="flex-row filter-brand">
+            <h5>Brand</h5>
+            <select name="brand" id="brand" formControlName="brand" >
+              <option value="" disabled selected>Please select</option>
+              <option *ngFor="let status_item of brand_values">
+                {{status_item}}
+                </option>
+            </select>
+          </div>
+        </div>
+        <div class="filter__grid__topright">
+
+        </div>
+        <div class="filter__grid__bottom">
+          <div class="flex-row">
+            <h5>Mechanism</h5>
+            <select name="mechanism" id="mechanism" formControlName="mechanism" >
+              <option value="" disabled selected>Please select</option>
+              <option *ngFor="let status_item of mechanism_values">
+                {{status_item}}
+                </option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Condition</h5>
+            <select name="condition" id="condition" formControlName="condition">
+              <option value="" disabled selected>Please select</option>
+              <option *ngFor="let status_item of condition_values">
+                {{status_item}}
+                </option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Year of
+              production</h5>
+            <select name="year" id="year" formControlName="year">
+              <option value="" disabled selected>Please select</option>
+              <option value="1950">1950 - 2022</option>
+              <option value="0">unknown</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Strap</h5>
+            <select name="strap" id="strap" formControlName="strap" >
+              <option value="" disabled selected>Please select</option>
+              <option *ngFor="let status_item of strap_values">
+                {{status_item}}
+                </option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Strap color</h5>
+            <select name="strap-color" id="strap-color" formControlName="strap_color">
+              <option value="" disabled selected>Please select</option>
+              <option *ngFor="let status_item of strap_color">
+                {{status_item}}
+                </option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Carcase</h5>
+            <select name="carcase" id="carcase" formControlName="carcase">
+              <option value="" disabled selected>Please select</option>
+              <option *ngFor="let status_item of carcase_values">
+                {{status_item}}
+                </option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Form</h5>
+            <select name="form" id="form" formControlName="carcase_form">
+              <option value="" disabled selected>Please select</option>
+              <option value="round">Round</option>
+              <option value="square">Square</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Thickness</h5>
+            <select name="thickness" id="thickness" formControlName="carcase_thickness">
+              <option value="" disabled selected>Please select</option>
+              <option value="8">2 - 8 mm</option>
+              <option value="12">8 - 12 mm</option>
+              <option value="20">12 - 20 mm</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Water resistance</h5>
+            <select name="water-resistance" id="water-resistance" formControlName="water_resistence">
+              <option value="" disabled selected>Please select</option>
+              <option value="1">ISO 2281 water resistance testing</option>
+              <option value="2">ISO 6425 – Divers' watches </option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Color</h5>
+            <select name="color" id="color" formControlName="carcase_color" >
+              <option value="" disabled selected>Please select</option>
+              <option *ngFor="let status_item of carcase_color">
+                {{status_item}}
+                </option>
+            </select>
+          </div>
+          <div class="filter__pentru flex-row">
+            <h5>Alarm</h5>
+            <div class="flex-column">
+              <div>
+                <input type="radio" name="alarm" value="1" formControlName="alarm">
+                <label for="alarm">yes</label>
+              </div>
+              <div>
+                <input type="radio" name="alarm" value="0" formControlName="alarm">
+                <label for="alarm">no</label>
+              </div>
+            </div>
+          </div>
+          <div class="filter__pentru flex-row">
+            <h5>Timer</h5>
+            <div class="flex-column">
+              <div>
+                <input type="radio" name="timer" value="1" formControlName="timer">
+                <label for="timer">yes</label>
+              </div>
+              <div>
+                <input type="radio" name="timer" value="0" formControlName="timer">
+                <label for="timer">no</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 
 
   <div class="watches-list">
-    <h1 class="promoted-title">Anunturi promovate</h1>
-    <div class="watch-card promoted-watch">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart-filled.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
-    <div class="watch-card promoted-watch">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart-filled.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
-    <div class="watch-card promoted-watch">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
-    <div class="grey-line"></div>
-    <div class="watch-card">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
-    <div class="watch-card">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart-filled.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
-    <div class="watch-card ">
-      <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
-      </div>
-      <div class="flex-column">
-        <h1>Ceas ROLEX 1980</h1>
-        <h2>Vandut de: Ion Popescu</h2>
-        <h3>Arad - Azi la 12:04</h3>
-      </div>
-      <div class="flex-column-right">
-        <h1>50.000 $</h1>
-        <img src="../../../../assets/filter-page/heart-filled.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
-      </div>
-    </div>
+
+
+    <app-buy-a-watch-card *ngFor="let product of productsJson" buyerId={{userId}} productId={{product.id}} name={{product.brand}} sellerId={{product.user_id}}
+
+      price={{product.price}}>
+
+    </app-buy-a-watch-card>
+
 
     <div class="page-counter">
       <div class="left-arrows">
@@ -116,5 +195,7 @@
         <img src="../../../../assets/filter-page/right-double-arrow.svg" alt="">
       </div>
     </div>
+
+    <pre>{{itemDetails.value|json}}</pre>
   </div>
 </div>

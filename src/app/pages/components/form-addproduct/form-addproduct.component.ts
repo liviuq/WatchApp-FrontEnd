@@ -80,6 +80,7 @@ export class FormAddproductComponent implements OnInit {
     
   }
 
+
   ngOnInit(): void {
    
   }
@@ -97,7 +98,7 @@ export class FormAddproductComponent implements OnInit {
           this.userId = profile.sub.split("|")[1];
           // this.phonenumber.value.user_id=this.userId;
           this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/product/" + this.userId).subscribe(data=>{
-          this.router.navigate(['']);      
+            this.router.navigate(['']); // am pus temporar sa se duca la homepage ca sa ai un feedback, ar fi mai logic sa te duca la pagina produsului adaugat
           });
       }
     );

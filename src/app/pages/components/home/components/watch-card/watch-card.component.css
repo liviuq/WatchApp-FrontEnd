@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'El Messiri', sans-serif;
+}
+
+
+.watch__card {
+    height: 285px;
+    width: 250px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(51, 51, 51, 0.55);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.watch__card img{
+    cursor: pointer;
+}
+
+.watch__card h3 {
+    cursor: pointer;
+    margin-top: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    align-self: center;
+    line-height: 1;
+}
+
+.watch__card__flex {
+    margin: auto 15px 10px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.watch__card__flex p {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.watch__card__flex img {
+    cursor: pointer;
+}
