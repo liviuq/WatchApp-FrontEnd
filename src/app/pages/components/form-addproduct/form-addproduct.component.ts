@@ -4,6 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-addproduct',
@@ -75,7 +76,9 @@ export class FormAddproductComponent implements OnInit {
   })
 
   
-  constructor(public auth: AuthService, private http: HttpClient) { }
+  constructor(public auth: AuthService, private http: HttpClient, private router: Router) { 
+    
+  }
 
   ngOnInit(): void {
    
@@ -94,7 +97,7 @@ export class FormAddproductComponent implements OnInit {
           this.userId = profile.sub.split("|")[1];
           // this.phonenumber.value.user_id=this.userId;
           this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/product/" + this.userId).subscribe(data=>{
-                
+          this.router.navigate(['']);      
           });
       }
     );
