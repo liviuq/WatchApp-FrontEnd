@@ -138,7 +138,10 @@
         </button>
         <div *ngIf="status2 === 'secound'">
 
-          <div class="drescriere_atribut" *ngFor="let product of sexFilterFINAL" (click)="filterFunction1(product,'sex')">- {{product}} </div>
+          <div class="drescriere_atribut" *ngFor="let product of sexFilterFINAL" (click)="filterFunction1(product,'sex')">
+            <div *ngIf="product==0">- Barbat</div>
+            <div *ngIf="product==1">- Femeie</div>
+          </div>
 
         </div>
   
@@ -154,8 +157,9 @@
             <h1 class="atribut">Conditie</h1>
         </button>
         <div *ngIf="status3 === 'third'">
-            <h1 class="drescriere_atribut">- Nou</h1>
-            <h1 class="drescriere_atribut">- Purtat</h1>
+            <!-- <h1 class="drescriere_atribut">- Nou</h1>
+            <h1 class="drescriere_atribut">- Purtat</h1> -->
+            <div class="drescriere_atribut" *ngFor="let product of conditionFilterFINAL" (click)="filterFunction1(product,'condition')">- {{product}} </div>
         </div>
   
         <button (click)="toggle4()" class="filtru">
@@ -178,10 +182,10 @@
               
           <div class="paginator" *ngIf="productsLength >= 0">
             
-            <div *ngIf="curentFilter.includes('year')||curentFilter.includes('brand')||curentFilter.includes('sex')">
+            <div *ngIf="curentFilter.includes('year')||curentFilter.includes('brand')||curentFilter.includes('sex')||curentFilter.includes('condition')">
                   <div *ngFor="let product of productsJson | slice: lowValue : highValue">
                     <!--  <div *ngIf="curentValueFilter.includes(product.year)||curentValueFilter.includes(product.brand)||curentValueFilter.includes(product.gender) "> -->
-                      <div *ngIf="checkFilter(product.year,product.brand,product.gender)==1">
+                      <div *ngIf="checkFilter(product.year,product.brand,product.gender,product.conditions)==1">
                         <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
                       </div>
                   </div>

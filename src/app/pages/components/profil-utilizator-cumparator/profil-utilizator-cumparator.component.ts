@@ -75,12 +75,15 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
                  /* ------ data for dinamic filter -------- backend does not do his job smh*/
                 for(let i=0;i<this.productsLength;i++){
                    this.brandFilter.push(this.productsJson[i].brand);
-                   if(this.productsJson[i].gender===0)
-                   this.sexFilter.push("Barbat");
-                   else this.sexFilter.push("Femeie");
+                  //  if(this.productsJson[i].gender===0)
+                  //  this.sexFilter.push("Barbat");
+                  //  else this.sexFilter.push("Femeie");
+                  this.sexFilter.push(this.productsJson[i].gender);
                     /* ------ condition does not exist yet -------- backend does not do his job smh  ///////////////////////////////////////////////////////////////DONT FORGET TO ADD*/ 
                    this.yearFilter.push(this.productsJson[i].year);
+                   this.conditionFilter.push(this.productsJson[i].conditions);
                 }
+                this.conditionFilterFINAL= this.conditionFilter.filter((v,i,a)=>a.indexOf(v)===i);
                 this.brandFilterFINAL=this.brandFilter.filter((v,i,a)=>a.indexOf(v)===i);
                 this.sexFilterFINAL=this.sexFilter.filter((v,i,a)=>a.indexOf(v)===i);
                 this.yearFilterFINAL=this.yearFilter.filter((v,i,a)=>a.indexOf(v)===i);
@@ -213,7 +216,7 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
     }
 
   }
-  checkFilter(yearValue:string,brandValue:string,sexValue:string){
+  checkFilter(yearValue:string,brandValue:string,sexValue:string,conditionValue:string){
       if(this.curentFilter.includes('year'))
           {
             if(!this.curentValueFilter.includes(yearValue))
@@ -231,7 +234,11 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
             if(!this.curentValueFilter.includes(sexValue))
             return -1;
           }
-
+      if(this.curentFilter.includes('condition'))
+      {
+        if(!this.curentValueFilter.includes(conditionValue))
+        return -1;
+      }
       return 1;
   }
   
