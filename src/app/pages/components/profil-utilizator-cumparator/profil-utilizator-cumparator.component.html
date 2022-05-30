@@ -186,7 +186,7 @@
                   <div *ngFor="let product of productsJson | slice: lowValue : highValue">
                     <!--  <div *ngIf="curentValueFilter.includes(product.year)||curentValueFilter.includes(product.brand)||curentValueFilter.includes(product.gender) "> -->
                       <div *ngIf="checkFilter(product.year,product.brand,product.gender,product.conditions)==1">
-                        <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                        <app-delete-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-delete-product-card>
                       </div>
                   </div>
             </div>
@@ -210,7 +210,7 @@
 
 
             <div *ngIf="curentFilter.includes('none')">
-              <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+              <app-delete-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-delete-product-card>
             </div>
 
         <!-- <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card> -->
