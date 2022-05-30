@@ -17,6 +17,7 @@
 .searchbar {
     z-index: 5;
     width: 70%;
+    margin-top: 503px;
 }
 
 .header--filter {

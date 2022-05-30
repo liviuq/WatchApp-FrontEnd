@@ -4,15 +4,32 @@
     font-family: 'El Messiri', sans-serif;
 }
 
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchbar {
+    margin-top: 30px;
+    width: 70%;
+}
+
+.filter {
+    margin-top: 40px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+
 h1 {
     font-size: 32px;
     line-height: 1;
     font-weight: 600;
 
-}
-
-.promoted-title {
-    margin: 50px 0px;
 }
 
 .watches-list {
@@ -64,4 +81,122 @@ h1 {
     font-size: 24px;
     line-height: 1;
     font-weight: 600;
+}
+
+
+
+.flex-row{
+  display:flex;
+}
+
+.flex-column{
+  display:flex;
+  flex-direction: column;
+}
+
+
+.filter__grid h5 {
+  font-size: 25px;
+  color: rgba(8, 42, 77, 1);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.filter__grid label,
+.filter__grid input {
+  font-family: 'El Messiri', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1;
+}
+.filter__grid input[type="radio"]{
+  margin-right: 15px;
+}
+.filter__grid .filter__pentru{
+    gap:30px;
+}
+
+.ron{
+  display:inline-block;
+  position:relative;
+}
+.ron::after{
+  content:'lei';
+  position:absolute;
+  top:13px;
+  right:10px;
+  font-family: 'El Messiri', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.ron input{
+  line-height:1;
+  max-width: 65px;
+  text-align: center;
+  padding:5px 35px 0px 10px;
+}
+
+.filter__pret{
+  margin: 45px 0px 45px 0px;
+}
+
+.filter__pret .flex-row{
+  gap:30px;
+}
+
+.filter__pret h5{
+  margin-right:58px;
+}
+
+.filter__grid{
+  padding:35px;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+}
+
+.filter__grid__bottom .flex-row,
+.filter-brand{
+  gap:25px;
+  align-items: center;
+}
+
+.filter__grid__bottom .filter__pentru{
+  width:325px !important;
+}
+
+.filter__grid__bottom select,
+.filter-brand select{
+  width:170px;
+  text-align:center;
+  padding:5px 0px;
+  font-family: 'El Messiri', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color:#1D566E;
+}
+
+.filter__grid__bottom h5{
+  width:130px;
+  text-align: center;
+}
+
+.filter__grid__bottom {
+  display:flex;
+  flex-wrap: wrap;
+  column-gap:50px;
+  row-gap:30px;
+}
+
+.filter__grid__topleft{
+  margin-bottom: 30px;
+}
+
+
+.filter-brand{
+  margin-top:30px;
+  gap:45px;
 }
