@@ -248,12 +248,13 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
     
     window.location.reload();
   }
-
+  //works
   saveAdress(){
     console.log(this.userDetails.value);
     this.sendF('https://watchappa3-be.herokuapp.com/user/'+ this.userId+'/update/userdata',this.userDetails.value).subscribe(data=>{
                 
     });
+    window.location.reload();
   }
 
   sendF(url: string,x:any):Observable<any>{
