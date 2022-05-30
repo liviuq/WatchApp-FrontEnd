@@ -21,7 +21,7 @@ export class FormAddproductComponent implements OnInit {
   carcase_values:any=["Silver","Gold","Steel","White Gold","Ceramics"]
   carcase_color:any=["Silver","Gold","Rose Gold","Neon"];
   control:any=1;
-  step: any = 3;
+  step: any = 1;
   userId :any;
 
   submitted: any = false;
