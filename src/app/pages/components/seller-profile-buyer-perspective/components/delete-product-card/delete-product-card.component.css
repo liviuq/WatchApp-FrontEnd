@@ -1,0 +1,77 @@
+.watch_box{
+    width: 904px;
+    height: 199px;
+    background: #FFFFFF;
+    border: 1px solid #45EBA5;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-top: 13px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.poza_ceas{
+    width: 250px;
+    height: 173px;
+    border-radius: 10px;
+    margin-top: 13px;
+    margin-left: 19px;
+}
+.date_ceas{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: -120px;
+}
+
+.header1{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 47px;
+    color: #000000;
+}
+.tip_ceas_desc1{
+    margin-top: 55px;
+}
+.tip_ceas_desc{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 31px;
+    color: #000000;
+}
+
+
+.pret_anunt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 49px;
+    margin-top: 20px;
+}
+.anuntdesc{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 39px;
+    text-align: center;
+    color: #000000;
+}
+.anunt{
+    background: #45EBA5;
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    width: 180px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.inima_fav{
+    cursor: pointer;
+    margin-top: 20px;
+}

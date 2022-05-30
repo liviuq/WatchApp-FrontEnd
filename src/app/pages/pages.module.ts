@@ -39,6 +39,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { FaqComponent } from './components/faq/faq.component';
 import { ProtectiaCumparatoruluiComponent } from './components/protectia-cumparatorului/protectia-cumparatorului.component';
 import { ReturComodComponent } from './components/retur-comod/retur-comod.component';
+import { DeleteProductCardComponent } from './components/seller-profile-buyer-perspective/components/delete-product-card/delete-product-card.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { ReturComodComponent } from './components/retur-comod/retur-comod.compon
     FaqComponent,
     ProtectiaCumparatoruluiComponent,
     ReturComodComponent,
+    DeleteProductCardComponent,
   ],
   imports: [
     CommonModule,
