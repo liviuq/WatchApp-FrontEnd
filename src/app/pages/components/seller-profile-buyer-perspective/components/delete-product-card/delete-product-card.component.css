@@ -11,6 +11,7 @@
     justify-content: space-between;
 }
 .poza_ceas{
+    cursor: pointer;
     width: 250px;
     height: 173px;
     border-radius: 10px;
@@ -25,6 +26,7 @@
 }
 
 .header1{
+    cursor: pointer;
     font-family: 'El Messiri';
     font-style: normal;
     font-weight: 600;
