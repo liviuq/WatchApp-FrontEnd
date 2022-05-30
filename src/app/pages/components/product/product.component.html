@@ -6,7 +6,7 @@
                 <h1>{{productJson.brand}}</h1>
                 <p>PRODUCT ID: {{productJson.id}}</p>
                 <div class="product__tags">
-                    <div class="tag"><p>Condition: <span>to be added</span></p></div>
+                    <div class="tag"><p>Condition: <span>{{productJson.conditions}}</span></p></div>
                     <div class="tag"><p>Production year: <span>{{productJson.year}}</span></p></div>
                 </div>
                 <h2 class="product__price">$ <span>{{productJson.price}}</span></h2>
@@ -19,7 +19,7 @@
             <div class="product__seller">
                 <img src="../../../../assets/product/user.png" alt="">
                 <div class="seller__info">
-                    <p class="seller">Sold by: <span>{{productJson.user_id}}</span></p>
+                    <p class="seller">Sold by: <span>{{seller}}</span></p>
                     <p class="view-seller" routerLink="/seller/{{productJson.user_id}}">View seller's profile</p>
                     <button class="chat">  Chat with seller <img src="../../../../assets/product/chat.svg" alt=""></button>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="flex__content">
                         <p class="proprietate">Case Material: <span>{{productJson.carcase}}</span></p>
                         <p class="proprietate">Year Of Production: <span>{{productJson.year}}</span></p>
-                        <p class="proprietate">Gender: <span>{{productJson.gender}}</span></p>
+                        <p class="proprietate">Gender: <span *ngIf="productJson.gender == 1">Female</span> <span *ngIf="productJson.gender == 0">Male</span> </p>
                     </div>
                 </div>
             </div>
@@ -73,8 +73,8 @@
                     <p class="proprietate">Glass: <span>{{productJson.glass}}</span></p>
                 </div>
                 <div class="flex__content">
-                    <p class="proprietate">Alarm: <span>{{productJson.alarm}}</span></p>
-                    <p class="proprietate">Timer: <span>{{productJson.timer}}</span></p>
+                    <p class="proprietate">Alarm: <span *ngIf="productJson.alarm == 1">Yes</span> <span *ngIf="productJson.alarm == 0">No</span> </p>
+                    <p class="proprietate">Timer: <span *ngIf="productJson.timer == 1">Yes</span> <span *ngIf="productJson.timer == 0">no</span> </p>
                 </div>
             </div>
         </mat-tab>
