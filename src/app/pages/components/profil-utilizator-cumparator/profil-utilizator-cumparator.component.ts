@@ -250,18 +250,18 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
     console.log(this.phonenumber.value);
     
     this.sendF('https://watchappa3-be.herokuapp.com/user/'+ this.userId+'/phone',this.phonenumber.value).subscribe(data=>{
-                
+      window.location.reload();      
     });
     
-    window.location.reload();
+    
   }
   //works
   saveAdress(){
     console.log(this.userDetails.value);
     this.sendF('https://watchappa3-be.herokuapp.com/user/'+ this.userId+'/update/userdata',this.userDetails.value).subscribe(data=>{
-                
+      window.location.reload();
     });
-    window.location.reload();
+    
   }
 
   sendF(url: string,x:any):Observable<any>{
