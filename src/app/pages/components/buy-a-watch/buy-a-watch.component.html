@@ -1,14 +1,189 @@
 <div class="page">
 
+  <app-searchbar class="searchbar"></app-searchbar>
+
+  <div class="filter">
+    <form>
+      <div class="filter__grid">
+        <div class="filter__grid__topleft">
+          <h5>Filtre pentru a gasi ceasul perfect:</h5>
+          <div class="filter__pret flex-row">
+            <h5>Pret:</h5>
+            <div class="flex-row">
+              <div class="ron">
+                <input type="text" id="ron" value="0" maxlength="4"/>
+              </div>
+              <div class="ron">
+                <input type="text" id="ron" value="1500" maxlength="4"/>
+              </div>
+            </div>
+          </div>
+          <div class="filter__pentru flex-row">
+            <h5>Pentru: </h5>
+            <div class="flex-column">
+              <div>
+                <input type="radio" name="gender" value="femei">
+                <label for="gender">Femei</label>
+              </div>
+              <div>
+                <input type="radio" name="gender" value="barbati">
+                <label for="gender">Barbati</label>
+              </div>
+            </div>
+          </div>
+          <div class="flex-row filter-brand">
+            <h5>Brand</h5>
+            <select name="mechanism" id="mechanism" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+        <div class="filter__grid__topright">
+
+        </div>
+        <div class="filter__grid__bottom">
+          <div class="flex-row">
+            <h5>Mechanism</h5>
+            <select name="mechanism" id="mechanism" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Condition</h5>
+            <select name="condition" id="condition" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Year of
+              production</h5>
+            <select name="year" id="year" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Strap</h5>
+            <select name="strap" id="strap" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Strap color</h5>
+            <select name="strap-color" id="strap-color" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Carcase</h5>
+            <select name="carcase" id="carcase" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Form</h5>
+            <select name="form" id="form" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Thickness</h5>
+            <select name="thickness" id="thickness" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Water resistance</h5>
+            <select name="water-resistance" id="water-resistance" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="flex-row">
+            <h5>Color</h5>
+            <select name="color" id="color" >
+              <option value="" disabled selected>Please select</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <div class="filter__pentru flex-row">
+            <h5>Alarm</h5>
+            <div class="flex-column">
+              <div>
+                <input type="radio" name="alarm" value="yes">
+                <label for="alarm">yes</label>
+              </div>
+              <div>
+                <input type="radio" name="alarm" value="no">
+                <label for="alarm">no</label>
+              </div>
+            </div>
+          </div>
+          <div class="filter__pentru flex-row">
+            <h5>Timer</h5>
+            <div class="flex-column">
+              <div>
+                <input type="radio" name="timer" value="yes">
+                <label for="timer">yes</label>
+              </div>
+              <div>
+                <input type="radio" name="timer" value="no">
+                <label for="timer">no</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
   <div class="watches-list">
-    <h1 class="promoted-title">Anunturi promovate</h1>
     <app-buy-a-watch-card *ngFor="let product of productsJson" name={{product.brand}} seller={{product.user_id}}
       price={{product.price}}>
 
     </app-buy-a-watch-card>
-
-    <div class="grey-line"></div>
-
 
 
     <div class="page-counter">
