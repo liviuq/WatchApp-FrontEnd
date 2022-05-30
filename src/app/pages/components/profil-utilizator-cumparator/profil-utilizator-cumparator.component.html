@@ -1,7 +1,7 @@
 
   <div class="info_utilizator_box" *ngIf="auth.user$ | async as user">
     <img class="poza_profil" src="assets/profil-utilizator-cumparator-images/image 6.png">
-    <h1 class="descr">Nume: {{profileJson?.mail}}</h1>
+    <h1 class="descr">Nume: {{profileJson?.user_name}}</h1>
     <!--  -->
     <h1 class="descr" id="numar_tel">Nr de telefon : <span [style.color]="numberTelColor">{{profileJson?.phone_number}}</span></h1>
     <button type="button" class="button_green"><h1 class="button_text" (click)="toggleNumber()">Schimba nr de telefon</h1></button>
@@ -186,7 +186,7 @@
                   <div *ngFor="let product of productsJson | slice: lowValue : highValue">
                     <!--  <div *ngIf="curentValueFilter.includes(product.year)||curentValueFilter.includes(product.brand)||curentValueFilter.includes(product.gender) "> -->
                       <div *ngIf="checkFilter(product.year,product.brand,product.gender,product.conditions)==1">
-                        <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                        <app-seller-profile-product-card productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerId={{product.user_id}}  productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
                       </div>
                   </div>
             </div>
@@ -210,7 +210,7 @@
 
 
             <div *ngIf="curentFilter.includes('none')">
-              <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerName={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+              <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchYear={{product.year}} watchPrice={{product.price}} sellerId={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
             </div>
 
         <!-- <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} sellerName={{product.user_id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card> -->

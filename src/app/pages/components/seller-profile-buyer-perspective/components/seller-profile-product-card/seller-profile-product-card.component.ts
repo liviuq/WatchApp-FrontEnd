@@ -1,4 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-seller-profile-product-card',
@@ -10,7 +15,7 @@ export class SellerProfileProductCardComponent implements OnInit {
   @Input()
   productName!: string;
   @Input()
-  sellerName!: string;
+  sellerId!: string;
   @Input()
   locationName!: string;
   @Input()
@@ -21,9 +26,72 @@ export class SellerProfileProductCardComponent implements OnInit {
   watchYear!:string;
   @Input()
   productId!:string;
-  constructor() { }
+  constructor(public auth: AuthService, private http: HttpClient, private router: Router) { }
+  public userId!: string;
+  public sellerName!: string;
+  public productsJson!: any[];
+  public productsLength!: string;
+  public isFavorite: boolean = false;
 
   ngOnInit(): void {
+
+    this.callJsonGetRestApi("https://watchappa3-be.herokuapp.com/user/" + this.sellerId).subscribe(data => { //de schimbat link-ul     
+          this.sellerName = data.user.user_name;
+        });
+  }
+
+  addToFavorite(): void{
+    this.auth.user$.subscribe(
+      (profile) => {
+        if (profile?.sub !== undefined)
+          this.userId = profile.sub.split("|")[1];
+
+          this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.userId+"/insert/"+this.productId).subscribe(data=>{
+            this.isFavorite = true;
+            console.log(data);
+          }); 
+      }
+    );
+
+    
+  }
+
+  callJsonPostRestApi(url: string):Observable<any> {
+   
+    return this.http.post(url, null)
+      .pipe(map((data: any) => {
+      //handle api 200 response code here or you wanted to manipulate to response
+        return data;
+
+      }),
+        catchError((error) => {    // handle error
+         
+          if (error.status == 404) {
+            //Handle Response code here
+          }
+          return throwError(error);
+        })
+      );
+
+  }
+
+  callJsonGetRestApi(url: string): Observable<any> {
+
+    return this.http.get(url)
+      .pipe(map((data: any) => {
+        //handle api 200 response code here or you wanted to manipulate to response
+        return data;
+
+      }),
+        catchError((error) => {    // handle error
+
+          if (error.status == 404) {
+            //Handle Response code here
+          }
+          return throwError(error);
+        })
+      );
+
   }
 
 }

@@ -8,7 +8,7 @@
     <h1>Gaseste-ti ceasul perfect!</h1>
     <h2>Recomandari:</h2>
     <div class="recommendations__cards">
-      <app-watch-card *ngFor="let product of productsJson | slice: 0 : 4" price={{product.price}} name={{product.brand}} routerLink="/product/{{product.id}}"></app-watch-card>
+      <app-watch-card *ngFor="let product of productsJson | slice: 0 : 4" price={{product.price}} name={{product.brand}} productId={{product.id}}></app-watch-card>
     </div>
     <button class="more" [routerLink]="['/buy-a-watch']">
       <p>Mai mult</p>
@@ -36,7 +36,7 @@
   <div class="promoted">
     <h1>Alte anunturi</h1>
     <div class="promoted__cards">
-      <app-watch-card *ngFor="let product of productsJson | slice: 4 : 12" price={{product.price}} name={{product.brand}} routerLink="/product/{{product.id}}"></app-watch-card>
+      <app-watch-card *ngFor="let product of productsJson | slice: 4 : 12" price={{product.price}} name={{product.brand}} productId={{product.id}}></app-watch-card>
     </div>
     <button class="more" [routerLink]="['/buy-a-watch']">
       <p>Mai mult</p>

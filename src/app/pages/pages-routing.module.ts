@@ -19,18 +19,16 @@ import { ProductComponent } from './components/product/product.component';
 import { FaqComponent } from './components/faq/faq.component';
 
 const routes: Routes = [
-  { path: 'cart/products', component: ShoppingCartComponent },
-  { path: 'cart/checkout', component: ShoppingCartCheckoutComponent },
+  { path: 'cart/products', component: ShoppingCartComponent, canActivate: [AuthGuard] },
+  { path: 'cart/checkout', component: ShoppingCartCheckoutComponent, canActivate: [AuthGuard] },
   { path: '', component: HomeComponent },
   { path: 'buy-a-watch', component: BuyAWatchComponent },
-  { path: 'favorite-list', component: FavoriteListComponent },
+  { path: 'favorite-list', component: FavoriteListComponent, canActivate: [AuthGuard] },
   { path: 'profil', component: ProfilUtilizatorCumparatorComponent, canActivate: [AuthGuard] },
-  { path: 'form', component: FormAddproductComponent },
+  { path: 'form', component: FormAddproductComponent, canActivate: [AuthGuard] },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'categories', component: CategoriesComponent },
   {path: 'profil', component: ProfilUtilizatorCumparatorComponent, canActivate: [AuthGuard]},
-  {path: 'form', component: FormAddproductComponent},
-  {path: 'about-us', component: AboutUsComponent},
   {path: 'seller', component: SellerProfileBuyerPerspectiveComponent},
   {path: 'seller/:id', component: SellerProfileBuyerPerspectiveComponent},
   {path: 'advice-for-sellers', component: AdviceForSellersComponent},
