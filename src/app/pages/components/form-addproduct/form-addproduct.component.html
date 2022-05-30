@@ -20,6 +20,8 @@
             {{status_item}}
             </option>
         </select>
+        
+        
         </div>
       </div>
       <div class="row">
@@ -28,8 +30,15 @@
         </div>
         <div class="col-75">
         
-            <input type="text" id="model" name="model" formControlName="model">
-      
+            <input type="text" id="model" name="model" formControlName="model" required>
+          <!--  -->
+          <!-- <div *ngIf="multistep.value.itemDetails.controls['brand'].invalid && (multistep.value.itemDetails.controls['brand'].dirty || multistep.value.itemDetails.controls['brand'].touched)" class="alert alert-danger">
+            <div *ngIf="multistep.value.itemDetails.controls['brand'].errors.required">
+              Brand is required.
+            </div>
+        </div> -->
+          
+          <!--  -->
         </div>
       </div>
       <div class="row">
@@ -37,7 +46,12 @@
           <label for="mechanism">Mechanism*</label>
         </div>
         <div class="col-75">
-          <input type="text" id="mechanism" name="mechanism" formControlName="mechanism">
+          <select id="mechanism" name="mechanism" formControlName="mechanism">
+            <option value="" disabled selected>Please select</option>
+              <option value="Manual Movement">Manual Movement</option>
+              <option value="Automatic Movement">Automatic Movement</option>
+              <option value="Quartz Movement">Quartz Movement</option>
+          </select>
         </div>
       </div>
       <div class="row">
@@ -69,7 +83,6 @@
             <option value="" disabled selected>Please select</option>
             <option value="0">Male</option>
             <option value="1">Female</option>
-            <option value="2">Unisex</option>
           </select>
         </div>
       </div>
@@ -83,7 +96,7 @@
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="strap">Strap</label>
+          <label for="strap">Strap*</label>
         </div>
         <div class="col-75">
           <select id="strap" name="strap" formControlName="strap">
@@ -96,7 +109,7 @@
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="strap_color">Strap Color</label>
+          <label for="strap_color">Strap Color*</label>
         </div>
         <div class="col-75">
           <select id="strap_color" name="strap_color" formControlName="strap_color">
@@ -172,8 +185,9 @@
     <div class="col-75">
       <select id="water_resistence" name="water_resistence" formControlName="water_resistence">
         <option value="" disabled selected>Please select</option>
-        <option value="yes">ISO 2281 water resistance testing</option>
-        <option value="no">ISO 2281 water resistance testing</option>
+        <option value="No">No</option>
+        <option value="ISO 2281 water resistance testing">ISO 2281 water resistance testing</option>
+        <option value="ISO 6425 – Divers' watches">ISO 6425 – Divers' watches</option>
   
       </select>
     </div>
@@ -196,9 +210,9 @@
       <label for="timer">Timer</label>
     </div>
     <div class="col-75">
-      <label for="alarm-yes">YES</label>
+      <label for="timer-yes">YES</label>
       <input type="radio" id="timer-yes" name="timer" value="1" formControlName="timer">
-      <label for="alarm-no" class="last">NO</label>
+      <label for="timer-no" class="last">NO</label>
       <input type="radio" id="timer-no" name="timer" value="0" formControlName="timer">
     </div>
   </div>
@@ -377,8 +391,8 @@
     </div>
 
 
-    <br>
+    <!-- <br>
     <br><br>
-    <pre>{{multistep.value | json}}</pre>
+    <pre>{{multistep.value | json}}</pre> -->
   </form>
 </div>
