@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup,FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup,FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { AuthService } from '@auth0/auth0-angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-addproduct',
@@ -17,38 +22,34 @@ export class FormAddproductComponent implements OnInit {
   carcase_color:any=["Silver","Gold","Rose Gold","Neon"];
 
   step: any = 1;
+  userId :any;
+
   submitted: any = false;
   multistep = new FormGroup({
       itemDetails:new FormGroup({
-        brand: new FormControl(''),
-        model: new FormControl(''),
-        mechanism: new FormControl(''),
-        condition: new FormControl(''),
-        gender: new FormControl(''),
-        year: new FormControl(''),
+        brand: new FormControl('',Validators.required),
+        price: new FormControl('',Validators.required),
+        date: new FormControl(''),
+        year: new FormControl('',Validators.required),
         strap: new FormControl(''),
-        strapcolor: new FormControl(''),
+        glass: new FormControl(''),
+        strap_color: new FormControl(''),
+        water_resistence: new FormControl(''),
         carcase: new FormControl(''),
-        carcaseform: new FormControl(''),
-        thickness: new FormControl(''),
-        carcasecolor: new FormControl(''),
-        waterresistence: new FormControl(''),
+        carcase_form: new FormControl(''),
+        carcase_color: new FormControl(''),
+        carcase_thickness: new FormControl(''),
         alarm: new FormControl(''),
         timer: new FormControl(''),
-        price: new FormControl(''),
-        currency: new FormControl('')
+        mechanism: new FormControl('',Validators.required),
+        rating: new FormControl(''),
+        gender: new FormControl('',Validators.required),
+        promoted: new FormControl(''),
+        category: new FormControl(''),
+        model: new FormControl('',Validators.required),
+        conditions: new FormControl('',Validators.required)
       }),
 
-      //  userDetails: new FormGroup({
-      //      firstname: new FormControl(''),
-      //      lastname: new FormControl(''),
-      //      dateofbirth: new FormControl(''),
-      //      street: new FormControl(''),
-      //      street2: new FormControl(''),
-      //      zip: new FormControl(''),
-      //      country: new FormControl(''),
-      //      phone: new FormControl(''),
-      //  }),
       userDetails: new FormGroup({
         firstname: new FormControl(''),
         lastname: new FormControl(''),
@@ -62,29 +63,57 @@ export class FormAddproductComponent implements OnInit {
      
   })
   
+
   
-  constructor() { }
+  constructor(public auth: AuthService, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+   
   }
-//   get userDetails() {
-//     return (this.multistep.controls['userDetails'] as FormGroup).controls;
-//   }
-
-// get contactDetails() {
-// return this.multistep.controls['contactDetails']   &&  this.multistep.controls['controls'];
-// }
-
-submit() {  
-  this.submitted = true;
-  // if(this.multistep.controls['userDetails'].invalid && this.step == 1) {
-  //   return;
-  // }
-  // if(this.multistep.controls.contactDetails.invalid && this.step == 2) {
-  //   return;
-  // }
-  this.step = this.step + 1;
   
+  phonenumber = new FormGroup({
+  phone_number: new FormControl(''),
+  })
+
+  postData(): void{
+    console.log('dsadasd');
+    console.log(this.multistep.value.itemDetails);
+    this.auth.user$.subscribe(
+      (profile) => {
+        if(profile?.sub !== undefined)
+          this.userId = profile.sub.split("|")[1];
+          // this.phonenumber.value.user_id=this.userId;
+          this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/product/" + this.userId).subscribe(data=>{
+            this.router.navigate(['']); // am pus temporar sa se duca la homepage ca sa ai un feedback, ar fi mai logic sa te duca la pagina produsului adaugat
+          });
+      }
+    );
+  }
+
+  callJsonPostRestApi(url: string):Observable<any> {
+    const headers = new HttpHeaders({'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers':  'Content-Type, X-Auth-Token, Authorization, Origin', 'Access-Control-Allow-Methods':  'POST', 'Access-Control-Allow-Credentials': 'true'});
+    return this.http.post(url,this.multistep.value.itemDetails,{headers:headers})
+      .pipe(map((data: any) => {
+      //handle api 200 response code here or you wanted to manipulate to response
+        return data;
+
+      }),
+        catchError((error) => {    // handle error
+         
+          if (error.status == 404) {
+            //Handle Response code here
+          }
+          return throwError(error);
+        })
+      );
+
+  }
+
+  
+next() {
+  // if(this.multistep.controls['itemDetails'].invalid)
+  // return ;
+  this.step = this.step + 1;
 }
 
 previous() {

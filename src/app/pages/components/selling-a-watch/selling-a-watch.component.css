@@ -1,0 +1,155 @@
+.header {
+    background-image: url('../../../../assets/home/header_background.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 671.23px;
+    max-height: 671.23px;
+    display: flex;
+    justify-content: center;
+}
+
+.header--filter {
+    position: absolute;
+    width: 100%;
+    height: 671.23px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.top{
+    height: 833px;
+}
+
+.top-text{
+    margin-top:70px;
+    display:flex;
+    align-content: center;
+    flex-direction: column;
+}
+.top-text-title{
+    height: 45px;
+}
+.top-text-title h2{
+    font-family: El Messiri;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 63px;
+    letter-spacing: 0em;
+    text-align: center;    
+}
+.top-text-content{
+    height: 45px;
+    margin-top:30px;
+}
+.top-text-content p{
+    font-family: El Messiri;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 39px;
+    text-align: center;
+    
+}
+.searchbar {
+    z-index: 5;
+    width: 70%;
+    height: 86px;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-top: 503px;
+    border: 1px solid #163A5F;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+}
+
+.searchbar>img {
+    width: 30px;
+}
+
+.searchbar .div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.searchbar .div img {
+    margin-right: 17px;
+}
+
+.input {
+    padding: 0 20px;
+    width: 90%;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.74);
+}
+.cards{
+    margin-left:180px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:145px;
+}
+.card{
+    display: flex;
+    align-items: center;
+    margin-top:176px;
+}
+.card-text{
+    height: 350px;
+    width: 872px;
+    margin-right:184px;
+}
+.card-text h2{
+    font-family: El Messiri;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.card-text p{
+    font-family: El Messiri;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.card img{
+    height: 334px;
+    width: 492px;
+    border-radius: 10px;
+}
+.card-buttons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 126px;
+    width:1890px;
+}
+.firstcard{
+    margin-right:136px;
+}
+.card-button{
+    width: 270px;
+    height: 50px;
+    background: #21ABA5;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-button a{
+    font-family: El Messiri;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: center;
+    text-decoration: none;
+    color:white;
+}

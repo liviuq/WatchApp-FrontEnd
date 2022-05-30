@@ -8,12 +8,9 @@
     <h1>Gaseste-ti ceasul perfect!</h1>
     <h2>Recomandari:</h2>
     <div class="recommendations__cards">
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
+      <app-watch-card *ngFor="let product of productsJson | slice: 0 : 4" price={{product.price}} name={{product.brand}} productId={{product.id}}></app-watch-card>
     </div>
-    <button class="more">
+    <button class="more" [routerLink]="['/buy-a-watch']">
       <p>Mai mult</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
@@ -30,25 +27,18 @@
       <app-categories-card text="Ceasuri editie limitata"></app-categories-card>
       <app-categories-card text="Ceasuri pentru afaceri"></app-categories-card>
     </div>
-    <button class="more">
+    <button class="more" [routerLink]="['/buy-a-watch']">
       <p>Mai mult</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
   </div>
 
   <div class="promoted">
-    <h1>Anunturi promovate</h1>
+    <h1>Alte anunturi</h1>
     <div class="promoted__cards">
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
-      <app-watch-card price="50.000" name="Ceas ROLEX"></app-watch-card>
+      <app-watch-card *ngFor="let product of productsJson | slice: 4 : 12" price={{product.price}} name={{product.brand}} productId={{product.id}}></app-watch-card>
     </div>
-    <button class="more">
+    <button class="more" [routerLink]="['/buy-a-watch']">
       <p>Mai mult</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>

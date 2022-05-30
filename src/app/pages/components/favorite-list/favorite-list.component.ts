@@ -13,6 +13,7 @@ export class FavoriteListComponent implements OnInit {
   constructor(public auth: AuthService, private http: HttpClient) { }
   public userId!: string;
   public productsJson!: any[];
+  public productsLength!: string;
   public userJson!: any;
   ngOnInit(): void {
     this.getData();
@@ -23,7 +24,8 @@ export class FavoriteListComponent implements OnInit {
         if (profile?.sub !== undefined)
           this.userId = profile.sub.split("|")[1];
         this.callJsonGetRestApi("https://watchappa3-be.herokuapp.com/favorites/extract/" + this.userId).subscribe(data => { //de schimbat link-ul     
-          this.productsJson = data.products;
+          this.productsJson = data.favoriteUtilsList;
+          this.productsLength = data.favoriteUtilsList.length;
         });
       }
     );
@@ -47,6 +49,5 @@ export class FavoriteListComponent implements OnInit {
           return throwError(error);
         })
       );
-
   }
 }

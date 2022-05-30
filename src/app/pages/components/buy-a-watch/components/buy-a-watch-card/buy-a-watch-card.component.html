@@ -1,6 +1,6 @@
 <div class="watch-card">
     <div class="watch-img">
-        <img src="../../../../assets/filter-page/watch.png" alt="">
+        <a routerLink="/product/{{productId}}"> <img src="../../../../assets/filter-page/watch.png" alt=""> </a>
     </div>
     <div class="flex-column">
         <h1>{{name}}</h1>
@@ -9,7 +9,7 @@
     </div>
     <div class="flex-column-right">
         <h1>{{price}} $</h1>
-        <img src="../../../../assets/filter-page/heart-filled.svg" alt="">
-        <button class="btn">Vezi anuntul</button>
+        <img src="../../../../assets/filter-page/heart.svg" alt="" (click)="addToFavorite()">
+        <button class="btn" routerLink="/product/{{productId}}">Vezi anuntul</button>
     </div>
 </div>

@@ -37,6 +37,7 @@ ul{
 }
 
 ul li a{
+    cursor: pointer;
     color: white;
     font-size: 20px;
     transition: .2s;

@@ -23,12 +23,23 @@ import { SellerProfileBuyerPerspectiveComponent } from './components/seller-prof
 import { HttpClientModule } from '@angular/common/http';
 import { SellerProfileProductCardComponent } from './components/seller-profile-buyer-perspective/components/seller-profile-product-card/seller-profile-product-card.component';
 import { PaginatorStyleDirective } from './components/seller-profile-buyer-perspective/paginator-style.directive';
+import { AdviceForSellersComponent } from './components/advice-for-sellers/advice-for-sellers.component';
+import { SellingAWatchComponent } from './components/selling-a-watch/selling-a-watch.component';
+import { CaringForYourWatchComponent } from './components/caring-for-your-watch/caring-for-your-watch.component';
+import { PhotographingAWatchComponent } from './components/photographing-a-watch/photographing-a-watch.component';
 import { SearchbarComponent } from './components/home/components/searchbar/searchbar.component';
 import { WatchCardComponent } from './components/home/components/watch-card/watch-card.component';
 import { CategoriesCardComponent } from './components/home/components/categories-card/categories-card.component';
 import { BuyAWatchCardComponent } from './components/buy-a-watch/components/buy-a-watch-card/buy-a-watch-card.component';
 import { FavoriteWatchCardComponent } from './components/favorite-list/components/favorite-watch-card/favorite-watch-card.component';
-
+import { ProductComponent } from './components/product/product.component';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import { FaqComponent } from './components/faq/faq.component';
+import { ProtectiaCumparatoruluiComponent } from './components/protectia-cumparatorului/protectia-cumparatorului.component';
+import { ReturComodComponent } from './components/retur-comod/retur-comod.component';
+import { DeleteProductCardComponent } from './components/seller-profile-buyer-perspective/components/delete-product-card/delete-product-card.component';
 
 @NgModule({
   declarations: [
@@ -48,11 +59,20 @@ import { FavoriteWatchCardComponent } from './components/favorite-list/component
     SellerProfileBuyerPerspectiveComponent,
     SellerProfileProductCardComponent,
     PaginatorStyleDirective,
+    AdviceForSellersComponent,
+    SellingAWatchComponent,
+    CaringForYourWatchComponent,
+    PhotographingAWatchComponent,
     SearchbarComponent,
     WatchCardComponent,
     CategoriesCardComponent,
     BuyAWatchCardComponent,
     FavoriteWatchCardComponent,
+    ProductComponent,
+    FaqComponent,
+    ProtectiaCumparatoruluiComponent,
+    ReturComodComponent,
+    DeleteProductCardComponent,
   ],
   imports: [
     CommonModule,
@@ -61,7 +81,10 @@ import { FavoriteWatchCardComponent } from './components/favorite-list/component
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
+    NgxGalleryModule,
+    BrowserAnimationsModule,
     MatPaginatorModule,
+    MatTabsModule
   ],
   exports: [
     ShoppingCartComponent,

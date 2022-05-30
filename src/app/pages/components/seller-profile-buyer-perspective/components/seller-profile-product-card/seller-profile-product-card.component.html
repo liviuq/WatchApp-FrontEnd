@@ -1,13 +1,13 @@
 <div class="watch_box">
     <img class="poza_ceas" src="assets/seller_profile/pozaceas.png">
     <div class="date_ceas">
-        <h1 class="header1">{{productName}}</h1>
+        <h1 class="header1">{{productName}} {{watchYear}}</h1>
         <h1 class="tip_ceas_desc tip_ceas_desc1">Vandut de: {{sellerName}}</h1>
         <h1 class="tip_ceas_desc">{{locationName}} - {{date}}</h1>
     </div>
     <div class="pret_anunt">
         <h1 class="header1">{{watchPrice}}$</h1>
-        <img class="inima_fav" src="assets/seller_profile/inima_seller.png">
-        <button class="anunt"><h1 class="anuntdesc">Vezi anuntul</h1></button>
+        <img class="inima_fav" src="assets/seller_profile/heart.svg">
+        <button class="anunt"><h1 class="anuntdesc" routerLink="/product/{{productId}}">Vezi anuntul</h1></button>
     </div>
  </div>

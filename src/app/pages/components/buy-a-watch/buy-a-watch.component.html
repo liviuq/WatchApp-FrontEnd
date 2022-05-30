@@ -180,7 +180,10 @@
 
 
   <div class="watches-list">
-    <app-buy-a-watch-card *ngFor="let product of productsJson" name={{product.brand}} seller={{product.user_id}}
+
+
+    <app-buy-a-watch-card *ngFor="let product of productsJson" buyerId={{userId}} productId={{product.id}} name={{product.brand}} sellerId={{product.user_id}}
+
       price={{product.price}}>
 
     </app-buy-a-watch-card>

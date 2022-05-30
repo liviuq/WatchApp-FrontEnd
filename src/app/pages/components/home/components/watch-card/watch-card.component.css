@@ -6,7 +6,6 @@
 
 
 .watch__card {
-    cursor: pointer;
     height: 285px;
     width: 250px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
@@ -16,7 +15,12 @@
     box-sizing: border-box;
 }
 
+.watch__card img{
+    cursor: pointer;
+}
+
 .watch__card h3 {
+    cursor: pointer;
     margin-top: 12px;
     font-size: 24px;
     font-weight: 700;
