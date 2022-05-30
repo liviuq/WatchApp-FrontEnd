@@ -40,98 +40,65 @@
  <ng-container *ngIf="show">
   <div class="adaugare_adresa">
     <div class="adrese_pt_livrare">
-          <h1 class="adrese_msj">Adrese dvs pentru livrare sunt:</h1>
-          <div class="adresa_model">
+           <h1 class="adrese_msj">Adresa curenta:</h1>
+           <div class="adresa_model">
             <div class="mic_flex">
-              <h1 class="Locatie_adresa styyle_text">Acasa</h1>
-              <img class="remove_locatie" src="assets/profil-utilizator-cumparator-images/remove_locatie.png">
+              <h1 class="Locatie_adresa styyle_text">{{profileJson?.postal_code}}</h1>
+              
             </div>
-               <h1 class="adresa_efectiva styyle_text1">str.. str..</h1>
-               <h1 class="oras_tara styyle_text1">Romania, Bucuresti</h1>
-          </div>
-          <div class="adresa_model">
-            <div class="mic_flex">
-              <h1 class="Locatie_adresa styyle_text">Birou</h1>
-              <img class="remove_locatie" src="assets/profil-utilizator-cumparator-images/remove_locatie.png">
-            </div>
-               <h1 class="adresa_efectiva styyle_text1">str.. str..</h1>
-               <h1 class="oras_tara styyle_text1">Romania, Bucuresti</h1>
-          </div>
-          
+               <h1 class="adresa_efectiva styyle_text1">{{profileJson?.address}}</h1>
+               <h1 class="oras_tara styyle_text1">{{profileJson?.city}}, {{profileJson?.county}}</h1>
+          </div>  
     </div>
+    
     <div class="bara">
 
     </div>
+    <!--  -->
     <div class="adaugare">
+      <form (ngSubmit)="saveAdress()" [formGroup]="userDetails" >
+        <h1 class="adrese_msj">Modificare adresa pentru livrare:</h1>
 
-          <h1 class="adrese_msj">Adaugare adresa pentru livrare:</h1>
-
-          <div class="row">
-            <div class="col-25">
-              <label for="mechanism">Tip adresa</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="mechanism" name="mechanism">
-            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="mechanism">City</label>
           </div>
-
-          <div class="row">
-            <div class="col-25">
-              <label for="mechanism">Street*</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="mechanism" name="mechanism">
-            </div>
+          <div class="col-75">
+            <input type="text" id="mechanism" name="mechanism" formControlName="city">
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-25">
-              <label for="mechanism">Street number</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="mechanism" name="mechanism">
-            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="mechanism">County</label>
           </div>
+          <div class="col-75">
+            <input type="text" id="mechanism" name="mechanism" formControlName="county">
+          </div>
+        </div>
 
-          <div class="row">
-            <div class="col-25">
-              <label for="mechanism">ZIP(or postal) code</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="mechanism" name="mechanism">
-            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="mechanism">Street</label>
           </div>
+          <div class="col-75">
+            <input type="text" id="mechanism" name="mechanism" formControlName="address">
+          </div>
+        </div>
 
-          <div class="row">
-            <div class="col-25">
-              <label for="condition">Country</label>
-            </div>
-            <div class="col-75">
-              <select id="condition" name="condition">
-                <option value="" disabled selected>Please select</option>
-                <option value="new">Romania</option>
-                <option value="used">France</option>
-              </select>
-            </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="mechanism">ZIP(or postal) code</label>
           </div>
-          
-          <div class="row">
-            <div class="col-25">
-                <label for="price">Phone number</label>
-              </div>
-              <div class="col-75 price">
-                <div class="mic_flex1">
-                <select name="price" id="price">
-                  <option value="fr">+33</option>
-                  <option value="ro">+40</option>
-                </select>
-                <input type="number" id="price" name="price" class="phone_in">
-                </div>
-              </div>
-            </div>
-         
-            <button class="salveaza_adresa"><h1 class="salv_adr">Add the adress to my profile</h1></button>
+          <div class="col-75">
+            <input type="text" id="mechanism" name="mechanism" formControlName="postal_code">
+          </div>
+        </div>
+          <button class="salveaza_adresa" type="submit"><h1 class="salv_adr">Add the adress to my profile</h1></button>
+        
+      </form>      
     </div>
+
     <img (click)="toggle()" class="cancel_save" src="assets/profil-utilizator-cumparator-images/cancel_save_adress.png">
 </div>
  </ng-container>

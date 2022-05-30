@@ -16,6 +16,13 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
     phone_number: new FormControl(''),
     })
 
+    userDetails= new FormGroup({
+      city: new FormControl(''),
+      county: new FormControl(''),
+      address: new FormControl(''),
+      postal_code: new FormControl(''),
+  })
+  
   public status1: 'none' | 'first'  = 'none';
   public status2: 'none' | 'secound'  = 'none';
   public status3: 'none' | 'third'  = 'none';
@@ -77,7 +84,7 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
                 this.brandFilterFINAL=this.brandFilter.filter((v,i,a)=>a.indexOf(v)===i);
                 this.sexFilterFINAL=this.sexFilter.filter((v,i,a)=>a.indexOf(v)===i);
                 this.yearFilterFINAL=this.yearFilter.filter((v,i,a)=>a.indexOf(v)===i);
-                 
+                
                 /* ------ works -------- */
                 //console.log(this.brandFilterFINAL);
                 //console.log(this.sexFilterFINAL);
@@ -241,6 +248,14 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
     
     window.location.reload();
   }
+  //works
+  saveAdress(){
+    console.log(this.userDetails.value);
+    this.sendF('https://watchappa3-be.herokuapp.com/user/'+ this.userId+'/update/userdata',this.userDetails.value).subscribe(data=>{
+                
+    });
+    window.location.reload();
+  }
 
   sendF(url: string,x:any):Observable<any>{
     const headers = new HttpHeaders({'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers':  'Content-Type, X-Auth-Token, Authorization, Origin', 'Access-Control-Allow-Methods':  'PUT', 'Access-Control-Allow-Credentials': 'true'});
@@ -261,10 +276,7 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
   }
 
 
-  // "city": null,
-  // "county": null,
-  // "address": null,
-  // "postal_code": null,
+  
 
   
 }
