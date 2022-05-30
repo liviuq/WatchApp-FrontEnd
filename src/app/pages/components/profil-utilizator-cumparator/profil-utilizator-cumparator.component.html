@@ -40,16 +40,17 @@
  <ng-container *ngIf="show">
   <div class="adaugare_adresa">
     <div class="adrese_pt_livrare">
-          <h1 class="adrese_msj">Adresa curenta:</h1>
-          <div class="adresa_model">
+           <h1 class="adrese_msj">Adresa curenta:</h1>
+           <div class="adresa_model">
             <div class="mic_flex">
-              <h1 class="Locatie_adresa styyle_text">Acasa</h1>
-              <img class="remove_locatie" src="assets/profil-utilizator-cumparator-images/remove_locatie.png">
+              <h1 class="Locatie_adresa styyle_text">{{profileJson?.postal_code}}</h1>
+              
             </div>
-               <h1 class="adresa_efectiva styyle_text1">str.. str..</h1>
-               <h1 class="oras_tara styyle_text1">Romania, Bucuresti</h1>
-          </div>
+               <h1 class="adresa_efectiva styyle_text1">{{profileJson?.address}}</h1>
+               <h1 class="oras_tara styyle_text1">{{profileJson?.city}}, {{profileJson?.county}}</h1>
+          </div>  
     </div>
+    
     <div class="bara">
 
     </div>
