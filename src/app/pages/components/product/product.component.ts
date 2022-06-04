@@ -5,6 +5,8 @@ import { Observable, throwError } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginConditionComponent } from '../login-condition/login-condition.component';
 
 
 @Component({
@@ -22,7 +24,7 @@ export class ProductComponent implements OnInit {
   galleryOptions!: NgxGalleryOptions[];
   galleryImages!: NgxGalleryImage[];
 
-  constructor(public auth: AuthService, private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(public auth: AuthService, private http: HttpClient, private route: ActivatedRoute,private dialogRef : MatDialog) { }
 
   ngOnInit(): void {
     this.productId = this.route.snapshot.paramMap.get('id');
@@ -89,14 +91,26 @@ export class ProductComponent implements OnInit {
   }
 
   addToFavorite(): void{
+    
+    if(this.userId!==undefined)
     this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.userId+"/insert/"+this.productId).subscribe(data=>{
       console.log(data);
     }); 
+    else 
+    this.openLoginConditionDialog();
+    
   }
 
   addToCart(): void{
-    this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/cart/"+this.userId+"/insert/"+this.productId).subscribe(data=>{
-    }); 
+
+    if(this.userId!==undefined){
+      this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/cart/"+this.userId+"/insert/"+this.productId).subscribe(data=>{
+      }); 
+    }
+    else {
+      this.openLoginConditionDialog();
+    }
+    
   }
 
   callJsonGetRestApi(url: string): Observable<any> {
@@ -135,6 +149,10 @@ export class ProductComponent implements OnInit {
         })
       );
 
+  }
+
+  openLoginConditionDialog():void{
+    this.dialogRef.open(LoginConditionComponent);
   }
 
 
