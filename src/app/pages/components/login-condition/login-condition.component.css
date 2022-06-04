@@ -1,0 +1,46 @@
+.text-container{
+    width: 800px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.text-container p{
+    font-family: El Messiri;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #082A4D;
+}
+
+.img-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.img-container img{
+    cursor: pointer; 
+}
+
+.login{
+    cursor: pointer;
+    margin-top:40px;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 37px;
+    background: #21ABA5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login a{
+    font-family: DM Mono;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: center;    
+}

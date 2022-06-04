@@ -40,6 +40,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { ProtectiaCumparatoruluiComponent } from './components/protectia-cumparatorului/protectia-cumparatorului.component';
 import { ReturComodComponent } from './components/retur-comod/retur-comod.component';
 import { DeleteProductCardComponent } from './components/seller-profile-buyer-perspective/components/delete-product-card/delete-product-card.component';
+import { LoginConditionComponent } from './components/login-condition/login-condition.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { DeleteProductCardComponent } from './components/seller-profile-buyer-pe
     ProtectiaCumparatoruluiComponent,
     ReturComodComponent,
     DeleteProductCardComponent,
+    LoginConditionComponent,
   ],
   imports: [
     CommonModule,

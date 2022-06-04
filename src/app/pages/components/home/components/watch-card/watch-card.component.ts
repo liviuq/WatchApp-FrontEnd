@@ -3,6 +3,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginConditionComponent } from '../../../login-condition/login-condition.component';
 
 @Component({
   selector: 'app-watch-card',
@@ -14,7 +16,7 @@ export class WatchCardComponent implements OnInit {
   @Input() name!: string;
   @Input() price!: string;
   @Input() productId!: string;
-  constructor(public auth: AuthService, private http: HttpClient) { }
+  constructor(public auth: AuthService, private http: HttpClient,private dialogRef : MatDialog) { }
   public userId!: string;
   public productsJson!: any[];
   public productsLength!: string;
@@ -26,11 +28,13 @@ export class WatchCardComponent implements OnInit {
   addToFavorite(): void{
     this.auth.user$.subscribe(
       (profile) => {
-        if (profile?.sub !== undefined)
+        if (profile?.sub !== undefined){
           this.userId = profile.sub.split("|")[1];
           this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.userId+"/insert/"+this.productId).subscribe(data=>{
             console.log(data);
-        }); 
+          }); 
+        }
+        else this.openLoginConditionDialog();
       }
     );
   }
@@ -52,6 +56,10 @@ export class WatchCardComponent implements OnInit {
         })
       );
 
+  }
+
+  openLoginConditionDialog():void{
+    this.dialogRef.open(LoginConditionComponent);
   }
 
 }
