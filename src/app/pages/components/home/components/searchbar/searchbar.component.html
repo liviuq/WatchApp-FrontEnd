@@ -1,7 +1,10 @@
+<form  (ngSubmit)="onSubmit()" [formGroup]="searchDetails">
 <div class="searchbar">
     <div class="div">
         <img src="../../../../assets/home/search.png" alt="">
-        <input class="input" type="text" placeholder="Search by brand, color ...">
+        <input class="input" type="text" formControlName="content" placeholder="Search by brand, color ...">
     </div>
-    <img src="../../../../assets/home/circle-arrow.svg" alt="">
+    <button type="submit"><img src="../../../../assets/home/circle-arrow.svg" alt=""></button>
 </div>
+<pre>{{searchDetails.value|json}}</pre>
+</form>

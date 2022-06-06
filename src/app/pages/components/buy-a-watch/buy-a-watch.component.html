@@ -1,21 +1,11 @@
 <div class="page">
 
  
-  <div class="searchbar">
-    
-    <div class="div">
-        <img src="../../../../assets/home/search.png" alt="">
-        <form (ngSubmit)="getData()" [formGroup]="searchDetails">
-        <input class="input" type="text" placeholder="Search by brand, color ..." formControlName="content"> 
-      </form>
-    </div>
+  <!-- <app-searchbar></app-searchbar> -->
 
-    <img src="../../../../assets/home/circle-arrow.svg" alt="">
-  
-</div>
 
   <div class="filter">
-    <form  (ngSubmit)="getData()" [formGroup]="itemDetails">
+    <form  (ngSubmit)="updateData()" [formGroup]="itemDetails">
       <div class="filter__grid">
         <div class="filter__grid__topleft">
           <h5>Filtre pentru a gasi ceasul perfect:</h5>
@@ -26,7 +16,7 @@
                 <input type="text" id="ron" value="0" maxlength="4" formControlName="price_min"/>
               </div>
               <div class="ron">
-                <input type="text" id="ron" value="20" maxlength="4" formControlName="price_max"/>
+                <input type="text" id="ron" value="9999" maxlength="4" formControlName="price_max"/>
               </div>
             </div>
           </div>
@@ -47,7 +37,7 @@
             <h5>Brand</h5>
             <select name="brand" id="brand" formControlName="brand" >
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.brands">
+              <option *ngFor="let filter of filtersJson?.brands">
                 {{filter}}
               </option>
             </select>
@@ -58,7 +48,7 @@
             <h5>Mechanism</h5>
             <select name="mechanism" id="mechanism" formControlName="mechanism" >
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.mechanisms">
+              <option *ngFor="let filter of filtersJson?.mechanisms">
                 {{filter}}
               </option>
             </select>
@@ -67,7 +57,7 @@
             <h5>Condition</h5>
             <select name="condition" id="condition" formControlName="conditions">
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.conditions">
+              <option *ngFor="let filter of filtersJson?.conditions">
                 {{filter}}
               </option>
             </select>
@@ -77,7 +67,7 @@
               production</h5>
             <select name="year" id="year" formControlName="year">
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.years">
+              <option *ngFor="let filter of filtersJson?.years">
                 {{filter}}
               </option>
             </select>
@@ -86,7 +76,7 @@
             <h5>Strap</h5>
             <select name="strap" id="strap" formControlName="strap" >
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.straps">
+              <option *ngFor="let filter of filtersJson?.straps">
                 {{filter}}
               </option>
             </select>
@@ -95,7 +85,7 @@
             <h5>Strap color</h5>
             <select name="strap-color" id="strap-color" formControlName="strap_color">
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.strap_colors">
+              <option *ngFor="let filter of filtersJson?.strap_colors">
                 {{filter}}
               </option>
             </select>
@@ -104,7 +94,7 @@
             <h5>Carcase</h5>
             <select name="carcase" id="carcase" formControlName="carcase">
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.carcases">
+              <option *ngFor="let filter of filtersJson?.carcases">
                 {{filter}}
               </option>
             </select>
@@ -113,7 +103,7 @@
             <h5>Form</h5>
             <select name="form" id="form" formControlName="carcase_form">
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.carcase_forms">
+              <option *ngFor="let filter of filtersJson?.carcase_forms">
                 {{filter}}
               </option>
             </select>
@@ -122,16 +112,16 @@
             <h5>Thickness</h5>
             <select name="thickness" id="thickness" formControlName="carcase_thickness">
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.carcase_thicknesses">
+              <option *ngFor="let filter of filtersJson?.carcase_thicknesses">
                 {{filter}}
               </option>
             </select>
           </div>
           <div class="flex-row">
             <h5>Water resistance</h5>
-            <select name="water-resistance" id="water-resistance" formControlName="water_resistance">
+            <select name="water-resistance" id="water-resistance" formControlName="water_resistence">
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.water_resistences">
+              <option *ngFor="let filter of filtersJson?.water_resistences">
                 {{filter}}
               </option>
             </select>
@@ -140,7 +130,7 @@
             <h5>Carcase Color</h5>
             <select name="color" id="color" formControlName="carcase_color" >
               <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson.carcase_colors">
+              <option *ngFor="let filter of filtersJson?.carcase_colors">
                 {{filter}}
               </option>
             </select>
@@ -175,7 +165,7 @@
       </div>
       <div class="filter__button__container">
         <button (click)="resetData()" class="filter__reset__button">Reset</button>
-        <button class="filter__button">Filter</button>
+        <button type="submit" class="filter__button">Filter</button>
       </div>
     </form>
   </div>
@@ -184,9 +174,9 @@
   <div class="watches-list">
 
 
-    <app-buy-a-watch-card *ngFor="let product of productsJson" buyerId={{userId}} productId={{product.id}} name={{product.brand}} sellerId={{product.user_id}}
+    <app-buy-a-watch-card *ngFor="let product of productsJson" buyerId={{userId}} productId={{product?.id}} name={{product?.brand}} sellerId={{product?.user_id}}
 
-      price={{product.price}}>
+      price={{product?.price}}>
 
     </app-buy-a-watch-card>
 
@@ -213,6 +203,5 @@
     </div>
 
     <pre>{{itemDetails.value|json}}</pre>
-    <pre>{{searchDetails.value|json}}</pre>
   </div>
 </div>

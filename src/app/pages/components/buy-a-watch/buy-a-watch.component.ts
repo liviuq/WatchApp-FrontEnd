@@ -1,84 +1,118 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Component,  OnInit } from '@angular/core';
+import {HttpParams, HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
-import { FormControl, FormGroup,FormsModule, ReactiveFormsModule, } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '@auth0/auth0-angular';
+import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-buy-a-watch',
   templateUrl: './buy-a-watch.component.html',
   styleUrls: ['./buy-a-watch.component.css']
 })
 export class BuyAWatchComponent implements OnInit {
-
-  constructor(public auth: AuthService, private http: HttpClient) { }
+  constructor(public auth: AuthService, private http: HttpClient,private route: ActivatedRoute, private router: Router) { 
+    this.route.queryParamMap
+      .subscribe((params) => {
+        this.params = params;
+  }
+);
+  }
+  public params!:any;
   public userId!: string;
   public productsJson!: any[];
   public filtersJson!: any;
   public userJson!: any;
-
-  ngOnInit(): void {
+  public paramsObject!:any;
+  public brand!:string;
+  public mechanism !:string;
+  public condition !:string;
+  public year !:string;
+  public strap !:string;
+  public strap_color!:string;
+  public carcase !:string;
+  public carcase_form !:string;
+  public carcase_thickness !:string;
+  public water_resistence!:string;
+  public carcase_color!:string;
+  public alarm !:string;
+  public timer !:string;
+  public gender !:string;
+  public price_min !:string;
+  public price_max !:string;
+  ngOnInit(): void { 
     this.getData();
-
   }
-  getData(): void {
-    var brand = this.itemDetails.value.brand;
-    var mechanism = this.itemDetails.value.mechanism;
-    var condition = this.itemDetails.value.conditions;
-    var year = this.itemDetails.value.year;
-    var strap = this.itemDetails.value.strap;
-    var strap_color= this.itemDetails.value.strap_color;
-    var carcase = this.itemDetails.value.carcase;
-    var carcase_form = this.itemDetails.value.carcase_form;
-    var carcase_thickness = this.itemDetails.value.carcase_thickness;
-    var water_resistence = this.itemDetails.value.water_resistence;
-    var carcase_color = this.itemDetails.value.carcase_color;
-    var alarm = this.itemDetails.value.alarm;
-    var timer = this.itemDetails.value.timer;
-    var gender = this.itemDetails.value.gender;
+  updateData():void{
+    console.log("UPDATE DATA");
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate(['/buy-a-watch'], { queryParams: { 
+        brand : this.itemDetails.value.brand ,
+         mechanism : this.itemDetails.value.mechanism,
+         condition : this.itemDetails.value.conditions,
+         year : this.itemDetails.value.year,
+         strap : this.itemDetails.value.strap,
+         strap_color: this.itemDetails.value.strap_color,
+         carcase : this.itemDetails.value.carcase,
+         carcase_form : this.itemDetails.value.carcase_form,
+         carcase_thickness : this.itemDetails.value.carcase_thickness,
+         water_resistence : this.itemDetails.value.water_resistence,
+         carcase_color : this.itemDetails.value.carcase_color,
+         alarm : this.itemDetails.value.alarm,
+         timer : this.itemDetails.value.timer,
+         gender : this.itemDetails.value.gender,
+         price_min : this.itemDetails.value.price_min,
+         price_max : this.itemDetails.value.price_max,
+      },queryParamsHandling: 'merge'});
+  });
+    
+  }
 
+  getData(): void {
+    
     var url = `https://watchappa3-be.herokuapp.com/product/filter?`;
-    if(brand != ""){
-      url = url.concat(`brand=${brand}&`);
+    if(this.params.get('brand') != ""){
+      url = url.concat(`brand=${this.params.get('brand')}&`);
     }
-    if(mechanism != ""){
-      url = url.concat(`mechanism=${mechanism}&`);
+    if(this.params.get('mechanism') != ""){
+      url = url.concat(`mechanism=${this.params.get('mechanism')}&`);
     }
-    if(condition != ""){
-      url = url.concat(`condition=${condition}&`);
+    if(this.params.get('condition') != ""){
+      url = url.concat(`condition=${this.params.get('condition')}&`);
     }
-    if(year != ""){
-      url = url.concat(`year=${year}&`);
+    if(this.params.get('year') != ""){
+      url = url.concat(`year=${this.params.get('year')}&`);
     }
-    if(strap != ""){
-      url = url.concat(`strap=${strap}&`);
+    if(this.params.get('strap') != ""){
+      url = url.concat(`strap=${this.params.get('strap')}&`);
     }
-    if(strap_color != ""){
-      url = url.concat(`color=${strap_color}&`);
+    if(this.params.get('strap_color') != ""){
+      url = url.concat(`color=${this.params.get('strap_color')}&`);
     }
-    if(carcase != ""){
-      url = url.concat(`carcase=${carcase}&`);
+    if(this.params.get('carcase') != ""){
+      url = url.concat(`carcase=${this.params.get('carcase')}&`);
     }
-    if(carcase_form != ""){
-      url = url.concat(`form=${carcase_form}&`);
+    if(this.params.get('carcase_form') != ""){
+      url = url.concat(`form=${this.params.get('carcase_form')}&`);
     }
-    if(carcase_thickness != ""){
-      url = url.concat(`thickness=${carcase_thickness}&`);
+    if(this.params.get('carcase_thickness') != ""){
+      url = url.concat(`thickness=${this.params.get('carcase_thickness')}&`);
     }
-    if(water_resistence != ""){
-      url = url.concat(`waterResistance=${water_resistence}&`);
+    if(this.params.get('water_resistence') != ""){
+      url = url.concat(`waterResistance=${this.params.get('water_resistence')}&`);
     }
-    if(carcase_color != ""){
-      url = url.concat(`carcaseColor=${carcase_color}&`);
+    if(this.params.get('carcase_color') != ""){
+      url = url.concat(`carcaseColor=${this.params.get('carcase_color')}&`);
     }
-    if(alarm != ""){
-      url = url.concat(`alarm=${alarm}&`);
+    if(this.params.get('alarm') != ""){
+      url = url.concat(`alarm=${this.params.get('alarm')}&`);
     }
-    if(timer != ""){
-      url = url.concat(`timer=${timer}&`);
+    if(this.params.get('timer') != ""){
+      url = url.concat(`timer=${this.params.get('timer')}&`);
     }
-    if(gender != ""){
-      url = url.concat(`gender=${gender}&`);
+    if(this.params.get('gender') != ""){
+      url = url.concat(`gender=${this.params.get('gender')}&`);
     }
     url.replaceAll(" ","%20");
     // alert(url);
@@ -89,8 +123,9 @@ export class BuyAWatchComponent implements OnInit {
 
         this.callJsonGetRestApi(url).subscribe(data => { //de schimbat link-ul     
           this.productsJson = data;
-          if(this.itemDetails.value.price_min != "" &&  this.itemDetails.value.price_max != ""){ //
-            this.productsJson = this.productsJson.filter((product) => { return (product.price <= parseInt(this.itemDetails.value.price_max)) && (product.price >= parseInt(this.itemDetails.value.price_min))})
+          console.log(this.params.get('price_min') + " --- "+ this.params.get('price_max'));
+          if(this.params.get('price_min') != "" &&  this.params.get('price_max') != ""){ //
+            this.productsJson = this.productsJson.filter((product) => { return (product.price <= parseInt(this.params.get('price_max'))) && (product.price >= parseInt(this.params.get('price_min')))})
           }
         });
 
@@ -108,7 +143,6 @@ export class BuyAWatchComponent implements OnInit {
   }
 
   callJsonGetRestApi(url: string): Observable<any> {
-    console.log(url);
     return this.http.get(url)
       .pipe(map((data: any) => {
         //handle api 200 response code here or you wanted to manipulate to response
@@ -125,9 +159,6 @@ export class BuyAWatchComponent implements OnInit {
       );
 
   }
-  searchDetails = new FormGroup({
-    content: new FormControl('')
-  })
   itemDetails = new FormGroup({
     price_min: new FormControl(''),
     price_max: new FormControl(''),
