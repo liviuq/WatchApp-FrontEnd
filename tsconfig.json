@@ -23,7 +23,8 @@
     "allowSyntheticDefaultImports": true,
     "lib": [
       "es2020",
-      "dom"
+      "dom",
+      "ES2021.String"
     ]
   },
   "angularCompilerOptions": {
