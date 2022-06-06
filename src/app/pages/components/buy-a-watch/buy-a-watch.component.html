@@ -1,6 +1,18 @@
 <div class="page">
 
-  <app-searchbar class="searchbar"></app-searchbar>
+ 
+  <div class="searchbar">
+    
+    <div class="div">
+        <img src="../../../../assets/home/search.png" alt="">
+        <form (ngSubmit)="getData()" [formGroup]="searchDetails">
+        <input class="input" type="text" placeholder="Search by brand, color ..." formControlName="content"> 
+      </form>
+    </div>
+
+    <img src="../../../../assets/home/circle-arrow.svg" alt="">
+  
+</div>
 
   <div class="filter">
     <form  (ngSubmit)="getData()" [formGroup]="itemDetails">
@@ -8,129 +20,129 @@
         <div class="filter__grid__topleft">
           <h5>Filtre pentru a gasi ceasul perfect:</h5>
           <div class="filter__pret flex-row">
-            <h5>Pret:</h5>
+            <h5>Price:</h5>
             <div class="flex-row">
               <div class="ron">
-                <input type="text" id="ron" value="0" maxlength="4"/>
+                <input type="text" id="ron" value="0" maxlength="4" formControlName="price_min"/>
               </div>
               <div class="ron">
-                <input type="text" id="ron" value="1500" maxlength="4"/>
+                <input type="text" id="ron" value="20" maxlength="4" formControlName="price_max"/>
               </div>
             </div>
           </div>
           <div class="filter__pentru flex-row">
-            <h5>Pentru: </h5>
+            <h5>For: </h5>
             <div class="flex-column">
               <div>
                 <input type="radio" name="gender" value="0" formControlName="gender">
-                <label for="gender">Barbati</label>
+                <label for="gender">Male</label>
               </div>
               <div>
                 <input type="radio" name="gender" value="1" formControlName="gender">
-                <label for="gender">Femei</label>
+                <label for="gender">Female</label>
               </div>
             </div>
           </div>
           <div class="flex-row filter-brand">
             <h5>Brand</h5>
             <select name="brand" id="brand" formControlName="brand" >
-              <option value="" disabled selected>Please select</option>
-              <option *ngFor="let status_item of brand_values">
-                {{status_item}}
-                </option>
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.brands">
+                {{filter}}
+              </option>
             </select>
           </div>
-        </div>
-        <div class="filter__grid__topright">
-
         </div>
         <div class="filter__grid__bottom">
           <div class="flex-row">
             <h5>Mechanism</h5>
             <select name="mechanism" id="mechanism" formControlName="mechanism" >
-              <option value="" disabled selected>Please select</option>
-              <option *ngFor="let status_item of mechanism_values">
-                {{status_item}}
-                </option>
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.mechanisms">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="flex-row">
             <h5>Condition</h5>
-            <select name="condition" id="condition" formControlName="condition">
-              <option value="" disabled selected>Please select</option>
-              <option *ngFor="let status_item of condition_values">
-                {{status_item}}
-                </option>
+            <select name="condition" id="condition" formControlName="conditions">
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.conditions">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="flex-row">
             <h5>Year of
               production</h5>
             <select name="year" id="year" formControlName="year">
-              <option value="" disabled selected>Please select</option>
-              <option value="1950">1950 - 2022</option>
-              <option value="0">unknown</option>
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.years">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="flex-row">
             <h5>Strap</h5>
             <select name="strap" id="strap" formControlName="strap" >
-              <option value="" disabled selected>Please select</option>
-              <option *ngFor="let status_item of strap_values">
-                {{status_item}}
-                </option>
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.straps">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="flex-row">
             <h5>Strap color</h5>
             <select name="strap-color" id="strap-color" formControlName="strap_color">
-              <option value="" disabled selected>Please select</option>
-              <option *ngFor="let status_item of strap_color">
-                {{status_item}}
-                </option>
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.strap_colors">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="flex-row">
             <h5>Carcase</h5>
             <select name="carcase" id="carcase" formControlName="carcase">
-              <option value="" disabled selected>Please select</option>
-              <option *ngFor="let status_item of carcase_values">
-                {{status_item}}
-                </option>
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.carcases">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="flex-row">
             <h5>Form</h5>
             <select name="form" id="form" formControlName="carcase_form">
-              <option value="" disabled selected>Please select</option>
-              <option value="round">Round</option>
-              <option value="square">Square</option>
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.carcase_forms">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="flex-row">
             <h5>Thickness</h5>
             <select name="thickness" id="thickness" formControlName="carcase_thickness">
-              <option value="" disabled selected>Please select</option>
-              <option value="8">2 - 8 mm</option>
-              <option value="12">8 - 12 mm</option>
-              <option value="20">12 - 20 mm</option>
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.carcase_thicknesses">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="flex-row">
             <h5>Water resistance</h5>
-            <select name="water-resistance" id="water-resistance" formControlName="water_resistence">
-              <option value="" disabled selected>Please select</option>
-              <option value="1">ISO 2281 water resistance testing</option>
-              <option value="2">ISO 6425 – Divers' watches </option>
+            <select name="water-resistance" id="water-resistance" formControlName="water_resistance">
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.water_resistences">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="flex-row">
-            <h5>Color</h5>
+            <h5>Carcase Color</h5>
             <select name="color" id="color" formControlName="carcase_color" >
-              <option value="" disabled selected>Please select</option>
-              <option *ngFor="let status_item of carcase_color">
-                {{status_item}}
-                </option>
+              <option value="" >Please select</option>
+              <option *ngFor="let filter of filtersJson.carcase_colors">
+                {{filter}}
+              </option>
             </select>
           </div>
           <div class="filter__pentru flex-row">
@@ -138,11 +150,11 @@
             <div class="flex-column">
               <div>
                 <input type="radio" name="alarm" value="1" formControlName="alarm">
-                <label for="alarm">yes</label>
+                <label for="alarm">Yes</label>
               </div>
               <div>
                 <input type="radio" name="alarm" value="0" formControlName="alarm">
-                <label for="alarm">no</label>
+                <label for="alarm">No</label>
               </div>
             </div>
           </div>
@@ -151,15 +163,19 @@
             <div class="flex-column">
               <div>
                 <input type="radio" name="timer" value="1" formControlName="timer">
-                <label for="timer">yes</label>
+                <label for="timer">Yes</label>
               </div>
               <div>
                 <input type="radio" name="timer" value="0" formControlName="timer">
-                <label for="timer">no</label>
+                <label for="timer">No</label>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="filter__button__container">
+        <button (click)="resetData()" class="filter__reset__button">Reset</button>
+        <button class="filter__button">Filter</button>
       </div>
     </form>
   </div>
@@ -197,5 +213,6 @@
     </div>
 
     <pre>{{itemDetails.value|json}}</pre>
+    <pre>{{searchDetails.value|json}}</pre>
   </div>
 </div>

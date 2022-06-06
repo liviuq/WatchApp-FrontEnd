@@ -3,9 +3,6 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
-import { LoginConditionComponent } from '../../../login-condition/login-condition.component';
-import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-buy-a-watch-card',
@@ -23,7 +20,7 @@ export class BuyAWatchCardComponent implements OnInit {
   @Input() buyerId!: string;
   @Input() productId!: string;
 
-  constructor(public auth: AuthService,private http: HttpClient, private router: Router, private dialogRef : MatDialog) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -35,19 +32,9 @@ export class BuyAWatchCardComponent implements OnInit {
   
 
   addToFavorite(): void{
-    
-    this.auth.user$.subscribe(
-      (profile) => {
-        if (profile?.sub == undefined)
-        this.openLoginConditionDialog();
-        else{
-          this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.buyerId+"/insert/"+this.productId).subscribe(data=>{
-          console.log(data);
-          }); 
-        }
-      }
-    );      
-    
+    this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.buyerId+"/insert/"+this.productId).subscribe(data=>{
+      console.log(data);
+    }); 
   }
 
   callJsonPostRestApi(url: string):Observable<any> {
@@ -85,12 +72,6 @@ export class BuyAWatchCardComponent implements OnInit {
           return throwError(error);
         })
       );
-
-  }
-
-  openLoginConditionDialog():void{
-
-    this.dialogRef.open(LoginConditionComponent);
 
   }
 

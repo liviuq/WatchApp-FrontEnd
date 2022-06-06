@@ -16,7 +16,7 @@
         <div class="col-75">
           <select id="brand" formControlName="brand">
             <option value="" disabled selected>Please select</option>
-            <option *ngFor="let status_item of brand_values">
+            <option *ngFor="let status_item of filtersJson.brands">
             {{status_item}}
             </option>
         </select>
@@ -48,9 +48,9 @@
         <div class="col-75">
           <select id="mechanism" name="mechanism" formControlName="mechanism">
             <option value="" disabled selected>Please select</option>
-              <option value="Manual Movement">Manual Movement</option>
-              <option value="Automatic Movement">Automatic Movement</option>
-              <option value="Quartz Movement">Quartz Movement</option>
+            <option *ngFor="let status_item of filtersJson.mechanisms">
+              {{status_item}}
+            </option>
           </select>
         </div>
       </div>
@@ -61,7 +61,7 @@
         <div class="col-75">
           <select id="conditions" name="conditions" formControlName="conditions">
             <option value="" disabled selected>Please select</option>
-            <option *ngFor="let status_item of condition_values">
+            <option *ngFor="let status_item of filtersJson.conditions">
               {{status_item}}
               </option>
           </select>
@@ -91,7 +91,12 @@
           <label for="year">Year of production*</label>
         </div>
         <div class="col-75">
-          <input type="number" id="year" name="year" formControlName="year">
+          <select name="year" id="year" formControlName="year">
+            <option value="" disabled selected>Please select</option>
+            <option *ngFor="let status_item of filtersJson.years">
+              {{status_item}}
+            </option>
+          </select>
         </div>
       </div>
       <div class="row">
@@ -101,7 +106,7 @@
         <div class="col-75">
           <select id="strap" name="strap" formControlName="strap">
             <option value="" disabled selected>Please select</option>
-            <option *ngFor="let status_item of strap_values">
+            <option *ngFor="let status_item of filtersJson.straps">
               {{status_item}}
               </option>
           </select>
@@ -114,7 +119,7 @@
         <div class="col-75">
           <select id="strap_color" name="strap_color" formControlName="strap_color">
             <option value="" disabled selected>Please select</option>
-            <option *ngFor="let status_item of strap_color">
+            <option *ngFor="let status_item of filtersJson.strap_colors">
               {{status_item}}
               </option>
           </select>
@@ -131,7 +136,12 @@
       <label for="carcase">Carcase</label>
     </div>
     <div class="col-75">
-      <input type="text" id="carcase" name="carcase" formControlName="carcase">
+      <select name="carcase" id="carcase" formControlName="carcase">
+        <option value="" disabled selected>Please select</option>
+        <option *ngFor="let status_item of filtersJson.carcases">
+          {{status_item}}
+        </option>
+      </select>
     </div>
   </div>
   <div class="row">
@@ -139,10 +149,11 @@
       <label for="carcase_form">Form</label>
     </div>
     <div class="col-75">
-      <select id="carcase_form" name="carcase_form" formControlName="carcase_form">
-        <option value="" disabled selected>Please select</option>
-        <option value="Round">Round</option>
-        <option value="Square">Square</option>
+      <select name="carcase_form" id="carcase_form" formControlName="carcase_form">
+        <option value="" >Please select</option>
+        <option *ngFor="let status_item of filtersJson.carcase_forms">
+          {{status_item}}
+        </option>
       </select>
     </div>
   </div>
@@ -151,11 +162,11 @@
       <label for="carcase_thickness">Thickness</label>
     </div>
     <div class="col-75">
-      <select id="carcase_thickness" name="carcase_thickness" formControlName="carcase_thickness">
-        <option value="" disabled selected>Please select</option>
-        <option value="2 to 8mm">2 to 8mm</option>
-        <option value="8 to 12mm">8mm to 12mm</option>
-        <option value="12 to 20mm">12mm-20mm</option>
+      <select name="carcase_thickness" id="carcase_thickness" formControlName="carcase_thickness">
+        <option value="" >Please select</option>
+        <option *ngFor="let status_item of filtersJson.carcase_thicknesses">
+          {{status_item}}
+        </option>
       </select>
     </div>
   </div>
@@ -166,7 +177,7 @@
     <div class="col-75">
       <select id="carcase_color" name="carcase_color" formControlName="carcase_color">
         <option value="" disabled selected>Please select</option>
-        <option *ngFor="let status_item of carcase_color">
+        <option *ngFor="let status_item of filtersJson.carcase_colors">
           {{status_item}}
           </option>
       </select>
@@ -183,12 +194,11 @@
       <label for="water_resistence">Water resistence</label>
     </div>
     <div class="col-75">
-      <select id="water_resistence" name="water_resistence" formControlName="water_resistence">
-        <option value="" disabled selected>Please select</option>
-        <option value="No">No</option>
-        <option value="ISO 2281 water resistance testing">ISO 2281 water resistance testing</option>
-        <option value="ISO 6425 – Divers' watches">ISO 6425 – Divers' watches</option>
-  
+      <select name="water_resistence" id="water_resistence" formControlName="water_resistence">
+        <option value="" >Please select</option>
+        <option *ngFor="let status_item of filtersJson.water_resistences">
+          {{status_item}}
+        </option>
       </select>
     </div>
   </div>
