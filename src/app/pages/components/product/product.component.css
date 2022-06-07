@@ -159,10 +159,7 @@ ngx-gallery {
 
 .chat{
     margin-top: .3em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: .2em;
+    text-align: center;
     width: 250px;
     height: 50px;
     background: #24865D;
@@ -170,17 +167,12 @@ ngx-gallery {
     border: none;
     
 
-    font-weight: 400;
+    font-weight: 700;
     font-size: 20px;
-    line-height: 80%;
+
 
     color: #FFFFFF;
     transition: all .4s;
-}
-
-.chat img{
-    margin-bottom: 8px;
-    height: 40px;
 }
 
 .chat:hover{
