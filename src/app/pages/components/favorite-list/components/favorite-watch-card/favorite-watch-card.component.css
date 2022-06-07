@@ -39,7 +39,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end;
     gap: 5px;
     right: 35px;
 }

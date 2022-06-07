@@ -15,7 +15,9 @@ export class SearchbarComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit() {
-    this.router.navigate(['/buy-a-watch'], { queryParams: { brand : this.searchDetails.value.content,
+    
+    this.router.navigate(['/buy-a-watch'], { queryParams: { 
+      brand : this.searchDetails.value.content,
       mechanism :"" ,
       condition :"" ,
       year :"" ,
@@ -28,6 +30,9 @@ export class SearchbarComponent implements OnInit {
       carcase_color : "",
       alarm :"" ,
       timer : "",
-      gender : ""},queryParamsHandling: 'merge' });
+      gender : "",
+    price_min:"",
+  price_max:""
+},queryParamsHandling: 'merge' });
   }
 } 
