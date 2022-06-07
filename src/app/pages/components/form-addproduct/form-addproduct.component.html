@@ -293,7 +293,8 @@
   
 
       <!-- THIRD PAGE -->
-      <div *ngIf="step == 3" formGroupName="userDetails">
+      
+      <!-- <div *ngIf="step == 3" formGroupName="userDetails">
         <div class="category">
           <h2>Personal Information</h2>
           <div class="linie"></div>
@@ -376,12 +377,12 @@
               </div>
           </div>
 
-      </div>
+      </div> -->
 
       <!-- BUTOANE -->
 
       <div class="row">
-    <a class="prev" *ngIf="step == 3" (click)="previous()">BACK TO PICTURES</a>
+    <!-- <a class="prev" *ngIf="step == 3" (click)="previous()">BACK TO PICTURES</a> -->
     <!-- <button class="next" *ngIf="step != 2">Next</button> -->
     <a class="prev" *ngIf="step == 2" (click)="previous()">BACK TO STEP 1</a>
 
@@ -389,12 +390,12 @@
       <p>Accept details and continue</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
-    <button type="button" class="next" *ngIf="step == 2" (click)="next()">
+    <!-- <button type="button" class="next" *ngIf="step == 2" (click)="next()">
       <p>Continue to personal information</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
-    </button>
+    </button> -->
 
-    <button type="submit" class="next" *ngIf="step == 3">
+    <button type="submit" class="next" *ngIf="step == 2">
       <p>Post Listing</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
