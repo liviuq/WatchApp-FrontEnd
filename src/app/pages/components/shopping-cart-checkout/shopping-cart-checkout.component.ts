@@ -13,6 +13,7 @@ export class ShoppingCartCheckoutComponent implements OnInit {
 
   public userId!: string;
   public totalPrice: number = 0;
+  public profileJson!: any;
   
 
   constructor(public auth: AuthService, private http: HttpClient) { }
@@ -23,6 +24,10 @@ export class ShoppingCartCheckoutComponent implements OnInit {
       (profile) => {
         if(profile?.sub !== undefined)
           this.userId = profile.sub.split("|")[1];
+
+          this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/user/" + this.userId).subscribe(data=>{
+                this.profileJson=data.user;
+      });
 
           this.callJsonGetRestApi( "https://watchappa3-be.herokuapp.com/cart/" + this.userId).subscribe(data=>{
                 this.totalPrice = data.totalPrice;

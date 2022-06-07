@@ -3,13 +3,13 @@
         <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
         <div class="top__right">
             <div>
-                <h1>{{productJson.brand}}</h1>
-                <p>PRODUCT ID: {{productJson.id}}</p>
+                <h1>{{productJson?.brand}}</h1>
+                <p>PRODUCT ID: {{productJson?.id}}</p>
                 <div class="product__tags">
-                    <div class="tag"><p>Condition: <span>{{productJson.conditions}}</span></p></div>
-                    <div class="tag"><p>Production year: <span>{{productJson.year}}</span></p></div>
+                    <div class="tag"><p>Condition: <span>{{productJson?.conditions}}</span></p></div>
+                    <div class="tag"><p>Production year: <span>{{productJson?.year}}</span></p></div>
                 </div>
-                <h2 class="product__price">$ <span>{{productJson.price}}</span></h2>
+                <h2 class="product__price">$ <span>{{productJson?.price}}</span></h2>
 
                 <button (click)="addToCart()" class="add_to_cart">  Add to cart <img src="../../../../assets/product/cart.svg" alt=""></button>
                 <button (click)="addToFavorite()" class="add_to_favorites">  Save to favorites <img src="../../../../assets/product/favorite.svg" alt=""></button>
@@ -20,8 +20,8 @@
                 <img src="../../../../assets/product/user.png" alt="">
                 <div class="seller__info">
                     <p class="seller">Sold by: <span>{{seller}}</span></p>
-                    <p class="view-seller" routerLink="/seller/{{productJson.user_id}}">View seller's profile</p>
-                    <button class="chat">  Chat with seller <img src="../../../../assets/product/chat.svg" alt=""></button>
+                    <p class="view-seller" routerLink="/seller/{{productJson?.user_id}}">View seller's profile</p>
+                    <button class="chat">  {{sellerPhone}}</button>
                 </div>
             </div>
         </div>
@@ -40,14 +40,14 @@
             <div class="tab__container">
                 <div class="tab__content tab__flex">
                     <div class="flex__content">
-                        <p class="proprietate">Brand: <span>{{productJson.brand}}</span></p>
-                        <p class="proprietate">Model: <span>{{productJson.model}}</span></p>
-                        <p class="proprietate">Mechanism: <span>{{productJson.mechanism}}</span></p>
+                        <p class="proprietate">Brand: <span>{{productJson?.brand}}</span></p>
+                        <p class="proprietate">Model: <span>{{productJson?.model}}</span></p>
+                        <p class="proprietate">Mechanism: <span>{{productJson?.mechanism}}</span></p>
                     </div>
                     <div class="flex__content">
-                        <p class="proprietate">Case Material: <span>{{productJson.carcase}}</span></p>
-                        <p class="proprietate">Year Of Production: <span>{{productJson.year}}</span></p>
-                        <p class="proprietate">Gender: <span *ngIf="productJson.gender == 1">Female</span> <span *ngIf="productJson.gender == 0">Male</span> </p>
+                        <p class="proprietate">Case Material: <span>{{productJson?.carcase}}</span></p>
+                        <p class="proprietate">Year Of Production: <span>{{productJson?.year}}</span></p>
+                        <p class="proprietate">Gender: <span *ngIf="productJson?.gender == 1">Female</span> <span *ngIf="productJson?.gender == 0">Male</span> </p>
                     </div>
                 </div>
             </div>
@@ -55,26 +55,26 @@
         <mat-tab label="Case">
             <div class="tab__content tab__flex">
                 <div class="flex__content">
-                    <p class="proprietate">Material: <span>{{productJson.carcase}}</span></p>
-                    <p class="proprietate">Thickness: <span>{{productJson.carcase_thickness}}</span></p>
-                    <p class="proprietate">Form: <span>{{productJson.carcase_form}}</span></p>
+                    <p class="proprietate">Material: <span>{{productJson?.carcase}}</span></p>
+                    <p class="proprietate">Thickness: <span>{{productJson?.carcase_thickness}}</span></p>
+                    <p class="proprietate">Form: <span>{{productJson?.carcase_form}}</span></p>
                 </div>
                 <div class="flex__content">
-                    <p class="proprietate">Color: <span>{{productJson.carcase_color}}</span></p>
-                    <p class="proprietate">Water Resistance: <span>{{productJson.water_resistance}}</span></p>
+                    <p class="proprietate">Color: <span>{{productJson?.carcase_color}}</span></p>
+                    <p class="proprietate">Water Resistance: <span>{{productJson?.water_resistance}}</span></p>
                 </div>
             </div>
         </mat-tab>
         <mat-tab label="Additional">
             <div class="tab__content tab__flex">
                 <div class="flex__content">
-                    <p class="proprietate">Strap: <span>{{productJson.strap}}</span></p>
-                    <p class="proprietate">Strap color: <span>{{productJson.strap_color}}</span></p>
-                    <p class="proprietate">Glass: <span>{{productJson.glass}}</span></p>
+                    <p class="proprietate">Strap: <span>{{productJson?.strap}}</span></p>
+                    <p class="proprietate">Strap color: <span>{{productJson?.strap_color}}</span></p>
+                    <p class="proprietate">Glass: <span>{{productJson?.glass}}</span></p>
                 </div>
                 <div class="flex__content">
-                    <p class="proprietate">Alarm: <span *ngIf="productJson.alarm == 1">Yes</span> <span *ngIf="productJson.alarm == 0">No</span> </p>
-                    <p class="proprietate">Timer: <span *ngIf="productJson.timer == 1">Yes</span> <span *ngIf="productJson.timer == 0">no</span> </p>
+                    <p class="proprietate">Alarm: <span *ngIf="productJson?.alarm == 1">Yes</span> <span *ngIf="productJson?.alarm == 0">No</span> </p>
+                    <p class="proprietate">Timer: <span *ngIf="productJson?.timer == 1">Yes</span> <span *ngIf="productJson?.timer == 0">no</span> </p>
                 </div>
             </div>
         </mat-tab>
