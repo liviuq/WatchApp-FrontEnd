@@ -11,7 +11,7 @@ import {AuthModule} from '@auth0/auth0-angular';
 import { environment as env } from 'src/environments/environment';
 
 import { MatDialogModule } from '@angular/material/dialog';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AuthModule.forRoot({
       ... env.auth,
     }),
-    MatDialogModule
+    MatDialogModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

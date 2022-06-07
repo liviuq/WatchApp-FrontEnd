@@ -1,8 +1,5 @@
 <div class="page">
 
- 
-  <!-- <app-searchbar></app-searchbar> -->
-
 
   <div class="filter">
     <form  (ngSubmit)="updateData()" [formGroup]="itemDetails">
@@ -164,7 +161,7 @@
         </div>
       </div>
       <div class="filter__button__container">
-        <button (click)="resetData()" class="filter__reset__button">Reset</button>
+        
         <button type="submit" class="filter__button">Filter</button>
       </div>
     </form>
@@ -174,34 +171,12 @@
   <div class="watches-list">
 
 
-    <app-buy-a-watch-card *ngFor="let product of productsJson" buyerId={{userId}} productId={{product?.id}} name={{product?.brand}} sellerId={{product?.user_id}}
+    <app-buy-a-watch-card *ngFor="let product of productsJson | paginate : {itemsPerPage: 3, currentPage: p}" buyerId={{userId}} productId={{product?.id}} name={{product?.brand}} sellerId={{product?.user_id}}
 
       price={{product?.price}}>
 
     </app-buy-a-watch-card>
 
-
-    <div class="page-counter">
-      <div class="left-arrows">
-        <img src="../../../../assets/filter-page/right-double-arrow.svg" alt="">
-        <img src="../../../../assets/filter-page/right-arrow.svg" alt="">
-      </div>
-
-      <div class="counter">
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-        <p>...</p>
-        <p>20</p>
-      </div>
-
-      <div class="right-arrows">
-        <img src="../../../../assets/filter-page/right-arrow.svg" alt="">
-        <img src="../../../../assets/filter-page/right-double-arrow.svg" alt="">
-      </div>
-    </div>
-
-    <pre>{{itemDetails.value|json}}</pre>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 </div>

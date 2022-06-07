@@ -13,12 +13,10 @@ import {Router} from '@angular/router';
 })
 export class BuyAWatchComponent implements OnInit {
   constructor(public auth: AuthService, private http: HttpClient,private route: ActivatedRoute, private router: Router) { 
-    this.route.queryParamMap
-      .subscribe((params) => {
-        this.params = params;
+    
   }
-);
-  }
+
+  public p:number=1;
   public params!:any;
   public userId!: string;
   public productsJson!: any[];
@@ -42,6 +40,11 @@ export class BuyAWatchComponent implements OnInit {
   public price_min !:string;
   public price_max !:string;
   ngOnInit(): void { 
+    this.route.queryParamMap
+      .subscribe((params) => {
+        this.params = params;
+  }
+);
     this.getData();
   }
   updateData():void{
@@ -126,7 +129,7 @@ export class BuyAWatchComponent implements OnInit {
           console.log(this.params.get('price_min') + " --- "+ this.params.get('price_max'));
           if(this.params.get('price_min') != "" &&  this.params.get('price_max') != ""){ //
             this.productsJson = this.productsJson.filter((product) => { return (product.price <= parseInt(this.params.get('price_max'))) && (product.price >= parseInt(this.params.get('price_min')))})
-          }
+          }   
         });
 
         this.callJsonGetRestApi("https://watchappa3-be.herokuapp.com/product/filters").subscribe(data => { //de schimbat link-ul     
@@ -137,10 +140,6 @@ export class BuyAWatchComponent implements OnInit {
 
   }
 
-  resetData():void {
-    // this.itemDetails.reset({value: ''});
-    // this.getData();
-  }
 
   callJsonGetRestApi(url: string): Observable<any> {
     return this.http.get(url)

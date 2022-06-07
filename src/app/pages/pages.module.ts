@@ -41,7 +41,7 @@ import { ProtectiaCumparatoruluiComponent } from './components/protectia-cumpara
 import { ReturComodComponent } from './components/retur-comod/retur-comod.component';
 import { DeleteProductCardComponent } from './components/seller-profile-buyer-perspective/components/delete-product-card/delete-product-card.component';
 import { LoginConditionComponent } from './components/login-condition/login-condition.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     ShoppingCartComponent,
@@ -86,7 +86,8 @@ import { LoginConditionComponent } from './components/login-condition/login-cond
     NgxGalleryModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    MatTabsModule
+    MatTabsModule,
+    NgxPaginationModule
   ],
   exports: [
     ShoppingCartComponent,
