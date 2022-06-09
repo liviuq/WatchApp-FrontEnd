@@ -49,18 +49,8 @@
     
 }
 .searchbar {
-    z-index: 5;
-    width: 70%;
-    height: 86px;
-    background-color: rgba(255, 255, 255, 0.75);
-    margin-top: 503px;
-    border: 1px solid #163A5F;
-    box-sizing: border-box;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 35px;
+  z-index: 5;
+  margin-top: 473px;
 }
 
 .searchbar>img {

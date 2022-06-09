@@ -27,6 +27,7 @@
 }
 
 .navbar__middle li a{
+  cursor: pointer;
     display: block;
     line-height: 50px;
     width: 183px;

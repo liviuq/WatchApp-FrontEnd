@@ -8,94 +8,31 @@
     </div>
     <ng-container *ngIf="showBrands">
       <div class="content content-brands">
-        <div class="item item-brands">
+        <div (click)="goToBrand('Rolex')" class="item item-brands">
           <img src="../../../../assets/categories/rolex-logo.png" alt="">
           <img src="../../../../assets/categories/rolex-watch.png" alt="">
         </div>
-        <div class="item item-brands">
-          <img src="../../../../assets/categories/cartier-logo.png" alt="">
+        <div (click)="goToBrand('Timex')" class="item item-brands">
+          <img class="timex-logo" src="../../../../assets/categories/timex-logo.png" alt="">
         </div>
-        <div class="item item-brands">
+        <div (click)="goToBrand('Daniel Wellington')" class="item item-brands">
           <img src="../../../../assets/categories/daniel-wellington-logo.png" alt="">
         </div>
-        <div class="item item-brands">
+        <div (click)="goToBrand('Fossil')" class="item item-brands">
           <img src="../../../../assets/categories/fossil-logo.png" alt="">
         </div>
-        <div class="item item-brands">
-          <img src="../../../../assets/categories/zenith-logo.png" alt="">
+        <div (click)="goToBrand('Citizen')" class="item item-brands">
+          <img class="citizen-logo" src="../../../../assets/categories/citizen-logo.png" alt="">
         </div>
-        <div class="item item-brands">
-          <img src="../../../../assets/categories/omega-logo.png" alt="">
+        <div (click)="goToBrand('Versace')" class="item item-brands">
+          <img class="versace-logo" src="../../../../assets/categories/versace-logo.png" alt="">
           <img src="../../../../assets/categories/omega-watch.png" alt="">
         </div>
         <div class="button">
-          <button class="btn">Display all <img src="../../../../assets/categories/arrow-down.svg" alt=""></button>
+          <button (click)="goToBrand('')" class="btn">Display all <img src="../../../../assets/categories/arrow-down.svg" alt=""></button>
         </div>
       </div>
     </ng-container>
   </div>
 
-  <div class="drop-down">
-    <div (click)="toggle('models')" class="abstract">
-      <h2>Model</h2>
-      <img src="../../../../assets/categories/arrow-down.svg" alt="">
-    </div>
-    <ng-container *ngIf="showModels">
-      <div class="content content-model">
-      </div>
-    </ng-container>
-  </div>
-  <div class="drop-down">
-    <div (click)="toggle('materials')" class="abstract">
-      <h2>Material pentru carcasa</h2>
-      <img src="../../../../assets/categories/arrow-down.svg" alt="">
-    </div>
-    <ng-container *ngIf="showMaterials">
-      <div class="content content-material">
-      </div>
-    </ng-container>
-  </div>
-  <div class="drop-down">
-    <div (click)="toggle('categorii')" class="abstract">
-      <h2>Alte categorii</h2>
-      <img src="../../../../assets/categories/arrow-down.svg" alt="">
-    </div>
-    <ng-container *ngIf="showCategorii">
-      <div class="content content-categorii">
-        <div class="item item-categorii">
-          <p>Luxury Watches</p>
-          <img src="../../../../assets/categories/luxury-watches.png" alt="">
-        </div>
-        <div class="item item-categorii">
-          <p>Chronograph Watches</p>
-          <img src="../../../../assets/categories/chronograph-watches.png" alt="">
-        </div>
-        <div class="item item-categorii">
-          <p>Watches for Aviators</p>
-          <img src="../../../../assets/categories/aviator-watches.png" alt="">
-        </div>
-        <div class="item item-categorii">
-          <p>Limited Edition Watches</p>
-        </div>
-        <div class="item item-categorii">
-          <p>Minimalistic Watches</p>
-        </div>
-        <div class="item item-categorii">
-          <p>Vintage Watches</p>
-          <img src="../../../../assets/categories/vintage-watches.png" alt="">
-        </div>
-        <div class="item item-categorii">
-          <p>Business Watches</p>
-          <img src="../../../../assets/categories/afaceri-watches.png" alt="">
-        </div>
-        <div class="item item-categorii">
-          <p>Gold Watches</p>
-          <img src="../../../../assets/categories/gold-watches.png" alt="">
-        </div>
-        <div class="button">
-          <button>Display all <img src="../../../../assets/categories/arrow-down.svg" alt=""></button>
-        </div>
-      </div>
-    </ng-container>
-  </div>
 </div>

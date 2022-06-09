@@ -10,25 +10,41 @@
     <div class="recommendations__cards">
       <app-watch-card *ngFor="let product of productsJson | slice: 0 : 4" price={{product.price}} name={{product.brand}} productId={{product.id}}></app-watch-card>
     </div>
-    <button class="more" [routerLink]="['/buy-a-watch']">
-      <p>Mai mult</p>
+    <button class="more" (click)="goToBrand('')">
+      <p>Mai multe</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
   </div>
   <div class="categories">
-    <h1>Categorii de ceasuri</h1>
-    <div class="categories__cards">
-      <app-categories-card text="Ceasuri de lux"></app-categories-card>
-      <app-categories-card text="Ceasuri cronograf"></app-categories-card>
-      <app-categories-card text="Ceasuri pentru aviatori"></app-categories-card>
-      <app-categories-card text="Ceasuri din aur"></app-categories-card>
-      <app-categories-card text="Ceasuri vintage"></app-categories-card>
-      <app-categories-card text="Ceasuri minimaliste"></app-categories-card>
-      <app-categories-card text="Ceasuri editie limitata"></app-categories-card>
-      <app-categories-card text="Ceasuri pentru afaceri"></app-categories-card>
-    </div>
-    <button class="more" [routerLink]="['/buy-a-watch']">
-      <p>Mai mult</p>
+    <h1>Branduri de ceasuri</h1>
+      <div class="categories__cards">
+        <div (click)="goToBrand('Rolex')" class="categories__card">
+          <img src="../../../../assets/categories/rolex-logo.png" alt="">
+        </div>
+        <div (click)="goToBrand('Timex')" class="categories__card">
+          <img class="timex-logo" src="../../../../assets/categories/timex-logo.png" alt="">
+        </div>
+        <div (click)="goToBrand('Daniel Wellington')" class="categories__card">
+          <img src="../../../../assets/categories/daniel-wellington-logo.png" alt="">
+        </div>
+        <div (click)="goToBrand('Fossil')" class="categories__card">
+          <img src="../../../../assets/categories/fossil-logo.png" alt="">
+        </div>
+        <div (click)="goToBrand('Citizen')" class="categories__card">
+          <img class="citizen-logo" src="../../../../assets/categories/citizen-logo.png" alt="">
+        </div>
+        <div (click)="goToBrand('Versace')" class="categories__card">
+          <img class="versace-logo" src="../../../../assets/categories/versace-logo.png" alt="">
+        </div>
+        <div (click)="goToBrand('Tissot')" class="categories__card">
+          <img class="tissot-logo" src="../../../../assets/categories/tissot-logo.png" alt="">
+        </div>
+        <div (click)="goToBrand('Regent')" class="categories__card">
+          <img class="regent-logo" src="../../../../assets/categories/regent-logo.png" alt="">
+        </div>
+      </div>
+    <button class="more" (click)="goToBrand('')">
+      <p>Mai multe</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
   </div>
@@ -38,8 +54,8 @@
     <div class="promoted__cards">
       <app-watch-card *ngFor="let product of productsJson | slice: 4 : 12" price={{product.price}} name={{product.brand}} productId={{product.id}}></app-watch-card>
     </div>
-    <button class="more" [routerLink]="['/buy-a-watch']">
-      <p>Mai mult</p>
+    <button class="more" (click)="goToBrand('')">
+      <p>Mai multe</p>
       <img src="../../../../assets/home/arrow-right.svg" alt="">
     </button>
   </div>

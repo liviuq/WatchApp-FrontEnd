@@ -113,3 +113,37 @@ h2 {
     column-gap: 160px;
     row-gap: 90px;
 }
+
+
+.categories__card {
+  cursor: pointer;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.56);
+  box-sizing: border-box;
+  box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+  transition: all .3s ease;
+}
+.categories__card:hover{
+  background-color:rgb(228, 228, 228);
+}
+.timex-logo{
+  height:150px;
+}
+.versace-logo{
+  height:120px;
+}
+.citizen-logo{
+  height:35px;
+}
+
+.tissot-logo{
+  height:110px;
+}
+
+.regent-logo{
+  height:180px;
+}

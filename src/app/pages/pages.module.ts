@@ -29,7 +29,6 @@ import { CaringForYourWatchComponent } from './components/caring-for-your-watch/
 import { PhotographingAWatchComponent } from './components/photographing-a-watch/photographing-a-watch.component';
 import { SearchbarComponent } from './components/home/components/searchbar/searchbar.component';
 import { WatchCardComponent } from './components/home/components/watch-card/watch-card.component';
-import { CategoriesCardComponent } from './components/home/components/categories-card/categories-card.component';
 import { BuyAWatchCardComponent } from './components/buy-a-watch/components/buy-a-watch-card/buy-a-watch-card.component';
 import { FavoriteWatchCardComponent } from './components/favorite-list/components/favorite-watch-card/favorite-watch-card.component';
 import { ProductComponent } from './components/product/product.component';
@@ -66,7 +65,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
     PhotographingAWatchComponent,
     SearchbarComponent,
     WatchCardComponent,
-    CategoriesCardComponent,
     BuyAWatchCardComponent,
     FavoriteWatchCardComponent,
     ProductComponent,

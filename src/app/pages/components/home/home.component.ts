@@ -3,7 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   
 
-  constructor(public auth: AuthService, private http: HttpClient) { }
+  constructor(public auth: AuthService, private http: HttpClient,private router: Router) { }
   public userId!: string;
   public productsJson!: any[];
 
@@ -21,7 +21,26 @@ export class HomeComponent implements OnInit {
     this.getData();
   }
 
-
+  goToBrand(brand:String):void{
+    this.router.navigate(['/buy-a-watch'], { queryParams: { 
+      brand : brand,
+      mechanism :"" ,
+      condition :"" ,
+      year :"" ,
+      strap : "",
+      strap_color:"" ,
+      carcase :"" ,
+      carcase_form : "",
+      carcase_thickness :"" ,
+      water_resistence : "",
+      carcase_color : "",
+      alarm :"" ,
+      timer : "",
+      gender : "",
+    price_min:"",
+  price_max:""
+},queryParamsHandling: 'merge' });
+  }
   getData(): void {
     this.auth.user$.subscribe(
       (profile) => {
