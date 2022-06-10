@@ -33,8 +33,9 @@
           <div class="flex-row filter-brand">
             <h5>Brand</h5>
             <select name="brand" id="brand" formControlName="brand" >
-              <option value="" >Please select</option>
-              <option *ngFor="let filter of filtersJson?.brands">
+              <option *ngIf="params.get('brand') == ''"  selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('brand') != ''" selected hidden>{{params.get('brand')}}</option>
+              <option *ngFor="let filter of filtersJson?.brands " >
                 {{filter}}
               </option>
             </select>
@@ -44,7 +45,8 @@
           <div class="flex-row">
             <h5>Mechanism</h5>
             <select name="mechanism" id="mechanism" formControlName="mechanism" >
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('mechanism') == ''"  selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('mechanism') != ''" selected hidden>{{params.get('mechanism')}}</option>
               <option *ngFor="let filter of filtersJson?.mechanisms">
                 {{filter}}
               </option>
@@ -53,7 +55,8 @@
           <div class="flex-row">
             <h5>Condition</h5>
             <select name="condition" id="condition" formControlName="conditions">
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('condition') == ''"  selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('condition') != ''" selected hidden>{{params.get('condition')}}</option>
               <option *ngFor="let filter of filtersJson?.conditions">
                 {{filter}}
               </option>
@@ -63,7 +66,8 @@
             <h5>Year of
               production</h5>
             <select name="year" id="year" formControlName="year">
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('year') == ''"  selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('year') != ''" selected hidden>{{params.get('year')}}</option>
               <option *ngFor="let filter of filtersJson?.years">
                 {{filter}}
               </option>
@@ -72,7 +76,8 @@
           <div class="flex-row">
             <h5>Strap</h5>
             <select name="strap" id="strap" formControlName="strap" >
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('strap') == ''"  selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('strap') != ''" selected hidden>{{params.get('strap')}}</option>
               <option *ngFor="let filter of filtersJson?.straps">
                 {{filter}}
               </option>
@@ -81,7 +86,8 @@
           <div class="flex-row">
             <h5>Strap color</h5>
             <select name="strap-color" id="strap-color" formControlName="strap_color">
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('strap_color') == ''"  selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('strap_color') != ''" selected hidden>{{params.get('strap_color')}}</option>
               <option *ngFor="let filter of filtersJson?.strap_colors">
                 {{filter}}
               </option>
@@ -90,7 +96,8 @@
           <div class="flex-row">
             <h5>Carcase</h5>
             <select name="carcase" id="carcase" formControlName="carcase">
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('carcase') == ''" selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('carcase') != ''" selected hidden>{{params.get('carcase')}}</option>
               <option *ngFor="let filter of filtersJson?.carcases">
                 {{filter}}
               </option>
@@ -99,7 +106,8 @@
           <div class="flex-row">
             <h5>Form</h5>
             <select name="form" id="form" formControlName="carcase_form">
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('carcase_form') == ''" selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('carcase_form') != ''" selected hidden >{{params.get('carcase_form')}}</option>
               <option *ngFor="let filter of filtersJson?.carcase_forms">
                 {{filter}}
               </option>
@@ -108,7 +116,8 @@
           <div class="flex-row">
             <h5>Thickness</h5>
             <select name="thickness" id="thickness" formControlName="carcase_thickness">
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('carcase_thickness') == ''" selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('carcase_thickness') != ''" selected hidden>{{params.get('carcase_thickness')}}</option>
               <option *ngFor="let filter of filtersJson?.carcase_thicknesses">
                 {{filter}}
               </option>
@@ -117,7 +126,8 @@
           <div class="flex-row">
             <h5>Water resistance</h5>
             <select name="water-resistance" id="water-resistance" formControlName="water_resistence">
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('water_resistence') == ''" selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('water_resistence') != ''" selected hidden>{{params.get('water_resistence')}}</option>
               <option *ngFor="let filter of filtersJson?.water_resistences">
                 {{filter}}
               </option>
@@ -126,7 +136,8 @@
           <div class="flex-row">
             <h5>Carcase Color</h5>
             <select name="color" id="color" formControlName="carcase_color" >
-              <option value="" >Please select</option>
+              <option *ngIf="params.get('carcase_color') == ''" selected disabled hidden >Please select</option>
+              <option *ngIf="params.get('carcase_color') != ''" selected hidden>{{params.get('carcase_color')}}</option>
               <option *ngFor="let filter of filtersJson?.carcase_colors">
                 {{filter}}
               </option>
@@ -161,8 +172,8 @@
         </div>
       </div>
       <div class="filter__button__container">
-        
-        <button type="submit" class="filter__button">Filter</button>
+        <button (click)="resetData()" class="filter__button">Reset</button>
+        <button  type="submit" class="filter__button">Filter</button>
       </div>
     </form>
   </div>
@@ -171,7 +182,7 @@
   <div class="watches-list">
 
 
-    <app-buy-a-watch-card *ngFor="let product of productsJson | paginate : {itemsPerPage: 3, currentPage: p}" buyerId={{userId}} productId={{product?.id}} name={{product?.brand}} sellerId={{product?.user_id}}
+    <app-buy-a-watch-card *ngFor="let product of productsJson | paginate : {itemsPerPage: 8, currentPage: p}" buyerId={{userId}} productId={{product?.id}} name={{product?.brand}} sellerId={{product?.user_id}}
 
       price={{product?.price}}>
 
