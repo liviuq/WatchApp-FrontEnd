@@ -3,8 +3,8 @@
         <div class="info_filter">
             <div class="info">
                 <img class="poza_profil" src="assets/profil-utilizator-cumparator-images/image 6.png">
-                <h1 class="descr first_child">Nume: {{userJson.user_name}}</h1>
-                <h1 class="descr">Nr de telefon : {{userJson.phone_number}}</h1>
+                <h1 class="descr first_child">Nume: {{userJson?.user_name}}</h1>
+                <h1 class="descr">Nr de telefon : {{userJson?.phone_number}}</h1>
                 <h1 class="descr">Anunturi active: {{productsLength}}</h1> 
             </div>
             <div class="filter">
@@ -85,8 +85,8 @@
                 <div *ngIf="curentFilter.includes('year')||curentFilter.includes('brand')||curentFilter.includes('sex')||curentFilter.includes('condition')">
                     <div *ngFor="let product of productsJson | slice: lowValue : highValue">
                       <!--  <div *ngIf="curentValueFilter.includes(product.year)||curentValueFilter.includes(product.brand)||curentValueFilter.includes(product.gender) "> -->
-                        <div *ngIf="checkFilter(product.year,product.brand,product.gender,product.conditions)==1">
-                            <app-seller-profile-product-card  productName={{product.brand}} watchPrice={{product.price}} watchYear={{product.year}} sellerId={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                        <div *ngIf="checkFilter(product?.year,product?.brand,product?.gender,product?.conditions)==1">
+                            <app-seller-profile-product-card  productName={{product?.brand}} watchPrice={{product?.price}} watchYear={{product?.year}} sellerId={{product?.user_id}} productId={{product?.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
                         </div>
                     </div>
               </div>
@@ -96,7 +96,7 @@
   
   
               <div *ngIf="curentFilter.includes('none')">
-                <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product.brand}} watchPrice={{product.price}} watchYear={{product.year}} sellerId={{product.user_id}} productId={{product.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
+                <app-seller-profile-product-card *ngFor="let product of productsJson | slice: lowValue : highValue" productName={{product?.brand}} watchPrice={{product?.price}} watchYear={{product?.year}} sellerId={{product?.user_id}} productId={{product?.id}} locationName="Bucuresti" date="5/12/2022"></app-seller-profile-product-card>
               </div>
 
                 
