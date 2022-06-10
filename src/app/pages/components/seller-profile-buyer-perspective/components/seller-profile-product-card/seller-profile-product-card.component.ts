@@ -4,6 +4,8 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginConditionComponent } from '../../../login-condition/login-condition.component';
 
 @Component({
   selector: 'app-seller-profile-product-card',
@@ -26,7 +28,7 @@ export class SellerProfileProductCardComponent implements OnInit {
   watchYear!:string;
   @Input()
   productId!:string;
-  constructor(public auth: AuthService, private http: HttpClient, private router: Router) { }
+  constructor(public auth: AuthService, private http: HttpClient, private router: Router,private dialogRef : MatDialog) { }
   public userId!: string;
   public sellerName!: string;
 
@@ -40,12 +42,13 @@ export class SellerProfileProductCardComponent implements OnInit {
   addToFavorite(): void{
     this.auth.user$.subscribe(
       (profile) => {
-        if (profile?.sub !== undefined)
+        if (profile?.sub !== undefined){
           this.userId = profile.sub.split("|")[1];
-
           this.callJsonPostRestApi( "https://watchappa3-be.herokuapp.com/favorites/"+this.userId+"/insert/"+this.productId).subscribe(data=>{
             console.log(data);
           }); 
+        }
+        else this.openLoginConditionDialog();
       }
     );
 
@@ -88,6 +91,10 @@ export class SellerProfileProductCardComponent implements OnInit {
         })
       );
 
+  }
+
+  openLoginConditionDialog():void{
+    this.dialogRef.open(LoginConditionComponent);
   }
 
 }
