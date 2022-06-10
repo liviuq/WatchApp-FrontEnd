@@ -113,8 +113,11 @@
            <h1 class="atribut">Brand</h1>
        </button>
        <div *ngIf="status1 === 'first'">
-         
-         <div class="drescriere_atribut" *ngFor="let product of brandFilterFINAL" (click)="filterFunction1(product,'brand')" >- {{product}} </div>  
+         <!--  -->
+         <div class="drescriere_atribut" *ngFor="let product of brandFilterFINAL"  >
+          <input type="checkbox" (click)="filterFunction1(product,'brand')">
+           {{product}} 
+          </div>  
           
        </div>
       
@@ -132,9 +135,10 @@
         </button>
         <div *ngIf="status2 === 'secound'">
 
-          <div class="drescriere_atribut" *ngFor="let product of sexFilterFINAL" (click)="filterFunction1(product,'sex')">
-            <div *ngIf="product==0">- Barbat</div>
-            <div *ngIf="product==1">- Femeie</div>
+          <div class="drescriere_atribut" *ngFor="let product of sexFilterFINAL" >
+            
+            <div *ngIf="product==0"><input type="checkbox" (click)="filterFunction1(product,'sex')"> Barbat</div>
+            <div *ngIf="product==1"><input type="checkbox" (click)="filterFunction1(product,'sex')"> Femeie</div>
           </div>
 
         </div>
@@ -152,7 +156,9 @@
         </button>
         <div *ngIf="status3 === 'third'">
            
-            <div class="drescriere_atribut" *ngFor="let product of conditionFilterFINAL" (click)="filterFunction1(product,'condition')">- {{product}} </div>
+            <div class="drescriere_atribut" *ngFor="let product of conditionFilterFINAL" >
+              <input type="checkbox" (click)="filterFunction1(product,'condition')">
+              {{product}} </div>
         </div>
   
         <button (click)="toggle4()" class="filtru">
@@ -167,7 +173,9 @@
             <h1 class="atribut">An</h1>
         </button>
         <div *ngIf="status4 === 'forth'">
-          <div class="drescriere_atribut" *ngFor="let product of yearFilterFINAL" (click)="filterFunction1(product,'year')">- {{product}} </div>
+          <div class="drescriere_atribut" *ngFor="let product of yearFilterFINAL" >
+            <input type="checkbox" (click)="filterFunction1(product,'year')">
+            {{product}} </div>
         </div>
    </div>
   
