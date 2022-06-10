@@ -43,8 +43,24 @@ export class BuyAWatchComponent implements OnInit {
     this.route.queryParamMap
       .subscribe((params) => {
         this.params = params;
-  }
-);
+      }
+    );
+    this.itemDetails.controls['brand'].setValue(this.params.get('brand'));
+    this.itemDetails.controls['year'].setValue(this.params.get('year'));
+    this.itemDetails.controls['strap'].setValue(this.params.get('strap'));
+    this.itemDetails.controls['strap_color'].setValue(this.params.get('strap_color'));
+    this.itemDetails.controls['water_resistence'].setValue(this.params.get('water_resistence'));
+    this.itemDetails.controls['carcase'].setValue(this.params.get('carcase'));
+    this.itemDetails.controls['carcase_form'].setValue(this.params.get('carcase_form'));
+    this.itemDetails.controls['carcase_color'].setValue(this.params.get('carcase_color'));
+    this.itemDetails.controls['carcase_thickness'].setValue(this.params.get('carcase_thickness'));
+    this.itemDetails.controls['alarm'].setValue(this.params.get('alarm'));
+    this.itemDetails.controls['timer'].setValue(this.params.get('timer'));
+    this.itemDetails.controls['mechanism'].setValue(this.params.get('mechanism'));
+    this.itemDetails.controls['gender'].setValue(this.params.get('gender'));
+    this.itemDetails.controls['conditions'].setValue(this.params.get('condition'));
+    this.itemDetails.controls['price_min'].setValue(this.params.get('price_min'));
+    this.itemDetails.controls['price_max'].setValue(this.params.get('price_max'));
     this.getData();
   }
   updateData():void{
@@ -68,8 +84,31 @@ export class BuyAWatchComponent implements OnInit {
          price_min : this.itemDetails.value.price_min,
          price_max : this.itemDetails.value.price_max,
       },queryParamsHandling: 'merge'});
-  });
-    
+    });
+  }
+
+  resetData():void{
+    console.log("RESET DATA");
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate(['/buy-a-watch'], { queryParams: { 
+        brand : '' ,
+         mechanism : '',
+         condition : '',
+         year : '',
+         strap : '',
+         strap_color: '',
+         carcase : '',
+         carcase_form : '',
+         carcase_thickness : '',
+         water_resistence : '',
+         carcase_color : '',
+         alarm : '',
+         timer : '',
+         gender : '',
+         price_min : '',
+         price_max : '',
+      },queryParamsHandling: 'merge'});
+    });
   }
 
   getData(): void {
