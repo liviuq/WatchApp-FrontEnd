@@ -175,11 +175,6 @@ ngx-gallery {
     transition: all .4s;
 }
 
-.chat:hover{
-    cursor: pointer;
-    background: #1d6d4b;
-}
-
 mat-tab-group{
     margin: 8em 6%;
 }

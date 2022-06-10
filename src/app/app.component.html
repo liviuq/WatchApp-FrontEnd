@@ -1,5 +1,11 @@
 <div class="loading" *ngIf="auth.isLoading$ | async; else loaded">
-    <p>Pagina se incarca. Trebuie un loading page aici</p>
+    <div class="loader">
+        <span class="arrow">↓</span>
+        <span class="arrow" style="--delay: 0.1s">↓</span>
+        <span class="arrow" style="--delay: 0.3s">↓</span>
+        <span class="arrow" style="--delay: 0.4s">↓</span>
+        <span class="arrow" style="--delay: 0.5s">↓</span>
+      </div>
 </div>
 <ng-template #loaded>
     <div class="page-container">
