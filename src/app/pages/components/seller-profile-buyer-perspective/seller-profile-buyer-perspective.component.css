@@ -125,6 +125,7 @@
     margin-top: 20px;
 }
 .drescriere_atribut{
+    cursor: pointer;
     font-family: 'El Messiri';
     font-style: normal;
     font-weight: 600;
