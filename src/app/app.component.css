@@ -12,3 +12,27 @@
      bottom: 0;
      width: 100%;
  }
+
+ .loader {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @keyframes arrows {
+    0%,
+    100% {
+      color: black;
+      transform: translateY(0);
+    }
+    50% {
+      color: #3AB493;
+      transform: translateY(20px);
+    }
+  }
+  
+  .arrow {
+    --delay: 0s;
+    animation: arrows 1s var(--delay) infinite ease-in;
+  }
