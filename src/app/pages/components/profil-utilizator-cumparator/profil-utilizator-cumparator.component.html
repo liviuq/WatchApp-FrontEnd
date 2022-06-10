@@ -13,13 +13,7 @@
         </ng-container>
     <!--  -->
     <h1 class="descr">Numar de anunturi adaugate: {{productsLength}}</h1>
-    <h1 class="descr">Data inregistrarii: 11.03.2019</h1>
-    <h1 class="descr">Categorii preferate de produse:</h1>
-    <ul class="lista_pref">
-        <li>Romanian Vintage Watches</li>
-        <li>Another one</li>
-        <li>...</li>
-    </ul>
+  
     <button type="button" class="button_rose">
        <div class="flex_text_img">
         <h1 class="button_text_rose" [routerLink]="['/favorite-list']">Vezi produse preferate</h1>
@@ -120,7 +114,7 @@
        </button>
        <div *ngIf="status1 === 'first'">
          
-         <div class="drescriere_atribut" *ngFor="let product of brandFilterFINAL" (click)="filterFunction1(product,'brand')">- {{product}} </div>  
+         <div class="drescriere_atribut" *ngFor="let product of brandFilterFINAL" (click)="filterFunction1(product,'brand')" >- {{product}} </div>  
           
        </div>
       
@@ -157,8 +151,7 @@
             <h1 class="atribut">Conditie</h1>
         </button>
         <div *ngIf="status3 === 'third'">
-            <!-- <h1 class="drescriere_atribut">- Nou</h1>
-            <h1 class="drescriere_atribut">- Purtat</h1> -->
+           
             <div class="drescriere_atribut" *ngFor="let product of conditionFilterFINAL" (click)="filterFunction1(product,'condition')">- {{product}} </div>
         </div>
   

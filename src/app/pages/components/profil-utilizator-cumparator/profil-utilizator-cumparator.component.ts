@@ -29,6 +29,7 @@ export class ProfilUtilizatorCumparatorComponent implements OnInit {
   public status4: 'none' | 'forth'  = 'none';
   public insertNumber:boolean=false;
 
+
   public show:boolean = false;
   public numberTel:any='+4078*******';
   public numberTelColor:any='#FFFFFF';

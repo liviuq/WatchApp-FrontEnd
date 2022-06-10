@@ -1,7 +1,7 @@
 
 .info_utilizator_box{
     width: 1215px;
-    min-height: 900px;
+    min-height: 500px;
     height: fit-content;
     padding-bottom: 10px;
     background: #1D566E;
@@ -11,6 +11,7 @@
     transform:translateX(-50%);
     margin-top: 152px;
     margin-bottom: 160px;
+    padding-bottom: 20px;
 }
 .poza_profil{
     margin-left: 50%;
